@@ -94,12 +94,8 @@ export async function fetchIndexStatus(paths) {
 if (import.meta.url === `file://${process.argv[1]}`) {
   try {
     const { readFileSync } = await import('node:fs');
-    const { resolve, dirname } = await import('node:path');
-    const { fileURLToPath } = await import('node:url');
-    const __dirname = dirname(fileURLToPath(import.meta.url));
-    const core = JSON.parse(
-      readFileSync(resolve(__dirname, '..', 'semantic-core.json'), 'utf-8')
-    );
+    const { getCorePath } = await import('../config.mjs');
+    const core = JSON.parse(readFileSync(getCorePath(), 'utf-8'));
     const paths = [...new Set(core.pages.map((p) => p.url))];
     const results = await fetchIndexStatus(paths);
     console.log('\n' + JSON.stringify(results, null, 2));

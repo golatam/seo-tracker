@@ -1,38 +1,20 @@
 #!/usr/bin/env node
 /**
- * Send SEO report to Telegram (HTML parse mode) — Firmalo.io
+ * Send SEO report to Telegram (HTML parse mode).
  *
  * Usage:
- *   node seo-tracking/scripts/notify-telegram.mjs [--test]
+ *   node scripts/notify-telegram.mjs [--test]
  *
- * Env vars: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID
+ * Env vars: TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID, TELEGRAM_THREAD_ID (optional)
  */
 
 import { loadEnv, requireEnv } from './env.mjs';
-import { NOISE_THRESHOLD } from '../config.mjs';
+import { NOISE_THRESHOLD, getSiteName, loadClusters } from '../config.mjs';
 
 loadEnv();
 
 const TELEGRAM_MAX_LEN = 4096;
 const SAFE_MAX_LEN = 3900;
-
-const CLUSTER_LABELS = {
-  core: 'Firma PDF',
-  feature: 'Funciones',
-  usecase: 'Casos de uso',
-  competitor: 'Alternativas',
-  unknown: 'Otro',
-};
-
-const CLUSTER_EMOJI = {
-  core: '📄',
-  feature: '🔧',
-  usecase: '💼',
-  competitor: '🆚',
-  unknown: '❔',
-};
-
-const CLUSTER_ORDER = ['core', 'feature', 'usecase', 'competitor', 'unknown'];
 
 function escapeHtml(s) {
   return String(s)
@@ -42,15 +24,19 @@ function escapeHtml(s) {
 }
 
 async function sendMessage(token, chatId, html) {
+  const payload = {
+    chat_id: chatId,
+    text: html,
+    parse_mode: 'HTML',
+    disable_web_page_preview: true,
+  };
+  const threadId = process.env.TELEGRAM_THREAD_ID;
+  if (threadId) payload.message_thread_id = parseInt(threadId, 10);
+
   const res = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      chat_id: chatId,
-      text: html,
-      parse_mode: 'HTML',
-      disable_web_page_preview: true,
-    }),
+    body: JSON.stringify(payload),
   });
   const data = await res.json();
   if (!data.ok) {
@@ -82,7 +68,6 @@ function splitForTelegram(html) {
     if (section.length <= SAFE_MAX_LEN) {
       buf = section;
     } else {
-      // single section is too big — split by lines
       const lines = section.split('\n');
       let lineBuf = '';
       for (const line of lines) {
@@ -102,7 +87,6 @@ function splitForTelegram(html) {
 }
 
 function posChangeText(c) {
-  const kw = escapeHtml(c.keyword);
   if (c.isNewlyTracked && c.currentPosition !== null) {
     return `→ <b>${c.currentPosition}</b> <i>(new)</i>`;
   }
@@ -161,11 +145,19 @@ function indexationSection(indexStatus, sitemap) {
   return lines.join('\n');
 }
 
-export function formatReport(report) {
+function resolveCtx(ctx = {}) {
+  return {
+    siteName: ctx.siteName || getSiteName(),
+    clusters: ctx.clusters || loadClusters(null),
+  };
+}
+
+export function formatReport(report, ctx = {}) {
+  const { siteName, clusters } = resolveCtx(ctx);
   const { summary, changes, currentDate, previousDate, indexStatus, sitemap } = report;
   const sections = [];
 
-  sections.push(`📊 <b>SEO report: firmalo.io</b>\n<i>${previousDate} → ${currentDate}</i>`);
+  sections.push(`📊 <b>SEO report: ${escapeHtml(siteName)}</b>\n<i>${previousDate} → ${currentDate}</i>`);
 
   const avgChange = summary.avgPosition - summary.prevAvgPosition;
   const avgDir = avgChange < 0
@@ -184,6 +176,7 @@ export function formatReport(report) {
   ];
   if (summary.noData > 0) summaryLines.push(`N/A: <b>${summary.noData}</b>`);
   if (summary.newInTop > 0) summaryLines.push(`🆕 Entered TOP: <b>${summary.newInTop}</b>`);
+  if (summary.newlyTracked > 0) summaryLines.push(`➕ Newly tracked: <b>${summary.newlyTracked}</b>`);
   if (summary.droppedFromTop > 0) summaryLines.push(`💀 Left TOP: <b>${summary.droppedFromTop}</b>`);
   sections.push(summaryLines.join('\n'));
 
@@ -212,14 +205,15 @@ export function formatReport(report) {
   }
 
   const clusterLines = ['<b>By cluster</b>'];
-  for (const cat of CLUSTER_ORDER) {
+  for (const cat of clusters.order) {
     const cl = byCluster[cat];
     if (!cl || cl.length === 0) continue;
-    const emoji = CLUSTER_EMOJI[cat] || '❔';
-    const label = CLUSTER_LABELS[cat] || cat;
+    const emoji = clusters.emoji[cat] || '';
+    const label = clusters.labels[cat] || cat;
     const imp = cl.filter(c => c.change !== null && c.change > 0).length;
     const dec = cl.filter(c => c.change !== null && c.change < 0).length;
-    clusterLines.push(`${emoji} <b>${label}:</b> +${imp} -${dec} (${cl.length})`);
+    const prefix = emoji ? `${emoji} ` : '';
+    clusterLines.push(`${prefix}<b>${escapeHtml(label)}:</b> +${imp} -${dec} (${cl.length})`);
   }
   if (clusterLines.length > 1) sections.push(clusterLines.join('\n'));
 
@@ -230,8 +224,9 @@ export function formatReport(report) {
   if (improved.length > 0) {
     const lines = ['📈 <b>Top improvements</b>'];
     for (const c of improved) {
-      const clEmoji = CLUSTER_EMOJI[c.category] || '';
-      lines.push(`${clEmoji} 🟢 "${escapeHtml(c.keyword)}" ${posChangeText(c)}`);
+      const clEmoji = clusters.emoji[c.category] || '';
+      const prefix = clEmoji ? `${clEmoji} ` : '';
+      lines.push(`${prefix}🟢 "${escapeHtml(c.keyword)}" ${posChangeText(c)}`);
     }
     sections.push(lines.join('\n'));
   }
@@ -243,24 +238,26 @@ export function formatReport(report) {
   if (declined.length > 0) {
     const lines = ['📉 <b>Notable declines</b>'];
     for (const c of declined) {
-      const clEmoji = CLUSTER_EMOJI[c.category] || '';
-      lines.push(`${clEmoji} 🔻 "${escapeHtml(c.keyword)}" ${posChangeText(c)}`);
+      const clEmoji = clusters.emoji[c.category] || '';
+      const prefix = clEmoji ? `${clEmoji} ` : '';
+      lines.push(`${prefix}🔻 "${escapeHtml(c.keyword)}" ${posChangeText(c)}`);
     }
     sections.push(lines.join('\n'));
   }
 
-  sections.push('<i>Firmalo.io SEO tracker</i>');
+  sections.push(`<i>${escapeHtml(siteName)} SEO tracker</i>`);
   return sections.join('\n\n');
 }
 
-export function formatSnapshot(snapshot) {
+export function formatSnapshot(snapshot, ctx = {}) {
+  const { siteName } = resolveCtx(ctx);
   const { date, entries, comment, indexStatus, sitemap } = snapshot;
   const inTop10 = entries.filter(e => e.position !== null && e.position <= 10).length;
   const inTop30 = entries.filter(e => e.position !== null && e.position <= 30).length;
   const outOfTop = entries.filter(e => e.position === null).length;
 
   const sections = [];
-  sections.push(`📍 <b>Position snapshot — firmalo.io</b>\n<i>${date}${comment ? ` — ${escapeHtml(comment)}` : ''}</i>`);
+  sections.push(`📍 <b>Position snapshot — ${escapeHtml(siteName)}</b>\n<i>${date}${comment ? ` — ${escapeHtml(comment)}` : ''}</i>`);
   sections.push([
     `🔑 <b>Keywords:</b> ${entries.length}`,
     `🏆 <b>TOP-10:</b> ${inTop10}`,
@@ -271,17 +268,17 @@ export function formatSnapshot(snapshot) {
   const indexBlock = indexationSection(indexStatus, sitemap);
   if (indexBlock) sections.push(indexBlock);
 
-  sections.push('<i>Firmalo.io SEO tracker</i>');
+  sections.push(`<i>${escapeHtml(siteName)} SEO tracker</i>`);
   return sections.join('\n\n');
 }
 
-export async function sendTelegramReport(reportOrSnapshot, type = 'report') {
+export async function sendTelegramReport(reportOrSnapshot, type = 'report', ctx = {}) {
   const token = requireEnv('TELEGRAM_BOT_TOKEN', 'Bot token from @BotFather (123456:ABC-...)');
   const chatId = requireEnv('TELEGRAM_CHAT_ID', 'Chat or channel ID (negative for channels: -100...)');
 
   const html = type === 'report'
-    ? formatReport(reportOrSnapshot)
-    : formatSnapshot(reportOrSnapshot);
+    ? formatReport(reportOrSnapshot, ctx)
+    : formatSnapshot(reportOrSnapshot, ctx);
 
   const parts = splitForTelegram(html);
   for (const part of parts) {
@@ -296,14 +293,15 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   if (args.includes('--test')) {
     const token = requireEnv('TELEGRAM_BOT_TOKEN');
     const chatId = requireEnv('TELEGRAM_CHAT_ID');
+    const siteName = getSiteName();
     const html = [
-      '🧪 <b>Firmalo SEO tracker test</b>',
-      'Bot is working! Reports will be sent here.',
-      '<i>Firmalo.io SEO tracker</i>',
+      `🧪 <b>SEO tracker test — ${escapeHtml(siteName)}</b>`,
+      'Bot is working. Reports will be sent here.',
+      `<i>${escapeHtml(siteName)} SEO tracker</i>`,
     ].join('\n\n');
     await sendMessage(token, chatId, html);
     console.log('Test message sent to Telegram!');
   } else {
-    console.log('Usage: node seo-tracking/scripts/notify-telegram.mjs --test');
+    console.log('Usage: node scripts/notify-telegram.mjs --test');
   }
 }

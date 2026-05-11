@@ -45,53 +45,64 @@
 ```
 seo-tracker/
 ├── .gitignore                       # node_modules, .env, macOS resource forks
+├── .github/workflows/
+│   └── weekly-check.yml             # reusable workflow (workflow_call) — Task #5 done
 ├── CLAUDE.md                        # этот файл
-├── .env.example                     # GSC + Slack env + SITE_URL/SITE_PROPERTY
-├── config.mjs                       # project-neutral defaults (SITE_URL вынесен в env)
+├── README.md                        # caller-yaml шаблон + secrets + semantic-core пример
+├── .env.example                     # GSC + Slack + Telegram + Yandex + NOTIFIER/ENABLE_YANDEX
+├── config.mjs                       # constants + helpers: getSiteName/getNotifiers/loadClusters/etc
 ├── scripts/
-│   ├── env.mjs                      # .env loader, zero-dep
+│   ├── env.mjs                      # .env loader (резолвит из process.cwd())
 │   ├── fetch-gsc.mjs                # searchAnalytics.query; exports getAccessToken
-│   ├── inspect-index.mjs            # NEW: urlInspection.index:inspect
-│   ├── submit-sitemap.mjs           # NEW: sitemaps.list + submit, handles 403 scope
-│   ├── notify-slack.mjs             # Block Kit report, новая секция Indexation
-│   ├── report.mjs                   # снапшот-диф, нужно слить с golatam-версией
-│   └── weekly-check.mjs             # orchestrator, нужен feature flag на notifier
+│   ├── fetch-yandex.mjs             # Yandex.Webmaster popular queries — Task #4 done
+│   ├── inspect-index.mjs            # urlInspection.index:inspect
+│   ├── submit-sitemap.mjs           # sitemaps.list + submit, handles 403 scope
+│   ├── notify-slack.mjs             # Block Kit report; принимает ctx={siteName,clusters}
+│   ├── notify-telegram.mjs          # HTML report со splitForTelegram; thread support
+│   ├── report.mjs                   # console-инспектор: engine sub-grouping + cluster table
+│   └── weekly-check.mjs             # orchestrator: NOTIFIER, ENABLE_YANDEX, ctx
 └── reference/
     ├── firmalo-seo-weekly.yml       # workflow для справки
-    └── golatam/                     # полная копия golatam/seo-tracking
-        ├── scripts/ (с fetch-yandex, notify-telegram, import-*)
-        ├── config.mjs  (Google+Yandex, Telegram)
-        ├── semantic-core.json (RU+ES+PT, 32+ ключей)
-        ├── snapshots/ (10 недельных снапшотов — видны реальные эвристики в диффах)
-        └── templates/, types.ts, uslugi-traffic-baseline.json
+    └── golatam/                     # полная копия golatam/seo-tracking (как стоп-кадр)
 ```
 
 Каталоги `snapshots/` и `semantic-core.json` в корне проекта отсутствуют осознанно — они **проектные, не принадлежат пакету**.
 
+## Ключевые архитектурные решения (зафиксированы по итогу сессии 2026-05-11)
+
+1. **Cluster labels хранятся в `semantic-core.json`** (опциональное поле `core.clusters`). `config.mjs::loadClusters(core)` парсит их в `{ labels, emoji, order }` и отдаёт обоим нотификаторам + `report.mjs`. Fallback: единственный «Other»-кластер. Это убрало хардкод из 3 файлов.
+2. **Пути резолвятся от `process.cwd()`**, не от `__dirname` пакета. `getCorePath()`/`getSnapshotsDir()` читают `CORE_PATH`/`SNAPSHOTS_DIR` env с дефолтами в CWD. Это критично для reusable workflow: пакет чекаутится в `.seo-tracker/`, но данные лежат в корне consumer-репо. `env.mjs` тоже резолвит `.env` из CWD.
+3. **Эвристик антиканнибализации/recovery в коде нет** — упоминание в раннем плане было ошибочным. Hook-интерфейс для эвристик НЕ нужен; обе версии `report.mjs` (firmalo и golatam) используют идентичную формулу alerts. Union сделан без extension-механизма.
+4. **Нотификаторы принимают `ctx = { siteName, clusters }`** третьим аргументом, не лазают в `config.mjs` сами. `weekly-check.mjs` собирает ctx один раз и передаёт обоим — это держит нотификаторы чистыми.
+
 ## План работы v1.0 (актуальный, 2026-05-11)
 
-**Фаза 0 — bootstrap пакета (текущая сессия или ближайшая):**
-1. `git init` + `.gitignore` + первичный коммит текущего состояния
-2. Инвентаризация диффов `scripts/` vs `reference/golatam/scripts/` — построчная дифф `weekly-check.mjs`, `notify-slack.mjs` / `notify-telegram.mjs`, `report.mjs`, `fetch-gsc.mjs`. Цель — список переносов и решений по `report.mjs` эвристикам
-3. Дизайн `config.mjs`: `defaults.mjs` (shared) + runtime-конфиг из env-vars
-4. Параметризовать `weekly-check.mjs` — условные импорты yandex/telegram через feature flags
-5. Reusable workflow `.github/workflows/weekly-check.yml` с `workflow_call` + inputs (`site_url`, `notifier`, `enable_yandex`) + `secrets: inherit`
-6. **README с инструкцией «как подключить пакет к новому проекту»** — минимум: caller-yaml шаблон, список secrets, пример `semantic-core.json`
+**Фаза 0 — bootstrap пакета (✅ закрыта 2026-05-11):**
+1. ✅ `git init` + `.gitignore` + первичный коммит
+2. ✅ Инвентаризация диффов `scripts/` vs `reference/golatam/scripts/` (4 пары)
+3. ✅ `config.mjs`: удалены unused exports; добавлены helpers `getCorePath/getSnapshotsDir/getSiteName/getNotifiers/isYandexEnabled/loadClusters`. `env.mjs` резолвит из `process.cwd()`
+4. ✅ Нотификаторы (`notify-slack`, `notify-telegram`): параметризованы через `ctx = { siteName, clusters }`; убран хардкод «firmalo.io»; cluster labels — из `core.clusters`; добавлен `newlyTracked` summary line; Telegram сохраняет `TELEGRAM_THREAD_ID` support
+5. ✅ `fetch-yandex.mjs` перенесён из reference с параметризацией (`SITE_URL` hostname вместо хардкода `golatam.group`)
+6. ✅ `weekly-check.mjs` параметризован: `NOTIFIER` (slack/telegram/both/none), `ENABLE_YANDEX`, условные импорты, ctx для нотификаторов
+7. ✅ Reusable workflow `.github/workflows/weekly-check.yml` с `workflow_call` + inputs + `secrets: inherit`
+8. ✅ README с caller-yaml шаблоном, таблицей secrets, схемой semantic-core.json
+9. ✅ Бонус: `report.mjs` унифицирован (engine sub-grouping, cluster summary table, priority indicator, cluster labels из core)
+10. ✅ Smoke-tested: `weekly-check.mjs --dry-run` проходит и с `ENABLE_YANDEX=false`, и с `=true`
 
-**Фаза 1 — миграция firmalo (канарейка):**
-7. Заменить `firmar/.github/workflows/seo-weekly.yml` на caller-yaml с `uses: golatam/seo-tracker/.github/workflows/weekly-check.yml@v1`
-8. Удалить `firmar/seo-tracking/scripts/`, оставить только `semantic-core.json`
-9. Прогнать 1-2 недели, убедиться что снапшоты и Slack-репорты идентичны старым
+**Фаза 1 — миграция firmalo (канарейка) — следующая сессия:**
+- Создать GitHub remote `golatam/seo-tracker` (приватный), включить «Accessible from repositories owned by the organization»
+- Заменить `firmar/.github/workflows/seo-weekly.yml` на caller-yaml с `uses: golatam/seo-tracker/.github/workflows/weekly-check.yml@v1`
+- Добавить опциональное `clusters` поле в `firmar/seo-tracking/semantic-core.json` (с теми же `core/feature/usecase/competitor` метками, что были захардкожены)
+- Удалить `firmar/seo-tracking/scripts/`, оставить только `semantic-core.json` (плюс перенести `snapshots/` если они не в корне)
+- Прогнать 1-2 недели, убедиться что снапшоты и Slack-репорты идентичны старым
 
 **Фаза 2 — миграция golatam:**
-10. Реализовать Yandex feature flag (если ещё не сделан в фазе 0)
-11. Реализовать `notifier=telegram` ветку (если ещё не сделана)
-12. Принять решение по `report.mjs` эвристикам (антиканнибализация, recovery): встроить опционально или вынести в `extensions/`
-13. Положить `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` в GitHub Secrets `golatam/golatam-website`
-14. Заменить caller-yaml в golatam, удалить локальные scripts
+- Добавить `clusters` поле в `golatam/seo-tracking/semantic-core.json` (`country/blog/service/audience/brand/main/landing`)
+- Положить `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` в GitHub Secrets `golatam/golatam-website`
+- Заменить caller-yaml в golatam (`notifier: both`, `enable_yandex: true`), удалить локальные scripts
 
 **Фаза 3 — релиз:**
-15. Тэг `v1.0.0` в `seo-tracker`, обновить `@v1` references в обоих consumer'ах
+- Тэг `v1.0.0` в `seo-tracker`, обновить `@v1` references в обоих consumer'ах
 
 ## v1.1 — отложено
 

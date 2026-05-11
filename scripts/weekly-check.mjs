@@ -1,25 +1,32 @@
 #!/usr/bin/env node
 /**
- * Weekly position check — Firmalo.io
+ * Weekly position check — orchestrator.
  *
- * Full cycle: fetch GSC data -> snapshot -> compare -> Slack report.
+ * Full cycle: fetch GSC (+ optional Yandex) -> snapshot -> compare ->
+ * notify (Slack and/or Telegram).
  *
  * Usage:
- *   node seo-tracking/scripts/weekly-check.mjs [--no-slack] [--dry-run]
+ *   node scripts/weekly-check.mjs [--no-slack] [--no-telegram] [--dry-run]
  *
- * Env vars: see seo-tracking/.env.example
+ * Env vars: see .env.example
  */
 
-import { readFileSync, writeFileSync, readdirSync, existsSync } from 'node:fs';
-import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { loadEnv } from './env.mjs';
-import { SNAPSHOTS_DIR, NOTIFICATIONS } from '../config.mjs';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const CORE_PATH = resolve(__dirname, '..', 'semantic-core.json');
+import {
+  getCorePath,
+  getSnapshotsDir,
+  getSiteName,
+  getNotifiers,
+  isYandexEnabled,
+  loadClusters,
+} from '../config.mjs';
 
 loadEnv();
+
+const SNAPSHOTS_DIR = getSnapshotsDir();
+const CORE_PATH = getCorePath();
 
 // ANSI
 const GREEN = '\x1b[32m';
@@ -34,6 +41,7 @@ const RESET = '\x1b[0m';
 
 const args = process.argv.slice(2);
 const noSlack = args.includes('--no-slack');
+const noTelegram = args.includes('--no-telegram');
 const dryRun = args.includes('--dry-run');
 
 // ─── Retry helper ────────────────────────────────────────────────────
@@ -60,7 +68,11 @@ async function withRetry(fn, label) {
 // ─── Main ────────────────────────────────────────────────────────────
 
 async function main() {
-  console.log(`\n${BOLD}Weekly position check — Firmalo.io${RESET}`);
+  const siteName = getSiteName();
+  const notifiers = getNotifiers();
+  const yandexEnabled = isYandexEnabled();
+
+  console.log(`\n${BOLD}Weekly position check — ${siteName}${RESET}`);
   console.log(`${DIM}${new Date().toISOString()}${RESET}\n`);
 
   // 1. Load semantic core
@@ -77,8 +89,12 @@ async function main() {
     process.exit(1);
   }
 
-  // Extract tracked keywords (Google only for LATAM)
+  const clusters = loadClusters(core);
+  const ctx = { siteName, clusters };
+
+  // Extract tracked keywords per engine
   const googleKeywords = [];
+  const yandexKeywords = [];
   const trackedKeywordMap = new Map();
   for (const page of core.pages) {
     for (const kw of page.keywords) {
@@ -86,22 +102,27 @@ async function main() {
       if (kw.engines.includes('google')) {
         googleKeywords.push(kw.keyword);
         trackedKeywordMap.set(`${kw.keyword}|google`, {
-          keyword: kw.keyword,
-          url: page.url,
-          engine: 'google',
-          category: page.category,
+          keyword: kw.keyword, url: page.url, engine: 'google', category: page.category,
+        });
+      }
+      if (yandexEnabled && kw.engines.includes('yandex')) {
+        yandexKeywords.push(kw.keyword);
+        trackedKeywordMap.set(`${kw.keyword}|yandex`, {
+          keyword: kw.keyword, url: page.url, engine: 'yandex', category: page.category,
         });
       }
     }
   }
 
+  const totalTracked = googleKeywords.length + yandexKeywords.length;
   console.log(`${CYAN}Semantic core:${RESET} ${core.pages.length} pages`);
-  console.log(`   Tracked keywords: ${googleKeywords.length} (Google)\n`);
+  console.log(`   Tracked keywords: ${totalTracked} (Google: ${googleKeywords.length}${yandexEnabled ? `, Yandex: ${yandexKeywords.length}` : ''})\n`);
 
-  // 2. Fetch positions from GSC
+  // 2. Fetch positions
   const entries = [];
   const fetchedKeys = new Set();
 
+  // 2a. Google Search Console
   if (googleKeywords.length > 0 && process.env.GSC_CLIENT_ID) {
     console.log(`${BOLD}Google Search Console${RESET}`);
     try {
@@ -122,7 +143,7 @@ async function main() {
           fetchedKeys.add(`${r.keyword}|google`);
         }
       }
-      console.log(`   ${GREEN}${entries.length} keywords from GSC${RESET}\n`);
+      console.log(`   ${GREEN}${entries.filter(e => e.engine === 'google').length} keywords from GSC${RESET}\n`);
     } catch (e) {
       console.log(`   ${YELLOW}GSC unavailable after ${MAX_RETRIES} attempts: ${e.message}${RESET}\n`);
     }
@@ -130,7 +151,36 @@ async function main() {
     console.log(`${DIM}GSC skipped — GSC_CLIENT_ID not set${RESET}\n`);
   }
 
-  // 2a. Ensure sitemap is registered in GSC
+  // 2b. Yandex.Webmaster (optional)
+  if (yandexEnabled && yandexKeywords.length > 0 && process.env.YANDEX_OAUTH_TOKEN) {
+    console.log(`${BOLD}Yandex.Webmaster${RESET}`);
+    try {
+      const yandexResults = await withRetry(async () => {
+        const { fetchYandexPositions } = await import('./fetch-yandex.mjs');
+        return await fetchYandexPositions(yandexKeywords);
+      }, 'Yandex');
+
+      const yandexKwSet = new Set(yandexKeywords.map(k => k.toLowerCase()));
+      for (const r of yandexResults) {
+        if (yandexKwSet.has(r.keyword.toLowerCase())) {
+          entries.push({
+            keyword: r.keyword,
+            url: r.url,
+            engine: 'yandex',
+            position: r.position ? Math.round(r.position) : null,
+          });
+          fetchedKeys.add(`${r.keyword}|yandex`);
+        }
+      }
+      console.log(`   ${GREEN}${entries.filter(e => e.engine === 'yandex').length} keywords from Yandex${RESET}\n`);
+    } catch (e) {
+      console.log(`   ${YELLOW}Yandex unavailable after ${MAX_RETRIES} attempts: ${e.message}${RESET}\n`);
+    }
+  } else if (yandexEnabled && yandexKeywords.length > 0) {
+    console.log(`${DIM}Yandex skipped — YANDEX_OAUTH_TOKEN not set${RESET}\n`);
+  }
+
+  // 2c. Ensure sitemap is registered in GSC
   let sitemap = null;
   if (process.env.GSC_CLIENT_ID) {
     console.log(`${BOLD}Sitemap${RESET}`);
@@ -145,7 +195,7 @@ async function main() {
     }
   }
 
-  // 2b. Fetch index status for each unique page
+  // 2d. Fetch index status for each unique page
   let indexStatus = [];
   const uniquePaths = [...new Set(core.pages.map((p) => p.url))];
   if (uniquePaths.length > 0 && process.env.GSC_CLIENT_ID) {
@@ -190,7 +240,7 @@ async function main() {
 
   if (entries.length === 0) {
     console.log(`${YELLOW}No positions fetched.${RESET}`);
-    console.log(`Check API keys in .env (see seo-tracking/.env.example)\n`);
+    console.log(`Check API keys in .env (see .env.example)\n`);
     return;
   }
 
@@ -225,12 +275,7 @@ async function main() {
 
   if (prevFiles.length === 0) {
     console.log(`${YELLOW}First snapshot — comparison unavailable.${RESET}\n`);
-
-    if (NOTIFICATIONS.slack && !noSlack && process.env.SLACK_BOT_TOKEN) {
-      console.log(`${BOLD}Sending to Slack...${RESET}`);
-      const { sendSlackReport } = await import('./notify-slack.mjs');
-      await sendSlackReport(snapshot, 'snapshot');
-    }
+    await sendNotifications(snapshot, 'snapshot', notifiers, ctx);
     return;
   }
 
@@ -308,15 +353,22 @@ async function main() {
   console.log(`  Declined: ${summary.declined}`);
   console.log(`  Unchanged: ${summary.unchanged}`);
   if (summary.noData > 0) console.log(`  No data: ${summary.noData}`);
+  if (summary.newlyTracked > 0) console.log(`  Newly tracked: ${summary.newlyTracked}`);
   console.log(`  Avg position: ${summary.prevAvgPosition} -> ${summary.avgPosition}\n`);
 
-  // 6. Send Slack notification
-  if (NOTIFICATIONS.slack && !noSlack) {
+  // 6. Send notifications
+  await sendNotifications(report, 'report', notifiers, ctx);
+
+  console.log(`\n${GREEN}Weekly check completed${RESET}\n`);
+}
+
+async function sendNotifications(payload, type, notifiers, ctx) {
+  if (notifiers.slack && !noSlack) {
     if (process.env.SLACK_BOT_TOKEN) {
       console.log(`${BOLD}Sending to Slack...${RESET}`);
       try {
         const { sendSlackReport } = await import('./notify-slack.mjs');
-        await sendSlackReport(report, 'report');
+        await sendSlackReport(payload, type, ctx);
       } catch (e) {
         console.error(`${RED}Slack error: ${e.message}${RESET}`);
       }
@@ -325,7 +377,19 @@ async function main() {
     }
   }
 
-  console.log(`\n${GREEN}Weekly check completed${RESET}\n`);
+  if (notifiers.telegram && !noTelegram) {
+    if (process.env.TELEGRAM_BOT_TOKEN) {
+      console.log(`${BOLD}Sending to Telegram...${RESET}`);
+      try {
+        const { sendTelegramReport } = await import('./notify-telegram.mjs');
+        await sendTelegramReport(payload, type, ctx);
+      } catch (e) {
+        console.error(`${RED}Telegram error: ${e.message}${RESET}`);
+      }
+    } else {
+      console.log(`${DIM}Telegram skipped — TELEGRAM_BOT_TOKEN not set${RESET}`);
+    }
+  }
 }
 
 function avg(arr) {

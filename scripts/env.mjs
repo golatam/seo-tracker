@@ -1,17 +1,14 @@
 /**
  * .env loader (zero dependencies).
- * Reads KEY=VALUE pairs from .env in project root.
+ * Reads KEY=VALUE pairs from .env in the current working directory
+ * (the consumer repo root, both locally and on CI).
  */
 
 import { readFileSync } from 'node:fs';
-import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const PROJECT_ROOT = resolve(__dirname, '..', '..');
+import { resolve } from 'node:path';
 
 export function loadEnv() {
-  const envPath = resolve(PROJECT_ROOT, '.env');
+  const envPath = resolve(process.cwd(), '.env');
   try {
     const content = readFileSync(envPath, 'utf-8');
     for (const line of content.split(/\r?\n/)) {
@@ -37,7 +34,7 @@ export function loadEnv() {
 export function requireEnv(key, description) {
   const value = process.env[key];
   if (!value) {
-    const msg = `Variable ${key} is not set.${description ? ` ${description}.` : ''} Copy seo-tracking/.env.example -> .env and fill in the values.`;
+    const msg = `Variable ${key} is not set.${description ? ` ${description}.` : ''} See .env.example for required variables.`;
     throw new Error(msg);
   }
   return value;

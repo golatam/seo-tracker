@@ -1,23 +1,31 @@
 #!/usr/bin/env node
 /**
- * Position change report — Firmalo.io
+ * Position change report (console).
  *
  * Compares two snapshots and outputs:
- * — summary (improvements, drops, average position)
- * — cluster breakdown
- * — critical alerts
+ *  — summary (improvements, drops, average position)
+ *  — alerts (critical drops, drops out of TOP)
+ *  — cluster breakdown with engine sub-grouping
+ *  — cluster summary table
  *
  * Usage:
- *   node seo-tracking/scripts/report.mjs [--from=2026-01-15] [--to=2026-02-19] [--engine=google] [--category=core] [--json]
+ *   node scripts/report.mjs [--from=2026-01-15] [--to=2026-02-19] \
+ *                           [--engine=google|yandex] [--category=core] [--json]
  */
 
 import { readFileSync, readdirSync } from 'node:fs';
-import { resolve, dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
-import { SNAPSHOTS_DIR, ALERT_DECLINE_THRESHOLD, ALERT_TOP_THRESHOLD, NOISE_THRESHOLD } from '../config.mjs';
+import { resolve } from 'node:path';
+import {
+  ALERT_DECLINE_THRESHOLD,
+  ALERT_TOP_THRESHOLD,
+  NOISE_THRESHOLD,
+  getCorePath,
+  getSnapshotsDir,
+  loadClusters,
+} from '../config.mjs';
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const CORE_PATH = resolve(__dirname, '..', 'semantic-core.json');
+const SNAPSHOTS_DIR = getSnapshotsDir();
+const CORE_PATH = getCorePath();
 
 // ANSI
 const GREEN = '\x1b[32m';
@@ -30,18 +38,6 @@ const RESET = '\x1b[0m';
 const BG_RED = '\x1b[41m';
 const BG_GREEN = '\x1b[42m';
 const WHITE = '\x1b[37m';
-
-// ─── Cluster labels ──────────────────────────────────────────────────
-
-const CLUSTER_LABELS = {
-  core: ':page_facing_up: Firma PDF',
-  feature: ':wrench: Funciones',
-  usecase: ':briefcase: Casos de uso',
-  competitor: ':vs: Alternativas',
-  unknown: ':grey_question: Otro',
-};
-
-const CLUSTER_ORDER = ['core', 'feature', 'usecase', 'competitor', 'unknown'];
 
 // ─── CLI args ────────────────────────────────────────────────────────
 
@@ -69,6 +65,12 @@ function loadSemanticCore() {
   catch { return { pages: [] }; }
 }
 
+function clusterDisplay(clusters, cat) {
+  const emoji = clusters.emoji[cat] || '';
+  const label = clusters.labels[cat] || cat;
+  return emoji ? `${emoji} ${label}` : label;
+}
+
 // ─── Main ────────────────────────────────────────────────────────────
 
 const files = getSnapshotFiles();
@@ -77,6 +79,9 @@ if (files.length === 0) {
   console.log(`\n${YELLOW}No snapshots found.${RESET}\n`);
   process.exit(0);
 }
+
+const core = loadSemanticCore();
+const clusters = loadClusters(core);
 
 if (files.length === 1 && !fromDate) {
   printSingleSnapshot(loadSnapshot(files[0]));
@@ -103,7 +108,6 @@ if (!prevFile) {
 
 const prevSnap = loadSnapshot(prevFile);
 const currSnap = loadSnapshot(currFile);
-const core = loadSemanticCore();
 
 const entryKey = (e) => `${e.keyword}|${e.engine}`;
 
@@ -198,7 +202,8 @@ if (jsonOutput) {
 
 console.log(`\n${BOLD}=======================================================${RESET}`);
 console.log(`${BOLD}  Position report: ${prevSnap.date} -> ${currSnap.date}${RESET}`);
-if (engineFilter) console.log(`${DIM}  Filter: ${engineFilter}${RESET}`);
+if (engineFilter) console.log(`${DIM}  Engine filter: ${engineFilter}${RESET}`);
+if (categoryFilter) console.log(`${DIM}  Category filter: ${categoryFilter}${RESET}`);
 console.log(`${BOLD}=======================================================${RESET}\n`);
 
 const avgChange = summary.avgPosition - summary.prevAvgPosition;
@@ -211,11 +216,13 @@ console.log(`  ${RED}Declined:${RESET}        ${summary.declined}`);
 console.log(`  Unchanged:       ${summary.unchanged}`);
 if (summary.noData > 0) console.log(`  ${DIM}No data (N/A):${RESET}   ${summary.noData}`);
 console.log(`  ${GREEN}Entered TOP:${RESET}     ${summary.newInTop}`);
+if (summary.newlyTracked > 0) console.log(`  ${CYAN}Newly tracked:${RESET}   ${summary.newlyTracked}`);
 console.log(`  ${RED}Left TOP:${RESET}        ${summary.droppedFromTop}`);
 console.log(`  Avg position:    ${summary.prevAvgPosition} -> ${summary.avgPosition} (${avgDir})`);
 console.log();
 
-// Alerts
+// ─── Alerts ──────────────────────────────────────────────────────────
+
 const alerts = changes.filter(c =>
   !c.isNewlyTracked && (
     (c.previousPosition !== null && c.currentPosition === null) ||
@@ -233,7 +240,8 @@ if (alerts.length > 0) {
   console.log();
 }
 
-// Cluster detail
+// ─── Cluster detail (with engine sub-grouping) ───────────────────────
+
 console.log(`${BOLD}By cluster:${RESET}\n`);
 
 const byCluster = {};
@@ -243,31 +251,70 @@ for (const c of changes) {
   byCluster[cat].push(c);
 }
 
-for (const cat of CLUSTER_ORDER) {
+for (const cat of clusters.order) {
   const clusterChanges = byCluster[cat];
   if (!clusterChanges || clusterChanges.length === 0) continue;
 
-  const label = CLUSTER_LABELS[cat] || cat;
+  const label = clusterDisplay(clusters, cat);
   const imp = clusterChanges.filter(c => c.change !== null && c.change > 0).length;
   const dec = clusterChanges.filter(c => c.change !== null && c.change < 0).length;
+  const nd = clusterChanges.filter(c => c.previousPosition === null && c.currentPosition === null).length;
 
-  console.log(`${CYAN}${BOLD}  ${label}${RESET} ${DIM}(${clusterChanges.length} keywords: +${imp} -${dec})${RESET}`);
+  console.log(`${CYAN}${BOLD}  ${label}${RESET} ${DIM}(${clusterChanges.length} keywords: +${imp} -${dec}${nd > 0 ? ` /${nd}` : ''})${RESET}`);
   console.log(`  ${'─'.repeat(55)}`);
 
-  let noiseCount = 0;
+  // Sub-group by engine when there is more than one
+  const byEngine = {};
   for (const c of clusterChanges) {
-    if (c.change !== null && Math.abs(c.change) <= NOISE_THRESHOLD && !c.isNewlyTracked) { noiseCount++; continue; }
-    if (c.previousPosition === null && c.currentPosition === null) continue;
-
-    const kwTrunc = c.keyword.length > 40 ? c.keyword.slice(0, 37) + '...' : c.keyword;
-    const posStr = c.isNewlyTracked
-      ? `${CYAN}-> ${c.currentPosition ?? '—'} (new)${RESET}`
-      : formatPosition(c.previousPosition, c.currentPosition, c.change);
-    console.log(`    ${kwTrunc.padEnd(42)} ${posStr}`);
+    if (!byEngine[c.engine]) byEngine[c.engine] = [];
+    byEngine[c.engine].push(c);
   }
-  if (noiseCount > 0) console.log(`  ${DIM}  ... and ${noiseCount} keywords with +-${NOISE_THRESHOLD} change (noise)${RESET}`);
+  const showEngineHeader = Object.keys(byEngine).length > 1;
+
+  for (const [engine, engineChanges] of Object.entries(byEngine)) {
+    if (showEngineHeader) console.log(`  ${DIM}${engine}:${RESET}`);
+
+    let noiseCount = 0;
+    for (const c of engineChanges) {
+      if (c.change !== null && Math.abs(c.change) <= NOISE_THRESHOLD && !c.isNewlyTracked) {
+        noiseCount++;
+        continue;
+      }
+      if (c.previousPosition === null && c.currentPosition === null) continue;
+
+      const prio = c.priority === 'high' ? `${RED}!${RESET}` : c.priority === 'low' ? `${DIM}·${RESET}` : ' ';
+      const kwTrunc = c.keyword.length > 40 ? c.keyword.slice(0, 37) + '...' : c.keyword;
+      const posStr = c.isNewlyTracked
+        ? `${CYAN}-> ${c.currentPosition ?? '—'} (new)${RESET}`
+        : formatPosition(c.previousPosition, c.currentPosition, c.change);
+      console.log(`  ${prio} ${kwTrunc.padEnd(42)} ${posStr}`);
+    }
+    if (noiseCount > 0) {
+      console.log(`  ${DIM}  ... and ${noiseCount} keywords with ±${NOISE_THRESHOLD} change (noise)${RESET}`);
+    }
+  }
   console.log();
 }
+
+// ─── Cluster summary table ───────────────────────────────────────────
+
+console.log(`${BOLD}Cluster summary:${RESET}`);
+for (const cat of clusters.order) {
+  const clusterChanges = byCluster[cat];
+  if (!clusterChanges || clusterChanges.length === 0) continue;
+  const label = clusterDisplay(clusters, cat);
+  const stats = {
+    improved: clusterChanges.filter(c => c.change !== null && c.change > 0).length,
+    declined: clusterChanges.filter(c => c.change !== null && c.change < 0).length,
+    unchanged: clusterChanges.filter(c => c.change === 0).length,
+    noData: clusterChanges.filter(c => c.currentPosition === null && c.previousPosition === null).length,
+    total: clusterChanges.length,
+    avg: calcAvg(clusterChanges.map(c => c.currentPosition).filter(p => p !== null)),
+  };
+  const avgStr = stats.avg > 0 ? ` avg:${stats.avg}` : '';
+  console.log(`  ${label.padEnd(22)} +${stats.improved} -${stats.declined} =${stats.unchanged}${stats.noData > 0 ? ` /${stats.noData}` : ''} (${stats.total} total${avgStr})`);
+}
+console.log();
 
 // ─── Helpers ─────────────────────────────────────────────────────────
 
@@ -281,7 +328,6 @@ function formatPosition(prev, curr, change) {
 }
 
 function printSingleSnapshot(snap) {
-  const core = loadSemanticCore();
   console.log(`\n${BOLD}Positions on ${snap.date}${RESET}`);
   console.log(`${DIM}Source: ${snap.source}${snap.comment ? ` (${snap.comment})` : ''}${RESET}\n`);
 
@@ -291,11 +337,14 @@ function printSingleSnapshot(snap) {
 
   const inTop10 = positions.filter(e => e.position !== null && e.position <= 10).length;
   const inTop30 = positions.filter(e => e.position !== null && e.position <= 30).length;
+  const notInTop = positions.filter(e => e.position === null).length;
 
   console.log(`${BOLD}Summary:${RESET}`);
   console.log(`  Keywords:     ${positions.length}`);
   console.log(`  ${GREEN}In TOP-10:${RESET}    ${inTop10}`);
-  console.log(`  ${CYAN}In TOP-30:${RESET}    ${inTop30}\n`);
+  console.log(`  ${CYAN}In TOP-30:${RESET}    ${inTop30}`);
+  if (notInTop > 0) console.log(`  ${DIM}N/A:${RESET}          ${notInTop}`);
+  console.log();
 
   const byCluster = {};
   for (const e of positions) {
@@ -305,10 +354,10 @@ function printSingleSnapshot(snap) {
     byCluster[cat].push(e);
   }
 
-  for (const cat of CLUSTER_ORDER) {
+  for (const cat of clusters.order) {
     const entries = byCluster[cat];
     if (!entries || entries.length === 0) continue;
-    const label = CLUSTER_LABELS[cat] || cat;
+    const label = clusterDisplay(clusters, cat);
     console.log(`${CYAN}${BOLD}  ${label}${RESET}`);
     console.log(`  ${'─'.repeat(50)}`);
     for (const e of entries) {
@@ -318,7 +367,8 @@ function printSingleSnapshot(snap) {
       else if (e.position <= 10) posStr = `${GREEN}${e.position}${RESET}`;
       else if (e.position <= 30) posStr = `${CYAN}${e.position}${RESET}`;
       else posStr = `${e.position}`;
-      console.log(`    ${kwTrunc.padEnd(42)} ${posStr}`);
+      const engLabel = `${DIM}[${e.engine[0]}]${RESET}`;
+      console.log(`  ${engLabel} ${kwTrunc.padEnd(40)} ${posStr}`);
     }
     console.log();
   }

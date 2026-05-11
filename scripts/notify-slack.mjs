@@ -1,37 +1,24 @@
 #!/usr/bin/env node
 /**
- * Send SEO report to Slack (Block Kit) — Firmalo.io
+ * Send SEO report to Slack (Block Kit).
  *
  * Usage:
- *   node seo-tracking/scripts/notify-slack.mjs [--test]
+ *   node scripts/notify-slack.mjs [--test]
  *
  * Env vars: SLACK_BOT_TOKEN, SLACK_CHANNEL_ID
  */
 
 import { loadEnv, requireEnv } from './env.mjs';
-import { NOISE_THRESHOLD } from '../config.mjs';
+import { NOISE_THRESHOLD, getSiteName, loadClusters } from '../config.mjs';
 
 loadEnv();
 
-// ─── Cluster labels ─────────────────────────────────────────────────
-
-const CLUSTER_LABELS = {
-  core: 'Firma PDF',
-  feature: 'Funciones',
-  usecase: 'Casos de uso',
-  competitor: 'Alternativas',
-  unknown: 'Otro',
-};
-
-const CLUSTER_EMOJI = {
-  core: ':page_facing_up:',
-  feature: ':wrench:',
-  usecase: ':briefcase:',
-  competitor: ':vs:',
-  unknown: ':grey_question:',
-};
-
-const CLUSTER_ORDER = ['core', 'feature', 'usecase', 'competitor', 'unknown'];
+function resolveCtx(ctx = {}) {
+  return {
+    siteName: ctx.siteName || getSiteName(),
+    clusters: ctx.clusters || loadClusters(null),
+  };
+}
 
 // ─── Slack helpers ──────────────────────────────────────────────────
 
@@ -123,13 +110,14 @@ function indexationBlocks(indexStatus, sitemap) {
 
 // ─── Format report for Slack Block Kit ──────────────────────────────
 
-export function formatReport(report) {
+export function formatReport(report, ctx = {}) {
+  const { siteName, clusters } = resolveCtx(ctx);
   const { summary, changes, currentDate, previousDate, indexStatus, sitemap } = report;
   const blocks = [];
 
   blocks.push({
     type: 'header',
-    text: { type: 'plain_text', text: ':bar_chart: SEO report: firmalo.io', emoji: true },
+    text: { type: 'plain_text', text: `:bar_chart: SEO report: ${siteName}`, emoji: true },
   });
 
   blocks.push({
@@ -152,6 +140,7 @@ export function formatReport(report) {
 
   if (summary.noData > 0) summaryFields.push({ type: 'mrkdwn', text: `N/A: *${summary.noData}*` });
   if (summary.newInTop > 0) summaryFields.push({ type: 'mrkdwn', text: `:new: Entered TOP: *${summary.newInTop}*` });
+  if (summary.newlyTracked > 0) summaryFields.push({ type: 'mrkdwn', text: `:heavy_plus_sign: Newly tracked: *${summary.newlyTracked}*` });
   if (summary.droppedFromTop > 0) summaryFields.push({ type: 'mrkdwn', text: `:skull: Left TOP: *${summary.droppedFromTop}*` });
 
   blocks.push({ type: 'section', text: { type: 'mrkdwn', text: '*Summary*' } });
@@ -194,14 +183,15 @@ export function formatReport(report) {
   }
 
   const clusterLines = [];
-  for (const cat of CLUSTER_ORDER) {
+  for (const cat of clusters.order) {
     const clusterChanges = byCluster[cat];
     if (!clusterChanges || clusterChanges.length === 0) continue;
-    const emoji = CLUSTER_EMOJI[cat] || ':grey_question:';
-    const label = CLUSTER_LABELS[cat] || cat;
+    const emoji = clusters.emoji[cat] || '';
+    const label = clusters.labels[cat] || cat;
     const imp = clusterChanges.filter(c => c.change !== null && c.change > 0).length;
     const dec = clusterChanges.filter(c => c.change !== null && c.change < 0).length;
-    clusterLines.push(`${emoji} *${label}:* +${imp} -${dec} (${clusterChanges.length})`);
+    const prefix = emoji ? `${emoji} ` : '';
+    clusterLines.push(`${prefix}*${label}:* +${imp} -${dec} (${clusterChanges.length})`);
   }
 
   if (clusterLines.length > 0) {
@@ -216,8 +206,9 @@ export function formatReport(report) {
 
   if (improved.length > 0) {
     const lines = improved.map(c => {
-      const clEmoji = CLUSTER_EMOJI[c.category] || '';
-      return `${clEmoji} :large_green_circle: "${c.keyword}" ${posChangeText(c)}`;
+      const clEmoji = clusters.emoji[c.category] || '';
+      const prefix = clEmoji ? `${clEmoji} ` : '';
+      return `${prefix}:large_green_circle: "${c.keyword}" ${posChangeText(c)}`;
     });
     attachments.push({
       color: '#2EB67D',
@@ -233,8 +224,9 @@ export function formatReport(report) {
 
   if (declined.length > 0) {
     const lines = declined.map(c => {
-      const clEmoji = CLUSTER_EMOJI[c.category] || '';
-      return `${clEmoji} :small_red_triangle_down: "${c.keyword}" ${posChangeText(c)}`;
+      const clEmoji = clusters.emoji[c.category] || '';
+      const prefix = clEmoji ? `${clEmoji} ` : '';
+      return `${prefix}:small_red_triangle_down: "${c.keyword}" ${posChangeText(c)}`;
     });
     attachments.push({
       color: '#ECB22E',
@@ -243,21 +235,22 @@ export function formatReport(report) {
   }
 
   blocks.push({ type: 'divider' });
-  blocks.push({ type: 'context', elements: [{ type: 'mrkdwn', text: '_Firmalo.io SEO tracker_' }] });
+  blocks.push({ type: 'context', elements: [{ type: 'mrkdwn', text: `_${siteName} SEO tracker_` }] });
 
   const text = `SEO report ${previousDate} -> ${currentDate}: +${summary.improved} -${summary.declined} (${summary.totalKeywords} keywords)`;
 
   return { blocks, attachments, text };
 }
 
-export function formatSnapshot(snapshot) {
+export function formatSnapshot(snapshot, ctx = {}) {
+  const { siteName } = resolveCtx(ctx);
   const { date, entries, comment, indexStatus, sitemap } = snapshot;
   const inTop10 = entries.filter(e => e.position !== null && e.position <= 10).length;
   const inTop30 = entries.filter(e => e.position !== null && e.position <= 30).length;
   const outOfTop = entries.filter(e => e.position === null).length;
 
   const blocks = [
-    { type: 'header', text: { type: 'plain_text', text: ':round_pushpin: Position snapshot — firmalo.io', emoji: true } },
+    { type: 'header', text: { type: 'plain_text', text: `:round_pushpin: Position snapshot — ${siteName}`, emoji: true } },
     { type: 'context', elements: [{ type: 'mrkdwn', text: date + (comment ? ` — _${comment}_` : '') }] },
     { type: 'divider' },
     {
@@ -274,20 +267,20 @@ export function formatSnapshot(snapshot) {
   for (const b of indexationBlocks(indexStatus, sitemap)) blocks.push(b);
 
   blocks.push({ type: 'divider' });
-  blocks.push({ type: 'context', elements: [{ type: 'mrkdwn', text: '_Firmalo.io SEO tracker_' }] });
+  blocks.push({ type: 'context', elements: [{ type: 'mrkdwn', text: `_${siteName} SEO tracker_` }] });
 
   return { blocks, attachments: [], text: `Position snapshot ${date}: ${entries.length} keywords, TOP-10: ${inTop10}` };
 }
 
 // ─── Main ────────────────────────────────────────────────────────────
 
-export async function sendSlackReport(reportOrSnapshot, type = 'report') {
+export async function sendSlackReport(reportOrSnapshot, type = 'report', ctx = {}) {
   const token = requireEnv('SLACK_BOT_TOKEN', 'Bot User OAuth Token from Slack App (xoxb-...)');
   const channel = requireEnv('SLACK_CHANNEL_ID', 'Slack channel ID');
 
   const { blocks, attachments, text } = type === 'report'
-    ? formatReport(reportOrSnapshot)
-    : formatSnapshot(reportOrSnapshot);
+    ? formatReport(reportOrSnapshot, ctx)
+    : formatSnapshot(reportOrSnapshot, ctx);
 
   await postMessage(token, channel, blocks, text, attachments.length > 0 ? attachments : undefined);
   console.log('   Sent to Slack');
@@ -299,14 +292,15 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   if (args.includes('--test')) {
     const token = requireEnv('SLACK_BOT_TOKEN');
     const channel = requireEnv('SLACK_CHANNEL_ID');
+    const siteName = getSiteName();
     const blocks = [
-      { type: 'header', text: { type: 'plain_text', text: ':test_tube: Firmalo SEO tracker test', emoji: true } },
-      { type: 'section', text: { type: 'mrkdwn', text: 'Bot is working! Reports will be sent here.' } },
-      { type: 'context', elements: [{ type: 'mrkdwn', text: '_Firmalo.io SEO tracker_' }] },
+      { type: 'header', text: { type: 'plain_text', text: `:test_tube: SEO tracker test — ${siteName}`, emoji: true } },
+      { type: 'section', text: { type: 'mrkdwn', text: 'Bot is working. Reports will be sent here.' } },
+      { type: 'context', elements: [{ type: 'mrkdwn', text: `_${siteName} SEO tracker_` }] },
     ];
-    await postMessage(token, channel, blocks, 'Firmalo SEO tracker test — bot is working!');
+    await postMessage(token, channel, blocks, `${siteName} SEO tracker test — bot is working`);
     console.log('Test message sent to Slack!');
   } else {
-    console.log('Usage: node seo-tracking/scripts/notify-slack.mjs --test');
+    console.log('Usage: node scripts/notify-slack.mjs --test');
   }
 }

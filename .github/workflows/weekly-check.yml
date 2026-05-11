@@ -1,0 +1,107 @@
+name: SEO Weekly Check
+
+# Reusable workflow. Consumer repos invoke this via:
+#
+#   uses: golatam/seo-tracker/.github/workflows/weekly-check.yml@v1
+#   secrets: inherit
+#   with:
+#     site_url: https://example.com
+#     site_property: sc-domain:example.com
+#     notifier: slack            # slack | telegram | both | none
+#     enable_yandex: false
+
+on:
+  workflow_call:
+    inputs:
+      site_url:
+        description: 'Site origin (no trailing slash), e.g. https://example.com'
+        required: true
+        type: string
+      site_property:
+        description: 'GSC property: sc-domain:example.com or https://example.com/'
+        required: true
+        type: string
+      site_name:
+        description: 'Display name in reports. Defaults to SITE_URL hostname.'
+        required: false
+        type: string
+        default: ''
+      notifier:
+        description: 'slack | telegram | both | none'
+        required: false
+        type: string
+        default: 'slack'
+      enable_yandex:
+        description: 'Also fetch Yandex.Webmaster positions'
+        required: false
+        type: boolean
+        default: false
+      core_path:
+        description: 'Path to semantic-core.json (relative to consumer repo root)'
+        required: false
+        type: string
+        default: 'semantic-core.json'
+      snapshots_dir:
+        description: 'Directory for snapshot JSON files (relative to consumer repo root)'
+        required: false
+        type: string
+        default: 'snapshots'
+      package_ref:
+        description: 'Git ref of seo-tracker package to use (tag or branch)'
+        required: false
+        type: string
+        default: 'v1'
+
+permissions:
+  contents: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout consumer repo
+        uses: actions/checkout@v4
+
+      - name: Checkout seo-tracker package
+        uses: actions/checkout@v4
+        with:
+          repository: golatam/seo-tracker
+          ref: ${{ inputs.package_ref }}
+          path: .seo-tracker
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Ensure snapshots dir exists
+        run: mkdir -p "${{ inputs.snapshots_dir }}"
+
+      - name: Run weekly SEO check
+        env:
+          SITE_URL: ${{ inputs.site_url }}
+          SITE_PROPERTY: ${{ inputs.site_property }}
+          SITE_NAME: ${{ inputs.site_name }}
+          NOTIFIER: ${{ inputs.notifier }}
+          ENABLE_YANDEX: ${{ inputs.enable_yandex }}
+          CORE_PATH: ${{ inputs.core_path }}
+          SNAPSHOTS_DIR: ${{ inputs.snapshots_dir }}
+          GSC_CLIENT_ID: ${{ secrets.GSC_CLIENT_ID }}
+          GSC_CLIENT_SECRET: ${{ secrets.GSC_CLIENT_SECRET }}
+          GSC_REFRESH_TOKEN: ${{ secrets.GSC_REFRESH_TOKEN }}
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          SLACK_CHANNEL_ID: ${{ secrets.SLACK_CHANNEL_ID }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          TELEGRAM_THREAD_ID: ${{ secrets.TELEGRAM_THREAD_ID }}
+          YANDEX_OAUTH_TOKEN: ${{ secrets.YANDEX_OAUTH_TOKEN }}
+          YANDEX_USER_ID: ${{ secrets.YANDEX_USER_ID }}
+          YANDEX_HOST_ID: ${{ secrets.YANDEX_HOST_ID }}
+        run: node .seo-tracker/scripts/weekly-check.mjs
+
+      - name: Commit snapshot
+        run: |
+          git config user.name "SEO Bot"
+          git config user.email "seo-bot@users.noreply.github.com"
+          git add "${{ inputs.snapshots_dir }}"
+          git diff --staged --quiet || git commit -m "chore: weekly SEO position snapshot $(date +%Y-%m-%d)"
+          git push
