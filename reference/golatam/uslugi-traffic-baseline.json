@@ -1,0 +1,294 @@
+{
+  "date": "2026-02-20",
+  "period": "90 days",
+  "pages": [
+    {
+      "url": "/uslugi/biznes-soprovozhdenie/",
+      "type": "parent",
+      "impressions": 280,
+      "clicks": 3,
+      "ctr": 1.07,
+      "position": 5.4
+    },
+    {
+      "url": "/uslugi/marketingovoe-soprovozhdenie-biznesa/",
+      "type": "sub-page",
+      "impressions": 109,
+      "clicks": 2,
+      "ctr": 1.83,
+      "position": 7.8
+    },
+    {
+      "url": "/uslugi/finansovoe-soprovozhdenie-biznesa/",
+      "type": "sub-page",
+      "impressions": 109,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 46.1
+    },
+    {
+      "url": "/uslugi/peremeshhenie-biznesa/",
+      "type": "parent",
+      "impressions": 80,
+      "clicks": 1,
+      "ctr": 1.25,
+      "position": 17.2
+    },
+    {
+      "url": "/uslugi/yuridicheskoe-soprovozhdenie-biznesa/",
+      "type": "sub-page",
+      "impressions": 79,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 10.2
+    },
+    {
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/marketingovyj-konsalting/",
+      "type": "sub-page",
+      "impressions": 69,
+      "clicks": 1,
+      "ctr": 1.45,
+      "position": 10.6
+    },
+    {
+      "url": "/uslugi/organizacziya-predstavitelstva-kompanii/",
+      "type": "sub-page",
+      "impressions": 64,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 6.5
+    },
+    {
+      "url": "/uslugi/registracziya-mezhdunarodnoj-kompanii/",
+      "type": "parent",
+      "impressions": 63,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 11
+    },
+    {
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/",
+      "type": "parent",
+      "impressions": 59,
+      "clicks": 1,
+      "ctr": 1.69,
+      "position": 15.1
+    },
+    {
+      "url": "/uslugi/buhgalterskoe-soprovozhdenie-biznesa/",
+      "type": "sub-page",
+      "impressions": 45,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 3.9
+    },
+    {
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/pravovoj-i-nalogovyj-konsalting/",
+      "type": "sub-page",
+      "impressions": 40,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 13.9
+    },
+    {
+      "url": "/uslugi/nalogovoe-soprovozhdenie-biznesa/",
+      "type": "sub-page",
+      "impressions": 38,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 4.9
+    },
+    {
+      "url": "/uslugi/biznes-soprovozhdenie/poisk-partnerov/",
+      "type": "sub-page",
+      "impressions": 32,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 11.8
+    },
+    {
+      "url": "/uslugi/",
+      "type": "parent",
+      "impressions": 29,
+      "clicks": 1,
+      "ctr": 3.45,
+      "position": 6.9
+    },
+    {
+      "url": "/uslugi/franchajzing-za-rubezhom/",
+      "type": "parent",
+      "impressions": 17,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 26.2
+    },
+    {
+      "url": "/uslugi/oformlenie-viz/",
+      "type": "sub-page",
+      "impressions": 17,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 13.6
+    },
+    {
+      "url": "/uslugi/customer-development/",
+      "type": "parent",
+      "impressions": 16,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 13.5
+    },
+    {
+      "url": "/uslugi/biznes-soprovozhdenie/podderzhka-prodazh-i-vstrech-za-rubezhom/",
+      "type": "sub-page",
+      "impressions": 12,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 41.3
+    },
+    {
+      "url": "/uslugi/bizdev-na-autsorse/",
+      "type": "parent",
+      "impressions": 11,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 29.5
+    },
+    {
+      "url": "/uslugi/biznes-v-peru/",
+      "type": "old-country-redirect",
+      "impressions": 9,
+      "clicks": 1,
+      "ctr": 11.11,
+      "position": 4.7
+    },
+    {
+      "url": "/uslugi/lidogeneracziya/",
+      "type": "parent",
+      "impressions": 7,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 14.1
+    },
+    {
+      "url": "/uslugi/biznes-v-venesuele-2/",
+      "type": "old-country-redirect",
+      "impressions": 6,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 6.2
+    },
+    {
+      "url": "/uslugi/biznes-v-chili/",
+      "type": "old-country-redirect",
+      "impressions": 5,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 2.2
+    },
+    {
+      "url": "/uslugi/biznes-na-kube/",
+      "type": "old-country-redirect",
+      "impressions": 4,
+      "clicks": 0,
+      "ctr": 0,
+      "position": 2.5
+    }
+  ],
+  "queriesByPage": {
+    "/uslugi/mezhdunarodnyj-biznes-konsalting/": [
+      {
+        "query": "международный бизнес консалтинг",
+        "impressions": 9,
+        "clicks": 1,
+        "position": 11.9
+      },
+      {
+        "query": "международный бизнес-консалтинг",
+        "impressions": 9,
+        "clicks": 0,
+        "position": 16.6
+      },
+      {
+        "query": "міжнародний бізнес-консалтинг",
+        "impressions": 5,
+        "clicks": 0,
+        "position": 37
+      },
+      {
+        "query": "бизнес консалтинг за рубежом",
+        "impressions": 1,
+        "clicks": 0,
+        "position": 20
+      }
+    ],
+    "/uslugi/customer-development/": [
+      {
+        "query": "customer business development",
+        "impressions": 2,
+        "clicks": 0,
+        "position": 12
+      },
+      {
+        "query": "customer development перевод",
+        "impressions": 1,
+        "clicks": 0,
+        "position": 22
+      }
+    ],
+    "/uslugi/biznes-soprovozhdenie/": [
+      {
+        "query": "консалтинг в латинской америке",
+        "impressions": 3,
+        "clicks": 0,
+        "position": 24.7
+      },
+      {
+        "query": "go latam",
+        "impressions": 1,
+        "clicks": 0,
+        "position": 1
+      }
+    ],
+    "/uslugi/mezhdunarodnyj-biznes-konsalting/marketingovyj-konsalting/": [
+      {
+        "query": "консалтинг в латинской америке",
+        "impressions": 22,
+        "clicks": 0,
+        "position": 8.7
+      }
+    ],
+    "/uslugi/marketingovoe-soprovozhdenie-biznesa/": [
+      {
+        "query": "маркетинговое сопровождение бизнеса",
+        "impressions": 2,
+        "clicks": 0,
+        "position": 89
+      }
+    ],
+    "/uslugi/organizacziya-predstavitelstva-kompanii/": [
+      {
+        "query": "открыть компанию в уругвае",
+        "impressions": 1,
+        "clicks": 0,
+        "position": 92
+      }
+    ],
+    "/uslugi/registracziya-mezhdunarodnoj-kompanii/": [
+      {
+        "query": "регистрация компании в гватемале",
+        "impressions": 7,
+        "clicks": 0,
+        "position": 16.3
+      }
+    ],
+    "/uslugi/finansovoe-soprovozhdenie-biznesa/": [
+      {
+        "query": "финансовое сопровождение бизнеса",
+        "impressions": 67,
+        "clicks": 0,
+        "position": 69.6
+      }
+    ]
+  }
+}

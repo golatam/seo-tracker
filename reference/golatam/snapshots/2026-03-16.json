@@ -1,0 +1,2197 @@
+{
+  "date": "2026-03-16",
+  "source": "api",
+  "comment": "weekly auto-check",
+  "entries": [
+    {
+      "keyword": "go latam",
+      "url": "/",
+      "engine": "google",
+      "position": 7
+    },
+    {
+      "keyword": "golatam",
+      "url": "/",
+      "engine": "google",
+      "position": 9
+    },
+    {
+      "keyword": "golatam",
+      "url": "/en/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "go latam",
+      "url": "/es/",
+      "engine": "google",
+      "position": 3
+    },
+    {
+      "keyword": "go latam",
+      "url": "/pt/",
+      "engine": "google",
+      "position": 3
+    },
+    {
+      "keyword": "go latam",
+      "url": "/uslugi/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "golatam",
+      "url": "/pt/",
+      "engine": "google",
+      "position": 3
+    },
+    {
+      "keyword": "бизнес в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "go latam",
+      "url": "/about-us/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "go latam",
+      "url": "/contact-us/",
+      "engine": "google",
+      "position": 2
+    },
+    {
+      "keyword": "go latam",
+      "url": "/en/",
+      "engine": "google",
+      "position": 5
+    },
+    {
+      "keyword": "go latam",
+      "url": "/en/about-us-2/",
+      "engine": "google",
+      "position": 5
+    },
+    {
+      "keyword": "go latam",
+      "url": "/en/about/",
+      "engine": "google",
+      "position": 6
+    },
+    {
+      "keyword": "go latam",
+      "url": "/es/contacto/",
+      "engine": "google",
+      "position": 10
+    },
+    {
+      "keyword": "go latam",
+      "url": "/es/contactos/",
+      "engine": "google",
+      "position": 5
+    },
+    {
+      "keyword": "go latam",
+      "url": "/novosti/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "go latam",
+      "url": "/pt/contato/",
+      "engine": "google",
+      "position": 9
+    },
+    {
+      "keyword": "go latam",
+      "url": "/team/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "go latam",
+      "url": "/yuridicheskim-licam/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "golatam",
+      "url": "/about-us/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "golatam",
+      "url": "/contact-us/",
+      "engine": "google",
+      "position": 5
+    },
+    {
+      "keyword": "golatam",
+      "url": "/en/about-us-2/",
+      "engine": "google",
+      "position": 11
+    },
+    {
+      "keyword": "golatam",
+      "url": "/en/about/",
+      "engine": "google",
+      "position": 9
+    },
+    {
+      "keyword": "golatam",
+      "url": "/en/contact/",
+      "engine": "google",
+      "position": 10
+    },
+    {
+      "keyword": "golatam",
+      "url": "/en/contacts/",
+      "engine": "google",
+      "position": 10
+    },
+    {
+      "keyword": "golatam",
+      "url": "/es/",
+      "engine": "google",
+      "position": 4
+    },
+    {
+      "keyword": "golatam",
+      "url": "/es/contacto/",
+      "engine": "google",
+      "position": 10
+    },
+    {
+      "keyword": "golatam",
+      "url": "/es/sobre-nosotros/",
+      "engine": "google",
+      "position": 8
+    },
+    {
+      "keyword": "golatam",
+      "url": "/pt/contato/",
+      "engine": "google",
+      "position": 6
+    },
+    {
+      "keyword": "golatam",
+      "url": "/pt/sobre-nos/",
+      "engine": "google",
+      "position": 10
+    },
+    {
+      "keyword": "аргентина налоги",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "google",
+      "position": 35
+    },
+    {
+      "keyword": "аргентина налоги",
+      "url": "/blog/nalogovye-stavki-i-sistema-nalogooblozheniya-dlya-biznesa-v-argentine/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "бизнес в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "google",
+      "position": 12
+    },
+    {
+      "keyword": "бизнес в бразилии",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "бизнес на кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "google",
+      "position": 2
+    },
+    {
+      "keyword": "бизнес на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "богота виза для россиян",
+      "url": "/blog/poluchenie-biznes-vizy-v-kolumbiyu/",
+      "engine": "google",
+      "position": 13
+    },
+    {
+      "keyword": "гражданство аргентины за инвестиции",
+      "url": "/blog/mozhno-li-predprinimatelyam-poluchit-grazhdanstvo-v-argentine/",
+      "engine": "google",
+      "position": 20
+    },
+    {
+      "keyword": "гражданство аргентины купить",
+      "url": "/blog/mozhno-li-predprinimatelyam-poluchit-grazhdanstvo-v-argentine/",
+      "engine": "google",
+      "position": 21
+    },
+    {
+      "keyword": "как быстро можно получить гражданство аргентины",
+      "url": "/blog/mozhno-li-predprinimatelyam-poluchit-grazhdanstvo-v-argentine/",
+      "engine": "google",
+      "position": 27
+    },
+    {
+      "keyword": "консалтинг в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": 9
+    },
+    {
+      "keyword": "консалтинг в латинской америке",
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/",
+      "engine": "google",
+      "position": 18
+    },
+    {
+      "keyword": "консалтинг в латинской америке",
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/marketingovyj-konsalting/",
+      "engine": "google",
+      "position": 3
+    },
+    {
+      "keyword": "консалтинг в латинской америке",
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/operaczionnyj-konsalting/",
+      "engine": "google",
+      "position": 5
+    },
+    {
+      "keyword": "консалтинг в латинской америке",
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/pravovoj-i-nalogovyj-konsalting/",
+      "engine": "google",
+      "position": 11
+    },
+    {
+      "keyword": "купить готовую компанию в бразилии",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": 14
+    },
+    {
+      "keyword": "международный бизнес консалтинг",
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/",
+      "engine": "google",
+      "position": 10
+    },
+    {
+      "keyword": "международный бизнес-консалтинг",
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/",
+      "engine": "google",
+      "position": 26
+    },
+    {
+      "keyword": "монотрибуто",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "google",
+      "position": 8
+    },
+    {
+      "keyword": "монотрибуто аргентина",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "google",
+      "position": 7
+    },
+    {
+      "keyword": "налоги в аргентине",
+      "url": "/blog/nalogovye-stavki-i-sistema-nalogooblozheniya-dlya-biznesa-v-argentine/",
+      "engine": "google",
+      "position": 6
+    },
+    {
+      "keyword": "налоги в бразилии",
+      "url": "/blog/sistema-nalogooblozheniya-v-brazilii/",
+      "engine": "google",
+      "position": 29
+    },
+    {
+      "keyword": "налоги в панаме",
+      "url": "/blog/v-chem-osobennost-nalogovoj-sistemy-dlya-biznesa-v-paname/",
+      "engine": "google",
+      "position": 3
+    },
+    {
+      "keyword": "налоги в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": 17
+    },
+    {
+      "keyword": "налогообложение в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": 17
+    },
+    {
+      "keyword": "особенности бизнеса в латинской америке",
+      "url": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/",
+      "engine": "google",
+      "position": 11
+    },
+    {
+      "keyword": "открытие компании в панаме",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "google",
+      "position": 80
+    },
+    {
+      "keyword": "открытие компании в панаме",
+      "url": "/strana/biznes-v-paname/",
+      "engine": "google",
+      "position": 71
+    },
+    {
+      "keyword": "открыть компанию в аргентине",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "google",
+      "position": 20
+    },
+    {
+      "keyword": "открыть компанию в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": 18
+    },
+    {
+      "keyword": "открыть компанию в бразилии",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": 18
+    },
+    {
+      "keyword": "открыть компанию в панаме",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "google",
+      "position": 62
+    },
+    {
+      "keyword": "открыть компанию в панаме",
+      "url": "/strana/biznes-v-paname/",
+      "engine": "google",
+      "position": 43
+    },
+    {
+      "keyword": "открыть компанию в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": 9
+    },
+    {
+      "keyword": "панама налоги",
+      "url": "/blog/v-chem-osobennost-nalogovoj-sistemy-dlya-biznesa-v-paname/",
+      "engine": "google",
+      "position": 5
+    },
+    {
+      "keyword": "парагвай налоги",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": 15
+    },
+    {
+      "keyword": "рабочая виза в мексику",
+      "url": "/blog/poluchenie-biznes-vizy-v-meksiku/",
+      "engine": "google",
+      "position": 26
+    },
+    {
+      "keyword": "регистрация компании в боливии",
+      "url": "/strana/biznes-v-bolivii/",
+      "engine": "google",
+      "position": 7
+    },
+    {
+      "keyword": "регистрация компании в венесуэле",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": 8
+    },
+    {
+      "keyword": "регистрация компании в доминиканской республике",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "google",
+      "position": 18
+    },
+    {
+      "keyword": "регистрация компании в доминиканской республике",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "google",
+      "position": 13
+    },
+    {
+      "keyword": "регистрация компании в мексике",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "google",
+      "position": 19
+    },
+    {
+      "keyword": "регистрация компании в панаме",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "google",
+      "position": 65
+    },
+    {
+      "keyword": "регистрация компании в панаме",
+      "url": "/strana/biznes-v-paname/",
+      "engine": "google",
+      "position": 62
+    },
+    {
+      "keyword": "регистрация компании в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": 12
+    },
+    {
+      "keyword": "регистрация компании в перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "google",
+      "position": 19
+    },
+    {
+      "keyword": "регистрация компании в перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": 14
+    },
+    {
+      "keyword": "регистрация компании в чили",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "google",
+      "position": 16
+    },
+    {
+      "keyword": "регистрация компании в чили",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "google",
+      "position": 13
+    },
+    {
+      "keyword": "регистрация компании на кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "google",
+      "position": 10
+    },
+    {
+      "keyword": "регистрация компании на кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "google",
+      "position": 10
+    },
+    {
+      "keyword": "регистрация компании на кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "google",
+      "position": 11
+    },
+    {
+      "keyword": "регистрация компании на кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "google",
+      "position": 11
+    },
+    {
+      "keyword": "регистрация компании на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": 13
+    },
+    {
+      "keyword": "открыть компанию в бразилии",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "yandex",
+      "position": 6
+    },
+    {
+      "keyword": "открыть компанию в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": 5
+    },
+    {
+      "keyword": "открыть компанию в колумбии",
+      "url": "/blog/otkrytie-biznesa-v-kolumbii/",
+      "engine": "yandex",
+      "position": 4
+    },
+    {
+      "keyword": "открыть бизнес на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "монотрибуто",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "yandex",
+      "position": 9
+    },
+    {
+      "keyword": "бизнес на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": 10
+    },
+    {
+      "keyword": "бизнес в чили",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "yandex",
+      "position": 4
+    },
+    {
+      "keyword": "бизнес в бразилии",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "yandex",
+      "position": 7
+    },
+    {
+      "keyword": "регистрация компании в доминиканской республике",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "бизнес в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": 6
+    },
+    {
+      "keyword": "ип в аргентине",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "yandex",
+      "position": 2
+    },
+    {
+      "keyword": "как открыть бизнес в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "налоги в бразилии",
+      "url": "/blog/sistema-nalogooblozheniya-v-brazilii/",
+      "engine": "yandex",
+      "position": 10
+    },
+    {
+      "keyword": "сфера услуг перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": 11
+    },
+    {
+      "keyword": "регистрация компании в панаме",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": 11
+    },
+    {
+      "keyword": "налогообложение в бразилии",
+      "url": "/blog/sistema-nalogooblozheniya-v-brazilii/",
+      "engine": "yandex",
+      "position": 9
+    },
+    {
+      "keyword": "бизнес в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "yandex",
+      "position": 4
+    },
+    {
+      "keyword": "открыть ип в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": 1
+    },
+    {
+      "keyword": "как открыть бизнес в мексике",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "yandex",
+      "position": 13
+    },
+    {
+      "keyword": "как открыть счет в доминикане",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "yandex",
+      "position": 1
+    },
+    {
+      "keyword": "парагвай налоги",
+      "url": "/blog/nalog-na-pribyl-paragvaya/",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "налоги в панаме",
+      "url": "/blog/v-chem-osobennost-nalogovoj-sistemy-dlya-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": 11
+    },
+    {
+      "keyword": "налоги в колумбии",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "особенности бизнеса в латинской америке",
+      "url": "/",
+      "engine": "yandex",
+      "position": 6
+    },
+    {
+      "keyword": "бизнес на кубе для россиян",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": 9
+    },
+    {
+      "keyword": "бизнес в эквадоре",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "yandex",
+      "position": 3
+    },
+    {
+      "keyword": "открыть ип в уругвае",
+      "url": "/strana/biznes-v-urugvae/",
+      "engine": "yandex",
+      "position": 4
+    },
+    {
+      "keyword": "поиск партнёров в латинской америке",
+      "url": "/uslugi/biznes-soprovozhdenie/poisk-partnerov/",
+      "engine": "yandex",
+      "position": 4
+    },
+    {
+      "keyword": "открыть бизнес в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "yandex",
+      "position": 6
+    },
+    {
+      "keyword": "налоги в уругвае",
+      "url": "/strana/biznes-v-urugvae/",
+      "engine": "yandex",
+      "position": 1
+    },
+    {
+      "keyword": "открыть бизнес в чили",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "yandex",
+      "position": 3
+    },
+    {
+      "keyword": "налоги на кубе",
+      "url": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/",
+      "engine": "yandex",
+      "position": 13
+    },
+    {
+      "keyword": "налоги в кубе",
+      "url": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "налоги в аргентине",
+      "url": "/blog/nalogovye-stavki-i-sistema-nalogooblozheniya-dlya-biznesa-v-argentine/",
+      "engine": "yandex",
+      "position": 1
+    },
+    {
+      "keyword": "налоги в парагвае",
+      "url": "/blog/nalog-na-pribyl-paragvaya/",
+      "engine": "yandex",
+      "position": 11
+    },
+    {
+      "keyword": "налоги в перу",
+      "url": "/blog/nalogi-dlya-biznesa-v-peru/",
+      "engine": "yandex",
+      "position": 10
+    },
+    {
+      "keyword": "панама налоги",
+      "url": "/blog/v-chem-osobennost-nalogovoj-sistemy-dlya-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": 11
+    },
+    {
+      "keyword": "как открыть компанию в панаме",
+      "url": "/strana/biznes-v-paname/",
+      "engine": "yandex",
+      "position": 3
+    },
+    {
+      "keyword": "какой бизнес открыть в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "yandex",
+      "position": 2
+    },
+    {
+      "keyword": "какой бизнес открыть на кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "yandex",
+      "position": 4
+    },
+    {
+      "keyword": "открыть компанию в мексике",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": 5
+    },
+    {
+      "keyword": "уругвай налоги",
+      "url": "/strana/biznes-v-urugvae/",
+      "engine": "yandex",
+      "position": 22
+    },
+    {
+      "keyword": "ндс на кубе",
+      "url": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/",
+      "engine": "yandex",
+      "position": 4
+    },
+    {
+      "keyword": "бизнес в латинской америке",
+      "url": "/",
+      "engine": "yandex",
+      "position": 9
+    },
+    {
+      "keyword": "бизнес на кубе для русских",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "открыть бизнес в перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "yandex",
+      "position": 2
+    },
+    {
+      "keyword": "стартапы в мексике",
+      "url": "/blog/kak-meksika-pomogaet-startapam/",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "бразилия система налогообложения",
+      "url": "/blog/sistema-nalogooblozheniya-v-brazilii/",
+      "engine": "yandex",
+      "position": 9
+    },
+    {
+      "keyword": "сфера услуг в перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": 14
+    },
+    {
+      "keyword": "колумбия налоги",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": 14
+    },
+    {
+      "keyword": "регистрация компании в мексике",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "бизнес в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "российские компании в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "российские компании в латинской америке",
+      "url": "/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть предприятие в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть предприятие в латинской америке",
+      "url": "/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "развитие и размещение предприятия латинская америка",
+      "url": "/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "развитие и размещение предприятия латинская америка",
+      "url": "/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "развитие и размещение предприятия в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "развитие и размещение предприятия в латинской америке",
+      "url": "/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в латинской америке",
+      "url": "/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "российский бизнес в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "российский бизнес в латинской америке",
+      "url": "/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в латинской америке",
+      "url": "/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "инвестиции в мексике",
+      "url": "/blog/chem-meksika-interesuet-investorov/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "инвестиции в мексике",
+      "url": "/blog/chem-meksika-interesuet-investorov/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "инвестиции в бразилию",
+      "url": "/blog/investicii-v-biznes-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "инвестиции в бразилию",
+      "url": "/blog/investicii-v-biznes-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "налогообложение в парагвае",
+      "url": "/blog/nalog-na-pribyl-paragvaya/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "налоги в перу",
+      "url": "/blog/nalogi-dlya-biznesa-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "ндс в перу",
+      "url": "/blog/nalogi-dlya-biznesa-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "ндс в перу",
+      "url": "/blog/nalogi-dlya-biznesa-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "система налогообложения перу",
+      "url": "/blog/nalogi-dlya-biznesa-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "система налогообложения перу",
+      "url": "/blog/nalogi-dlya-biznesa-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "налоги на кубе",
+      "url": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "налоги в кубе",
+      "url": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "ндс на кубе",
+      "url": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "аргентина налоги",
+      "url": "/blog/nalogovye-stavki-i-sistema-nalogooblozheniya-dlya-biznesa-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "аргентина налогообложение",
+      "url": "/blog/nalogovye-stavki-i-sistema-nalogooblozheniya-dlya-biznesa-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "аргентина налогообложение",
+      "url": "/blog/nalogovye-stavki-i-sistema-nalogooblozheniya-dlya-biznesa-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "свободно экономические зоны латинской америки",
+      "url": "/blog/offshornye-zony-v-latinskoj-amerike-usloviya-otkrytiya-osobennosti-kak-zaregistrirovat/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "свободно экономические зоны латинской америки",
+      "url": "/blog/offshornye-zony-v-latinskoj-amerike-usloviya-otkrytiya-osobennosti-kak-zaregistrirovat/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "свободные экономические зоны латинской америки",
+      "url": "/blog/offshornye-zony-v-latinskoj-amerike-usloviya-otkrytiya-osobennosti-kak-zaregistrirovat/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "свободные экономические зоны латинской америки",
+      "url": "/blog/offshornye-zony-v-latinskoj-amerike-usloviya-otkrytiya-osobennosti-kak-zaregistrirovat/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "инвестиции в уругвай",
+      "url": "/blog/osnovnye-napravleniya-investicij-v-urugvaj/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "инвестиции в уругвай",
+      "url": "/blog/osnovnye-napravleniya-investicij-v-urugvaj/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес эквадор",
+      "url": "/blog/otkrytie-biznesa-v-ekvadore/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес эквадор",
+      "url": "/blog/otkrytie-biznesa-v-ekvadore/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес колумбия",
+      "url": "/blog/otkrytie-biznesa-v-kolumbii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес колумбия",
+      "url": "/blog/otkrytie-biznesa-v-kolumbii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Колумбия",
+      "url": "/blog/otkrytie-biznesa-v-kolumbii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Колумбия",
+      "url": "/blog/otkrytie-biznesa-v-kolumbii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в колумбии",
+      "url": "/blog/otkrytie-biznesa-v-kolumbii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес коста рика",
+      "url": "/blog/otkrytie-biznesa-v-kosta-rike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес коста рика",
+      "url": "/blog/otkrytie-biznesa-v-kosta-rike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Мехико",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Мехико",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в мексике",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть фирму Мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть фирму Мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес панама",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес панама",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в панаме",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес уругвай",
+      "url": "/blog/otkrytie-biznesa-v-urugvae/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес уругвай",
+      "url": "/blog/otkrytie-biznesa-v-urugvae/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "налогообложение в бразилии",
+      "url": "/blog/sistema-nalogooblozheniya-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "ставки налогов в бразилии",
+      "url": "/blog/sistema-nalogooblozheniya-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "ставки налогов в бразилии",
+      "url": "/blog/sistema-nalogooblozheniya-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бразилия система налогообложения",
+      "url": "/blog/sistema-nalogooblozheniya-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес гаити",
+      "url": "/strana/biznes-na-gaiti/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес гаити",
+      "url": "/strana/biznes-na-gaiti/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Аргентина",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Аргентина",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "компания в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "компания в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "сфера услуг в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "сфера услуг в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "аргентина для бизнеса",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "аргентина для бизнеса",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Аргентина",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Аргентина",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Буэнос Айрес",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Буэнос Айрес",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "ип в аргентине",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "как открыть бизнес в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть ип в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "как открыть ип в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "как открыть ип в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес боливия",
+      "url": "/strana/biznes-v-bolivii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес боливия",
+      "url": "/strana/biznes-v-bolivii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в боливии",
+      "url": "/strana/biznes-v-bolivii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бразилия предпринимательство",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бразилия предпринимательство",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "юр лицо в бразилии",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "юр лицо в бразилии",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Бразилия",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Бразилия",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес открыть в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес открыть в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес можно открыть в бразилии",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес можно открыть в бразилии",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "чили бизнес",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "чили бизнес",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "чили налоги",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "чили налоги",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес в чили",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "налоги в чили",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "налоги в чили",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Сантьяго",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Сантьяго",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в чили",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в чили",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Доминикана",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Доминикана",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес в доминикане",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес в доминикане",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "идеи бизнеса в доминикане",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "идеи бизнеса в доминикане",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "налоги в доминиканской республике",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "налоги в доминиканской республике",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "как открыть счет в доминикане",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "налоги в эквадоре",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "налоги в эквадоре",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес в эквадоре",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "колумбия налоги",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "налоги в колумбии",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "ндс в колумбии",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "ндс в колумбии",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "коста рика экономика",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "коста рика экономика",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "коста рика налоги",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "коста рика налоги",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "налоги в коста рике",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "налоги в коста рике",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес куба",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес куба",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "инвестиции кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "инвестиции кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "куба предприниматель",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "куба предприниматель",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Гавана",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Гавана",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "инвестиции в кубу",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "инвестиции в кубу",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "предпринимательство на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "предпринимательство на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "кубинский бизнес",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "кубинский бизнес",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "инвестиции на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "инвестиции на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "продажа бизнес в куба",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "продажа бизнес в куба",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес на кубе для россиян",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "частный бизнес на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "частный бизнес на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес можно открыть на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес можно открыть на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес на кубе для русских",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "как на кубе открыть бизнес",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "как на кубе открыть бизнес",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "мексика перспективы",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "мексика перспективы",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "мексика перспективы развития",
+      "url": "/blog/kak-meksika-pomogaet-startapam/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "мексика перспективы развития",
+      "url": "/blog/kak-meksika-pomogaet-startapam/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в мексике",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в мексике",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "ип в мексике",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "ип в мексике",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "как открыть бизнес в мексике",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "стоимость открытия компании в мексике",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "стоимость открытия компании в мексике",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открытие компании в панаме",
+      "url": "/strana/biznes-v-paname/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "как открыть компанию в панаме",
+      "url": "/strana/biznes-v-paname/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "парагвай компания",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "парагвай компания",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "как открыть ип в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "как открыть ип в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес открыть в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "перу бизнес",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "перу бизнес",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "сфера услуг перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "сфера услуг в перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Лима",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Лима",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть счет в перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть счет в перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес план для перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес план для перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес сальвадор",
+      "url": "/strana/biznes-v-salvadore/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес сальвадор",
+      "url": "/strana/biznes-v-salvadore/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "уругвай налоги",
+      "url": "/strana/biznes-v-urugvae/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "налоги в уругвае",
+      "url": "/strana/biznes-v-urugvae/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть ип в уругвае",
+      "url": "/strana/biznes-v-urugvae/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "венесуэла бизнес",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "венесуэла бизнес",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в венесуэле",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес в венесуэле",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес в венесуэле",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнесы в венесуэле",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнесы в венесуэле",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Каракас",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Каракас",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "международный бизнес консалтинг",
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "международный бизнес-консалтинг",
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "консалтинг в латинской америке",
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "поиск партнёров в латинской америке",
+      "url": "/uslugi/biznes-soprovozhdenie/poisk-partnerov/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "монотрибуто аргентина",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "купить готовую компанию в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в чили",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в чили",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в доминикане",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в доминикане",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "гражданство аргентины купить",
+      "url": "/blog/mozhno-li-predprinimatelyam-poluchit-grazhdanstvo-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "гражданство аргентины за инвестиции",
+      "url": "/blog/mozhno-li-predprinimatelyam-poluchit-grazhdanstvo-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "как быстро можно получить гражданство аргентины",
+      "url": "/blog/mozhno-li-predprinimatelyam-poluchit-grazhdanstvo-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "как получить гражданство аргентины",
+      "url": "/blog/mozhno-li-predprinimatelyam-poluchit-grazhdanstvo-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "как получить гражданство аргентины",
+      "url": "/blog/mozhno-li-predprinimatelyam-poluchit-grazhdanstvo-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "рабочая виза в мексику",
+      "url": "/blog/poluchenie-biznes-vizy-v-meksiku/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "богота виза для россиян",
+      "url": "/blog/poluchenie-biznes-vizy-v-kolumbiyu/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "стартапы в мексике",
+      "url": "/blog/kak-meksika-pomogaet-startapam/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес открыть на кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "go latam",
+      "url": "/about-us/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "golatam",
+      "url": "/about-us/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "go latam отзывы",
+      "url": "/about-us/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "go latam отзывы",
+      "url": "/about-us/",
+      "engine": "yandex",
+      "position": null
+    }
+  ]
+}

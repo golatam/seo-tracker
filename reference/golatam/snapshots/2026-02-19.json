@@ -1,0 +1,424 @@
+{
+  "date": "2026-02-19",
+  "source": "api",
+  "comment": "weekly auto-check",
+  "entries": [
+    {
+      "keyword": "регистрация компании в перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "google",
+      "position": 14
+    },
+    {
+      "keyword": "бизнес в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "бизнес в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "google",
+      "position": 11
+    },
+    {
+      "keyword": "бизнес в бразилии",
+      "url": "/blog/perspektivy-malogo-biznesa-v-brazilii/",
+      "engine": "google",
+      "position": 9
+    },
+    {
+      "keyword": "бизнес на кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "google",
+      "position": 4
+    },
+    {
+      "keyword": "бизнес на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "налоги в аргентине",
+      "url": "/blog/nalogovye-stavki-i-sistema-nalogooblozheniya-dlya-biznesa-v-argentine/",
+      "engine": "google",
+      "position": 15
+    },
+    {
+      "keyword": "открытие компании в панаме",
+      "url": "/strana/biznes-v-paname/",
+      "engine": "google",
+      "position": 78
+    },
+    {
+      "keyword": "открыть компанию в аргентине",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "google",
+      "position": 20
+    },
+    {
+      "keyword": "открыть компанию в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": 17
+    },
+    {
+      "keyword": "открыть компанию в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "google",
+      "position": 19
+    },
+    {
+      "keyword": "открыть компанию в бразилии",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": 19
+    },
+    {
+      "keyword": "открыть компанию в панаме",
+      "url": "/strana/biznes-v-paname/",
+      "engine": "google",
+      "position": 27
+    },
+    {
+      "keyword": "открыть компанию в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": 6
+    },
+    {
+      "keyword": "панама налоги",
+      "url": "/blog/v-chem-osobennost-nalogovoj-sistemy-dlya-biznesa-v-paname/",
+      "engine": "google",
+      "position": 1
+    },
+    {
+      "keyword": "регистрация компании в боливии",
+      "url": "/strana/biznes-v-bolivii/",
+      "engine": "google",
+      "position": 5
+    },
+    {
+      "keyword": "регистрация компании в венесуэле",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": 8
+    },
+    {
+      "keyword": "регистрация компании в мексике",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "google",
+      "position": 18
+    },
+    {
+      "keyword": "регистрация компании в панаме",
+      "url": "/strana/biznes-v-paname/",
+      "engine": "google",
+      "position": 81
+    },
+    {
+      "keyword": "регистрация компании в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": 9
+    },
+    {
+      "keyword": "регистрация компании в перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": 15
+    },
+    {
+      "keyword": "регистрация компании на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": 13
+    },
+    {
+      "keyword": "открыть компанию в бразилии",
+      "engine": "yandex",
+      "position": 5
+    },
+    {
+      "keyword": "особенности бизнеса в латинской америке",
+      "engine": "yandex",
+      "position": 4
+    },
+    {
+      "keyword": "бизнес на кубе для россиян",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "налоги в бразилии",
+      "engine": "yandex",
+      "position": 10
+    },
+    {
+      "keyword": "бизнес на кубе",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "налоги в парагвае",
+      "engine": "yandex",
+      "position": 7
+    },
+    {
+      "keyword": "регистрация компании в панаме",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "открыть бизнес на кубе",
+      "engine": "yandex",
+      "position": 6
+    },
+    {
+      "keyword": "бизнес в бразилии",
+      "engine": "yandex",
+      "position": 3
+    },
+    {
+      "keyword": "бизнес в аргентине",
+      "engine": "yandex",
+      "position": 7
+    },
+    {
+      "keyword": "сфера услуг в перу",
+      "engine": "yandex",
+      "position": 9
+    },
+    {
+      "keyword": "бизнес в парагвае",
+      "engine": "yandex",
+      "position": 4
+    },
+    {
+      "keyword": "открыть компанию в панаме",
+      "engine": "yandex",
+      "position": 6
+    },
+    {
+      "keyword": "бизнес в чили",
+      "engine": "yandex",
+      "position": 3
+    },
+    {
+      "keyword": "частный бизнес на кубе",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "какой бизнес открыть в бразилии",
+      "engine": "yandex",
+      "position": 10
+    },
+    {
+      "keyword": "открытие компании в панаме",
+      "engine": "yandex",
+      "position": 5
+    },
+    {
+      "keyword": "бизнес в доминикане",
+      "engine": "yandex",
+      "position": 3
+    },
+    {
+      "keyword": "парагвай налоги",
+      "engine": "yandex",
+      "position": 9
+    },
+    {
+      "keyword": "налоги в доминиканской республике",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "налоги в панаме",
+      "engine": "yandex",
+      "position": 6
+    },
+    {
+      "keyword": "как открыть бизнес в аргентине",
+      "engine": "yandex",
+      "position": 5
+    },
+    {
+      "keyword": "мексика перспективы развития",
+      "engine": "yandex",
+      "position": 10
+    },
+    {
+      "keyword": "панама налоги",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "ндс в колумбии",
+      "engine": "yandex",
+      "position": 12
+    },
+    {
+      "keyword": "бизнес в эквадоре",
+      "engine": "yandex",
+      "position": 3
+    },
+    {
+      "keyword": "какой бизнес можно открыть на кубе",
+      "engine": "yandex",
+      "position": 5
+    },
+    {
+      "keyword": "какой бизнес открыть в парагвае",
+      "engine": "yandex",
+      "position": 2
+    },
+    {
+      "keyword": "уругвай налоги",
+      "engine": "yandex",
+      "position": 20
+    },
+    {
+      "keyword": "налоги в коста рике",
+      "engine": "yandex",
+      "position": 1
+    },
+    {
+      "keyword": "ип в аргентине",
+      "engine": "yandex",
+      "position": 3
+    },
+    {
+      "keyword": "ндс на кубе",
+      "engine": "yandex",
+      "position": 4
+    },
+    {
+      "keyword": "налогообложение в бразилии",
+      "engine": "yandex",
+      "position": 12
+    },
+    {
+      "keyword": "бразилия система налогообложения",
+      "engine": "yandex",
+      "position": 7
+    },
+    {
+      "keyword": "бизнес в венесуэле",
+      "engine": "yandex",
+      "position": 7
+    },
+    {
+      "keyword": "налоги в кубе",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "налоги в аргентине",
+      "engine": "yandex",
+      "position": 6
+    },
+    {
+      "keyword": "налоги в колумбии",
+      "engine": "yandex",
+      "position": 7
+    },
+    {
+      "keyword": "как на кубе открыть бизнес",
+      "engine": "yandex",
+      "position": 9
+    },
+    {
+      "keyword": "как открыть ип в парагвае",
+      "engine": "yandex",
+      "position": 2
+    },
+    {
+      "keyword": "открыть компанию в перу",
+      "engine": "yandex",
+      "position": 1
+    },
+    {
+      "keyword": "открыть ип в уругвае",
+      "engine": "yandex",
+      "position": 1
+    },
+    {
+      "keyword": "как открыть компанию в панаме",
+      "engine": "yandex",
+      "position": 3
+    },
+    {
+      "keyword": "аргентина налоги",
+      "engine": "yandex",
+      "position": 12
+    },
+    {
+      "keyword": "бизнес в латинской америке",
+      "engine": "yandex",
+      "position": 4
+    },
+    {
+      "keyword": "бизнес на кубе для русских",
+      "engine": "yandex",
+      "position": 8
+    },
+    {
+      "keyword": "сфера услуг перу",
+      "engine": "yandex",
+      "position": 12
+    },
+    {
+      "keyword": "открыть бизнес в мексике",
+      "engine": "yandex",
+      "position": 6
+    },
+    {
+      "keyword": "предпринимательство на кубе",
+      "engine": "yandex",
+      "position": 10
+    },
+    {
+      "keyword": "налоги на кубе",
+      "engine": "yandex",
+      "position": 12
+    },
+    {
+      "keyword": "коста рика налоги",
+      "engine": "yandex",
+      "position": 11
+    },
+    {
+      "keyword": "какой бизнес можно открыть в бразилии",
+      "engine": "yandex",
+      "position": 4
+    },
+    {
+      "keyword": "как открыть ип в аргентине",
+      "engine": "yandex",
+      "position": 1
+    },
+    {
+      "keyword": "инвестиции в кубу",
+      "engine": "yandex",
+      "position": 10
+    },
+    {
+      "keyword": "регистрация компании в мексике",
+      "engine": "yandex",
+      "position": 9
+    },
+    {
+      "keyword": "налоги в перу",
+      "engine": "yandex",
+      "position": 10
+    },
+    {
+      "keyword": "открыть компанию в аргентине",
+      "engine": "yandex",
+      "position": 9
+    }
+  ]
+}
