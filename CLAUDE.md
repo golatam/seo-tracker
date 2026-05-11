@@ -34,7 +34,7 @@
 ## Принятые решения (2026-05-11)
 
 1. **Название репо:** `golatam/seo-tracker` — подтверждено
-2. **Приватный.** Перед первым прогоном reusable workflow в consumer-репо: **Settings → Actions → General → Access → "Accessible from repositories owned by the organization"** в `seo-tracker`. Без этого consumer'ы получат ошибку «workflow not found»
+2. **Приватный, user-owned (не org).** `golatam` — это user account, поэтому опция «Accessible from repositories owned by the organization» в Settings → Actions → General → Access **недоступна**. Эквивалент для user account — `access_level=user` (открывает workflow для всех приватных и публичных репо того же user'а). Установка через `gh api -X PUT /repos/golatam/seo-tracker/actions/permissions/access -f access_level=user`. Дефолт после создания репо — `none`, что блокировало бы вызовы. На 2026-05-11 уже выставлено в `user`.
 3. **Миграция итеративно (вариант b):** канарейка = **firmalo первым** (проще: только Google + Slack), golatam вторым после 1-2 недель стабильной работы пакета на firmalo
 4. **Telegram-токен** хранится локально у пользователя; перед миграцией golatam — положить в GitHub Secrets `golatam/golatam-website` как `TELEGRAM_BOT_TOKEN` и `TELEGRAM_CHAT_ID`. В secrets `seo-tracker` НЕ кладём — пакет должен быть stateless, токен пробрасывается через `secrets: inherit`
 5. **README с инструкцией «как подключить к новому проекту»** — обязательная часть v1.0 (отдельный пункт плана)
@@ -89,12 +89,13 @@ seo-tracker/
 9. ✅ Бонус: `report.mjs` унифицирован (engine sub-grouping, cluster summary table, priority indicator, cluster labels из core)
 10. ✅ Smoke-tested: `weekly-check.mjs --dry-run` проходит и с `ENABLE_YANDEX=false`, и с `=true`
 
-**Фаза 1 — миграция firmalo (канарейка) — следующая сессия:**
-- Создать GitHub remote `golatam/seo-tracker` (приватный), включить «Accessible from repositories owned by the organization»
-- Заменить `firmar/.github/workflows/seo-weekly.yml` на caller-yaml с `uses: golatam/seo-tracker/.github/workflows/weekly-check.yml@v1`
-- Добавить опциональное `clusters` поле в `firmar/seo-tracking/semantic-core.json` (с теми же `core/feature/usecase/competitor` метками, что были захардкожены)
-- Удалить `firmar/seo-tracking/scripts/`, оставить только `semantic-core.json` (плюс перенести `snapshots/` если они не в корне)
-- Прогнать 1-2 недели, убедиться что снапшоты и Slack-репорты идентичны старым
+**Фаза 1 — миграция firmalo (канарейка) — в процессе:**
+- ✅ Создан GitHub remote `golatam/seo-tracker` (приватный, user-owned), `access_level=user` выставлен на 2026-05-11
+- ✅ Добавлено `clusters` поле в `firmar/seo-tracking/semantic-core.json` (`core/feature/usecase/competitor/unknown` с испанскими label'ами `Firma PDF/Funciones/Casos de uso/Alternativas/Otro`). Smoke-test `loadClusters()` пакета на firmar core проходит — order и labels идентичны прежнему хардкоду
+- ✅ Caller-yaml шаблон лежит как `firmar/.github/workflows/seo-weekly.yml.disabled` (расширение `.disabled` не триггерит GitHub Actions). Ref'ы на `@main` (канарейка), `package_ref: main` для синхрона workflow/scripts. `core_path=seo-tracking/semantic-core.json`, `snapshots_dir=seo-tracking/snapshots`
+- ⏳ В firmar: атомарный коммит — переименовать `seo-weekly.yml.disabled` в `seo-weekly.yml`, удалить старый `seo-weekly.yml`, закоммитить `semantic-core.json` (всё в одном push, чтобы один cron-тик не поймал два workflow). Repo на GitHub называется `golatam/firmalo` (public), не `firmar` — локальный путь `firmar/` это алиас
+- ⏳ Понедельник 2026-05-18 12:00 UTC — проверить, что workflow прошёл и Slack-репорт идентичен прошлому
+- ⏳ После 1-2 успешных прогонов: удалить `firmar/seo-tracking/scripts/` и `firmar/seo-tracking/config.mjs` (оставить только `semantic-core.json` и `snapshots/`)
 
 **Фаза 2 — миграция golatam:**
 - Добавить `clusters` поле в `golatam/seo-tracking/semantic-core.json` (`country/blog/service/audience/brand/main/landing`)
@@ -118,5 +119,5 @@ seo-tracker/
 
 ## Связанные проекты
 
-- `/Volumes/Kirill_HDD/_CLAUDE/firmar/` — firmalo, production (`main` ahead of origin на 0 коммитов на 2026-04-20)
-- `/Volumes/Kirill_HDD/_CLAUDE/golatam/` — golatam-website, production
+- `/Volumes/Kirill_HDD/_CLAUDE/firmar/` — firmalo, production. GitHub: `golatam/firmalo` (public). `main` синхронизирован с origin на 2026-05-11
+- `/Volumes/Kirill_HDD/_CLAUDE/golatam/` — golatam-website, production. GitHub: `golatam/golatam-website` (private)
