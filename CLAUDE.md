@@ -38,14 +38,16 @@
 3. **Миграция итеративно (вариант b):** канарейка = **firmalo первым** (проще: только Google + Slack), golatam вторым после 1-2 недель стабильной работы пакета на firmalo
 4. **Telegram-токен** хранится локально у пользователя; перед миграцией golatam — положить в GitHub Secrets `golatam/golatam-website` как `TELEGRAM_BOT_TOKEN` и `TELEGRAM_CHAT_ID`. В secrets `seo-tracker` НЕ кладём — пакет должен быть stateless, токен пробрасывается через `secrets: inherit`
 5. **README с инструкцией «как подключить к новому проекту»** — обязательная часть v1.0 (отдельный пункт плана)
+6. **Strategy B — параметризовать до подключения.** Не создаём GitHub remote и не подключаем consumer'ов, пока не закрыты Tasks #1 (config), #3 (weekly-check flags), #4 (notify-telegram union), #5 (notify-slack cluster labels). Альтернатива (firmalo-canary сейчас, breaking v2.0.0 потом) явно отвергнута — пакет должен быть «настоящим» с первой минуты
 
 ## Что в этой папке сейчас
 
 ```
 seo-tracker/
+├── .gitignore                       # node_modules, .env, macOS resource forks
 ├── CLAUDE.md                        # этот файл
-├── .env.example                     # GSC + Slack env (из firmalo)
-├── config.mjs                       # из firmalo, только Google, Slack-only
+├── .env.example                     # GSC + Slack env + SITE_URL/SITE_PROPERTY
+├── config.mjs                       # project-neutral defaults (SITE_URL вынесен в env)
 ├── scripts/
 │   ├── env.mjs                      # .env loader, zero-dep
 │   ├── fetch-gsc.mjs                # searchAnalytics.query; exports getAccessToken
