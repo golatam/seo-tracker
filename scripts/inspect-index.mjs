@@ -7,16 +7,14 @@
  * Usage:
  *   node seo-tracking/scripts/inspect-index.mjs
  *
- * Env vars: GSC_CLIENT_ID, GSC_CLIENT_SECRET, GSC_REFRESH_TOKEN
+ * Env vars: SITE_URL, SITE_PROPERTY, GSC_CLIENT_ID, GSC_CLIENT_SECRET, GSC_REFRESH_TOKEN
  */
 
 import { loadEnv, requireEnv } from './env.mjs';
 import { getAccessToken } from './fetch-gsc.mjs';
-import { SITE_URL } from '../config.mjs';
 
 loadEnv();
 
-const SITE_PROPERTY = 'sc-domain:firmalo.io';
 const INSPECT_API = 'https://searchconsole.googleapis.com/v1/urlInspection/index:inspect';
 
 // URL Inspection API quota: 2000/day, 600/min. Sleep between requests to stay under burst.
@@ -24,7 +22,7 @@ const REQUEST_DELAY_MS = 200;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
-async function inspectOne(accessToken, inspectionUrl) {
+async function inspectOne(accessToken, inspectionUrl, siteProperty) {
   const res = await fetch(INSPECT_API, {
     method: 'POST',
     headers: {
@@ -33,7 +31,7 @@ async function inspectOne(accessToken, inspectionUrl) {
     },
     body: JSON.stringify({
       inspectionUrl,
-      siteUrl: SITE_PROPERTY,
+      siteUrl: siteProperty,
       languageCode: 'en-US',
     }),
   });
@@ -64,6 +62,8 @@ async function inspectOne(accessToken, inspectionUrl) {
  * @returns {Promise<Array<{url: string} & Awaited<ReturnType<typeof inspectOne>>>>}
  */
 export async function fetchIndexStatus(paths) {
+  const siteUrl = requireEnv('SITE_URL', 'Website origin, e.g. https://example.com (no trailing slash)');
+  const siteProperty = requireEnv('SITE_PROPERTY', 'GSC site property, e.g. sc-domain:example.com');
   const clientId = requireEnv('GSC_CLIENT_ID', 'Google OAuth Client ID');
   const clientSecret = requireEnv('GSC_CLIENT_SECRET', 'Google OAuth Client Secret');
   const refreshToken = requireEnv('GSC_REFRESH_TOKEN', 'Google OAuth Refresh Token');
@@ -74,10 +74,10 @@ export async function fetchIndexStatus(paths) {
   const results = [];
   for (let i = 0; i < paths.length; i++) {
     const path = paths[i];
-    const inspectionUrl = `${SITE_URL}${path}`;
+    const inspectionUrl = `${siteUrl}${path}`;
     process.stdout.write(`   [${i + 1}/${paths.length}] ${path}... `);
     try {
-      const status = await inspectOne(token, inspectionUrl);
+      const status = await inspectOne(token, inspectionUrl, siteProperty);
       results.push({ url: path, ...status });
       console.log(status.verdict || 'UNKNOWN');
     } catch (e) {

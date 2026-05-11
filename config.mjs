@@ -1,12 +1,9 @@
 /**
  * SEO Tracking — Configuration
  *
- * Firmalo.io — LATAM PDF signing tool
- * Google only (no Yandex needed for LATAM market)
+ * Project-neutral defaults. Site origin and GSC property live in env
+ * (SITE_URL, SITE_PROPERTY) — read them via requireEnv() inside scripts.
  */
-
-/** Site domain */
-export const SITE_URL = 'https://firmalo.io';
 
 /** Regions */
 export const REGIONS = [

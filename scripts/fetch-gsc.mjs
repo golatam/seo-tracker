@@ -7,15 +7,13 @@
  * Usage:
  *   node seo-tracking/scripts/fetch-gsc.mjs [--days=30]
  *
- * Env vars: GSC_CLIENT_ID, GSC_CLIENT_SECRET, GSC_REFRESH_TOKEN
+ * Env vars: SITE_PROPERTY, GSC_CLIENT_ID, GSC_CLIENT_SECRET, GSC_REFRESH_TOKEN
  */
 
 import { loadEnv, requireEnv } from './env.mjs';
 
 loadEnv();
 
-// Domain property in GSC (sc-domain:) covers all protocols and subdomains
-const SITE_URL = 'sc-domain:firmalo.io';
 const GSC_API = 'https://searchconsole.googleapis.com/webmasters/v3';
 const TOKEN_URL = 'https://oauth2.googleapis.com/token';
 
@@ -49,7 +47,7 @@ export async function getAccessToken(clientId, clientSecret, refreshToken) {
 
 // ─── GSC API ─────────────────────────────────────────────────────────
 
-async function fetchSearchAnalytics(accessToken, keywords) {
+async function fetchSearchAnalytics(accessToken, keywords, siteProperty) {
   const endDate = new Date();
   const startDate = new Date();
   startDate.setDate(endDate.getDate() - daysBack);
@@ -73,7 +71,7 @@ async function fetchSearchAnalytics(accessToken, keywords) {
     }];
   }
 
-  const siteEncoded = encodeURIComponent(SITE_URL);
+  const siteEncoded = encodeURIComponent(siteProperty);
   const url = `${GSC_API}/sites/${siteEncoded}/searchAnalytics/query`;
 
   const res = await fetch(url, {
@@ -106,6 +104,7 @@ async function fetchSearchAnalytics(accessToken, keywords) {
 // ─── Main ────────────────────────────────────────────────────────────
 
 export async function fetchGscPositions(keywords = []) {
+  const siteProperty = requireEnv('SITE_PROPERTY', 'GSC site property, e.g. sc-domain:example.com');
   const clientId = requireEnv('GSC_CLIENT_ID', 'Google OAuth Client ID');
   const clientSecret = requireEnv('GSC_CLIENT_SECRET', 'Google OAuth Client Secret');
   const refreshToken = requireEnv('GSC_REFRESH_TOKEN', 'Google OAuth Refresh Token');
@@ -114,7 +113,7 @@ export async function fetchGscPositions(keywords = []) {
   const token = await getAccessToken(clientId, clientSecret, refreshToken);
 
   console.log(`   Fetching GSC data for the last ${daysBack} days...`);
-  const results = await fetchSearchAnalytics(token, keywords);
+  const results = await fetchSearchAnalytics(token, keywords, siteProperty);
 
   console.log(`   Got ${results.length} entries from GSC`);
   return results;
