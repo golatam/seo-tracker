@@ -34,7 +34,7 @@
 ## Принятые решения (2026-05-11)
 
 1. **Название репо:** `golatam/seo-tracker` — подтверждено
-2. **Приватный, user-owned (не org).** `golatam` — это user account, поэтому опция «Accessible from repositories owned by the organization» в Settings → Actions → General → Access **недоступна**. Эквивалент для user account — `access_level=user` (открывает workflow для всех приватных и публичных репо того же user'а). Установка через `gh api -X PUT /repos/golatam/seo-tracker/actions/permissions/access -f access_level=user`. Дефолт после создания репо — `none`, что блокировало бы вызовы. На 2026-05-11 уже выставлено в `user`.
+2. **Публичный, user-owned.** Изначально создан как приватный с `access_level=user` (2026-05-11), но первый cron-прогон канарейки 2026-05-18 упал с `error parsing called workflow: workflow was not found` ещё до создания jobs (run id `26043241272`, длительность 0с, `referenced_workflows: []`). Причина: для user-owned account `access_level=user` открывает доступ только из **private** репо того же user'а; **public→private** cross-repo вызов reusable workflow не поддерживается ни при каком значении `access_level`. Поскольку у `firmalo` репо публичный, единственный надёжный способ — сделать `seo-tracker` публичным (секретов в пакете нет, всё пробрасывается через `secrets: inherit`). Visibility флипнут 2026-05-20.
 3. **Миграция итеративно (вариант b):** канарейка = **firmalo первым** (проще: только Google + Slack), golatam вторым после 1-2 недель стабильной работы пакета на firmalo
 4. **Telegram-токен** хранится локально у пользователя; перед миграцией golatam — положить в GitHub Secrets `golatam/golatam-website` как `TELEGRAM_BOT_TOKEN` и `TELEGRAM_CHAT_ID`. В secrets `seo-tracker` НЕ кладём — пакет должен быть stateless, токен пробрасывается через `secrets: inherit`
 5. **README с инструкцией «как подключить к новому проекту»** — обязательная часть v1.0 (отдельный пункт плана)
@@ -90,7 +90,7 @@ seo-tracker/
 10. ✅ Smoke-tested: `weekly-check.mjs --dry-run` проходит и с `ENABLE_YANDEX=false`, и с `=true`
 
 **Фаза 1 — миграция firmalo (канарейка) — в процессе:**
-- ✅ Создан GitHub remote `golatam/seo-tracker` (приватный, user-owned), `access_level=user` выставлен на 2026-05-11
+- ✅ Создан GitHub remote `golatam/seo-tracker` (user-owned). Был приватным с `access_level=user` на 2026-05-11, **флипнут в public 2026-05-20** после того, как cron-прогон 2026-05-18 упал из-за public→private cross-repo ограничения для user-owned account'ов (см. «Принятые решения» п.2)
 - ✅ Добавлено `clusters` поле в `firmar/seo-tracking/semantic-core.json` (`core/feature/usecase/competitor/unknown` с испанскими label'ами `Firma PDF/Funciones/Casos de uso/Alternativas/Otro`). Smoke-test `loadClusters()` пакета на firmar core проходит — order и labels идентичны прежнему хардкоду
 - ✅ Caller-yaml шаблон лежит как `firmar/.github/workflows/seo-weekly.yml.disabled` (расширение `.disabled` не триггерит GitHub Actions). Ref'ы на `@main` (канарейка), `package_ref: main` для синхрона workflow/scripts. `core_path=seo-tracking/semantic-core.json`, `snapshots_dir=seo-tracking/snapshots`
 - ⏳ В firmar: атомарный коммит — переименовать `seo-weekly.yml.disabled` в `seo-weekly.yml`, удалить старый `seo-weekly.yml`, закоммитить `semantic-core.json` (всё в одном push, чтобы один cron-тик не поймал два workflow). Repo на GitHub называется `golatam/firmalo` (public), не `firmar` — локальный путь `firmar/` это алиас

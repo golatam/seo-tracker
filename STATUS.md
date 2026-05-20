@@ -1,8 +1,16 @@
 # STATUS — Фаза 1 канарейка активна
 
-**Зафиксировано**: 2026-05-11
-**Следующий cron firmar**: 2026-05-18 ~12:00 UTC
-**Пользователь вернётся**: 2026-05-20 — к этому моменту первый weekly run каноники уже отстреляется
+**Зафиксировано**: 2026-05-20 (обновлено после первого incident'а)
+
+## Incident 2026-05-18 → исправлен 2026-05-20
+
+Первый cron-прогон в `golatam/firmalo` упал с `failure` за 0 секунд (run id `26043241272`). GitHub отказался парсить caller-yaml с ошибкой `error parsing called workflow: workflow was not found`. Причина: `firmalo` — public, `seo-tracker` был private, а для user-owned аккаунта `access_level=user` **не открывает public→private** доступ к reusable workflow (только private→private).
+
+Фикс: `gh repo edit golatam/seo-tracker --visibility public --accept-visibility-change-consequences`. Секретов в пакете нет (всё через `secrets: inherit`), так что публикация безопасна. После флипа manual rerun (`workflow_dispatch`) прошёл успешно — см. п. «Текущее состояние».
+
+## Текущее состояние
+
+Reusable workflow + caller-yaml связаны и работают. Первый успешный weekly-репорт прилетел в Slack 2026-05-20 после manual rerun. Следующий автоматический cron — понедельник 2026-05-25 12:00 UTC.
 
 ---
 
