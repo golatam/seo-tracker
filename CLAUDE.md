@@ -89,18 +89,19 @@ seo-tracker/
 9. ✅ Бонус: `report.mjs` унифицирован (engine sub-grouping, cluster summary table, priority indicator, cluster labels из core)
 10. ✅ Smoke-tested: `weekly-check.mjs --dry-run` проходит и с `ENABLE_YANDEX=false`, и с `=true`
 
-**Фаза 1 — миграция firmalo (канарейка) — в процессе:**
-- ✅ Создан GitHub remote `golatam/seo-tracker` (user-owned). Был приватным с `access_level=user` на 2026-05-11, **флипнут в public 2026-05-20** после того, как cron-прогон 2026-05-18 упал из-за public→private cross-repo ограничения для user-owned account'ов (см. «Принятые решения» п.2)
-- ✅ Добавлено `clusters` поле в `firmar/seo-tracking/semantic-core.json` (`core/feature/usecase/competitor/unknown` с испанскими label'ами `Firma PDF/Funciones/Casos de uso/Alternativas/Otro`). Smoke-test `loadClusters()` пакета на firmar core проходит — order и labels идентичны прежнему хардкоду
-- ✅ Caller-yaml шаблон лежит как `firmar/.github/workflows/seo-weekly.yml.disabled` (расширение `.disabled` не триггерит GitHub Actions). Ref'ы на `@main` (канарейка), `package_ref: main` для синхрона workflow/scripts. `core_path=seo-tracking/semantic-core.json`, `snapshots_dir=seo-tracking/snapshots`
-- ⏳ В firmar: атомарный коммит — переименовать `seo-weekly.yml.disabled` в `seo-weekly.yml`, удалить старый `seo-weekly.yml`, закоммитить `semantic-core.json` (всё в одном push, чтобы один cron-тик не поймал два workflow). Repo на GitHub называется `golatam/firmalo` (public), не `firmar` — локальный путь `firmar/` это алиас
-- ⏳ Понедельник 2026-05-18 12:00 UTC — проверить, что workflow прошёл и Slack-репорт идентичен прошлому
-- ⏳ После 1-2 успешных прогонов: удалить `firmar/seo-tracking/scripts/` и `firmar/seo-tracking/config.mjs` (оставить только `semantic-core.json` и `snapshots/`)
+**Фаза 1 — миграция firmalo (канарейка) — закрыта 2026-05-20:**
+- ✅ `golatam/seo-tracker` создан user-owned, флипнут в public 2026-05-20 после инцидента 2026-05-18 (public→private cross-repo не поддерживается для user account'а — см. «Принятые решения» п.2)
+- ✅ `firmar/seo-tracking/semantic-core.json` получил `clusters` (испанские labels, slack-style `:emoji:` коды для Slack-нотификатора)
+- ✅ Caller-yaml в `golatam/firmalo/.github/workflows/seo-weekly.yml` указывает на `golatam/seo-tracker/.github/workflows/weekly-check.yml@main` с `notifier: slack`, `enable_yandex: false`
+- ✅ Manual rerun 2026-05-20 (run `26152761423`) прошёл end-to-end: GSC fetch, Slack отчёт, snapshot `7715c3fb` закоммичен SEO Bot'ом. Cron 2026-05-25 ожидается ~12:00 UTC
 
-**Фаза 2 — миграция golatam:**
-- Добавить `clusters` поле в `golatam/seo-tracking/semantic-core.json` (`country/blog/service/audience/brand/main/landing`)
-- Положить `TELEGRAM_BOT_TOKEN` + `TELEGRAM_CHAT_ID` в GitHub Secrets `golatam/golatam-website`
-- Заменить caller-yaml в golatam (`notifier: both`, `enable_yandex: true`), удалить локальные scripts
+**Фаза 2 — миграция golatam — в процессе (старт 2026-05-25):**
+- ✅ `TELEGRAM_THREAD_ID` залит в GitHub Secrets `golatam/golatam-website` (остальные секреты уже были: `GSC_*`, `TELEGRAM_BOT_TOKEN/CHAT_ID`, `SLACK_*`, `YANDEX_*`)
+- ✅ Добавлено `clusters` поле в `golatam/seo-tracking/semantic-core.json` (`brand/main/country/service/audience/blog/landing/unknown` с русскими labels и unicode-эмодзи). Smoke-test `loadClusters()` совпадает с прежним хардкодом `notify-telegram.mjs` 1-в-1
+- ✅ Caller-yaml в `golatam/golatam-website/.github/workflows/seo-weekly.yml` указывает на `golatam/seo-tracker/.github/workflows/weekly-check.yml@main` с `notifier: telegram`, `enable_yandex: true`, cron `0 9 * * 1` (12:00 MSK)
+- ⏳ Manual rerun 2026-05-25 (run `26391024482`) в процессе — финальный smoke-test
+- ⏳ После 1-2 успешных cron-прогонов (2026-06-01, 2026-06-08): удалить `golatam/seo-tracking/scripts/`, `config.mjs`, `types.ts` (manual tools `import-keywords.mjs`, `import-positions.mjs`, `templates/`, `uslugi-traffic-baseline.json` оставить — они вне weekly pipeline)
+- ⏳ Параллельно: убрать ту же rollback safety net в firmar (`seo-tracking/scripts/`, `config.mjs`)
 
 **Фаза 3 — релиз:**
 - Тэг `v1.0.0` в `seo-tracker`, обновить `@v1` references в обоих consumer'ах
