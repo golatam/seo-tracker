@@ -91,17 +91,19 @@ seo-tracker/
 
 **Фаза 1 — миграция firmalo (канарейка) — закрыта 2026-05-20:**
 - ✅ `golatam/seo-tracker` создан user-owned, флипнут в public 2026-05-20 после инцидента 2026-05-18 (public→private cross-repo не поддерживается для user account'а — см. «Принятые решения» п.2)
-- ✅ `firmar/seo-tracking/semantic-core.json` получил `clusters` (испанские labels, slack-style `:emoji:` коды для Slack-нотификатора)
-- ✅ Caller-yaml в `golatam/firmalo/.github/workflows/seo-weekly.yml` указывает на `golatam/seo-tracker/.github/workflows/weekly-check.yml@main` с `notifier: slack`, `enable_yandex: false`
-- ✅ Manual rerun 2026-05-20 (run `26152761423`) прошёл end-to-end: GSC fetch, Slack отчёт, snapshot `7715c3fb` закоммичен SEO Bot'ом. Cron 2026-05-25 ожидается ~12:00 UTC
+- ✅ `firmar/seo-tracking/semantic-core.json` получил `clusters` (испанские labels, slack-style `:emoji:` коды — это был период Slack-нотификатора, до переключения на Telegram 2026-05-26)
+- ✅ Caller-yaml в `golatam/firmalo/.github/workflows/seo-weekly.yml` указывает на `golatam/seo-tracker/.github/workflows/weekly-check.yml@main`. Изначально `notifier: slack`; 2026-05-26 переключён на `notifier: telegram` (commit `b3d30f5`) после миграции уведомлений в новую Telegram-группу
+- ✅ Manual rerun 2026-05-20 (run `26152761423`) прошёл end-to-end: GSC fetch, Slack отчёт, snapshot `7715c3fb` закоммичен SEO Bot'ом
+- ✅ Автоматический cron 2026-05-25 (run `26406454931`, 2m22s) прошёл без вмешательства — финальное подтверждение стабильности канарейки
 
 **Фаза 2 — миграция golatam — в процессе (старт 2026-05-25):**
 - ✅ `TELEGRAM_THREAD_ID` залит в GitHub Secrets `golatam/golatam-website` (остальные секреты уже были: `GSC_*`, `TELEGRAM_BOT_TOKEN/CHAT_ID`, `SLACK_*`, `YANDEX_*`)
 - ✅ Добавлено `clusters` поле в `golatam/seo-tracking/semantic-core.json` (`brand/main/country/service/audience/blog/landing/unknown` с русскими labels и unicode-эмодзи). Smoke-test `loadClusters()` совпадает с прежним хардкодом `notify-telegram.mjs` 1-в-1
 - ✅ Caller-yaml в `golatam/golatam-website/.github/workflows/seo-weekly.yml` указывает на `golatam/seo-tracker/.github/workflows/weekly-check.yml@main` с `notifier: telegram`, `enable_yandex: true`, cron `0 9 * * 1` (12:00 MSK)
-- ⏳ Manual rerun 2026-05-25 (run `26391024482`) в процессе — финальный smoke-test
+- ✅ Manual rerun 2026-05-25 (run `26391024482`) + автоматический cron того же дня (run `26400711150`, 12m29s) — оба success, snapshot `0038d2fc` закоммичен SEO Bot'ом
+- ✅ 2026-05-26: миграция уведомлений в новую Telegram-группу `-1003789842509`. Per-consumer треды: GoLatam = 58, Firmalo = 508. Обновлены Secrets обоих consumer'ов и локальный `golatam/.env`. Manual reruns подтвердили доставку (golatam run `26454599987`, firmalo run `26454611946`)
 - ⏳ После 1-2 успешных cron-прогонов (2026-06-01, 2026-06-08): удалить `golatam/seo-tracking/scripts/`, `config.mjs`, `types.ts` (manual tools `import-keywords.mjs`, `import-positions.mjs`, `templates/`, `uslugi-traffic-baseline.json` оставить — они вне weekly pipeline)
-- ⏳ Параллельно: убрать ту же rollback safety net в firmar (`seo-tracking/scripts/`, `config.mjs`)
+- ⏳ Параллельно: убрать ту же rollback safety net в firmar (`seo-tracking/scripts/`, `config.mjs`). `SLACK_*` секреты в `golatam/firmalo` Secrets можно тоже удалить (unused после переключения на Telegram)
 
 **Фаза 3 — релиз:**
 - Тэг `v1.0.0` в `seo-tracker`, обновить `@v1` references в обоих consumer'ах

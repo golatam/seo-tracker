@@ -9,13 +9,14 @@
 | 2026-05-11 | Phase 0 закрыта (пакет параметризован), Phase 1 стартовала (firmalo caller-yaml) | — |
 | 2026-05-18 | **Incident**: cron firmalo упал в 0с — public→private cross-repo не работает для user account | `26043241272` (failure) |
 | 2026-05-20 | seo-tracker флипнут в public; manual rerun firmalo — успех; Telegram smoke-test на golatam | `26152761423` (success) |
-| 2026-05-25 | Phase 2 commit в golatam-website; manual rerun — успех; Telegram-отчёт пришёл | `26391024482` (success) |
+| 2026-05-25 | Phase 2 commit в golatam-website; manual rerun + автоматический cron на обоих consumer'ах | `26391024482`, `26400711150`, `26406454931` (все success) |
+| 2026-05-26 | Миграция уведомлений в новую Telegram-группу `-1003789842509`. Firmalo переключён со Slack на Telegram. Per-consumer треды: GoLatam=58, Firmalo=508 | `26454599987`, `26454611946` (оба success, доставку подтвердил пользователь) |
 
 ## Текущее состояние
 
-**Phase 1 (firmalo)** — пакет работает, ждём второй автоматический cron 2026-05-25 ~12:00 UTC для финального подтверждения.
+**Phase 1 (firmalo)** — канарейка закрыта 2026-05-25 (первый автоматический cron `26406454931`). Notifier переключён на Telegram 2026-05-26.
 
-**Phase 2 (golatam-website)** — миграция закоммичена sha `4ecc474`, manual rerun прошёл end-to-end (snapshot `0038d2fc`). Следующий автоматический cron — понедельник 2026-06-01 09:00 UTC.
+**Phase 2 (golatam-website)** — миграция закоммичена sha `4ecc474`, первый автоматический cron прошёл 2026-05-25. Уведомления переехали в новую Telegram-группу 2026-05-26. Следующий автоматический cron — понедельник 2026-06-01 09:00 UTC.
 
 ## Что осталось до Phase 3 (релиз v1.0.0)
 
