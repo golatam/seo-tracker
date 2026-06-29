@@ -1,4 +1,37 @@
-# STATUS — Phase 2 канарейка активна
+# STATUS
+
+## Сейчас (2026-06-29): standalone Topvisor-сервис
+
+Направление сменилось с «reusable workflow в каждом consumer» на **central
+monitoring service** (решение 2026-06-29, см. CLAUDE.md «Текущее направление» и
+`docs/architecture/2026-06-29-standalone-topvisor-service.md`).
+
+**Готово:**
+- `scripts/project-registry.mjs` — загрузка/валидация/нормализация дескрипторов,
+  отказ при секрет-подобных ключах, статусы проекта.
+- `scripts/check-project.mjs` — runner (`<id>` / `--all` / `--dry-run` /
+  `--validate-only`); инъекция per-project env, graceful skip без semantic-core.
+- `scripts/weekly-check.mjs` — `main(options)` экспортируется; Topvisor как
+  rank source; CLI-guard оставлен для legacy/workflow-пути.
+- `projects/golatam.json` (`status: waiting_for_keywords`), `data/README.md`.
+- Topvisor read-only provider (`scripts/providers/topvisor.mjs`) — без `checker/go`.
+- README / CLAUDE / STATUS / .env.example переписаны под standalone (2026-06-29).
+
+**Осталось:**
+- Завести `data/golatam/semantic-core.json` (импорт ключей из Topvisor-проекта),
+  затем `status: active`.
+- Прогнать `check-project.mjs golatam` против реального Topvisor (read-only),
+  свериться с region/searcher mapping (`searcherToEngine` — TODO в провайдере).
+- Зарегистрировать firmalo дескриптором; решить судьбу legacy reusable workflow.
+- Развести multi-project секреты/роутинг (один `.env` = один аккаунт/бот; см.
+  caveat в README и architecture-доке).
+
+---
+
+## История миграции (legacy reusable-workflow канарейка)
+
+> Контекст «как сюда пришли». Reusable workflow остаётся compatibility-слоем для
+> firmalo/golatam; новые проекты идут через реестр.
 
 **Зафиксировано**: 2026-05-25 (Phase 2 миграция golatam запущена)
 

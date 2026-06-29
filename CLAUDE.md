@@ -1,4 +1,37 @@
-# SEO Tracker — reusable GSC monitoring package
+# SEO Tracker — central SEO monitoring service
+
+## ⚡ Текущее направление (решение 2026-06-29)
+
+**Архитектура развернулась из «reusable workflow, вшитый в каждый consumer» в
+самостоятельный central monitoring service.** Главное:
+
+1. **Standalone service — first-class.** Один репо мониторит много сайтов. Сайт
+   регистрируется дескриптором `projects/<id>.json` (config-only, без секретов),
+   запускается `scripts/check-project.mjs <id>` / `--all`. Данные каждого
+   проекта живут в `data/<id>/` (snapshots + reports). Секреты — только в `.env`
+   / ambient env, реестр их жёстко отвергает (`FORBIDDEN_SECRET_KEYS`).
+2. **Topvisor — primary rank source, read-only.** `rankSource: topvisor` тянет
+   уже собранную историю (`get/positions_2/history`). **Никогда** не дёргаем
+   `edit/positions_2/checker/go` — это платный запуск проверки. GSC/Yandex
+   остаются analytics + indexation слоем (URL Inspection, sitemap), не источником
+   позиций. `gsc` — legacy fallback.
+3. **Reusable consumer workflow — теперь legacy / compatibility.** Он не удалён:
+   firmalo/golatam пока зовут его cross-repo через `secrets: inherit`. Те же
+   Node-скрипты обслуживают оба пути — `weekly-check.mjs::main()` читает
+   `process.env`, который в standalone заполняет runner из дескриптора, а в
+   workflow — из inputs. Новые проекты идут через реестр, не через workflow.
+4. **Статусы проекта** (`active | waiting_for_keywords | paused | draft`):
+   `--all` запускает только `active`; остальные показываются как skipped.
+   Регистрация сайта до появления ключей — это `waiting_for_keywords`, не ошибка.
+
+Подробная схема и onboarding-флоу: `docs/architecture/2026-06-29-standalone-topvisor-service.md`.
+План реализации Topvisor/отчётов: `docs/plans/2026-06-29-topvisor-reporting-architecture.md`.
+
+Разделы ниже (про reusable-workflow-пакет и фазовую миграцию firmalo/golatam)
+описывают, **как сюда пришли** — это исторический контекст и всё ещё актуальная
+правда про legacy consumer'ов, но не текущее основное направление.
+
+---
 
 ## Цель проекта
 

@@ -1,185 +1,256 @@
 # seo-tracker
 
-Reusable weekly SEO position monitor for Google Search Console (+ optional
-Yandex.Webmaster). Saves snapshots, computes deltas, and notifies Slack
-or Telegram. Zero npm dependencies — pure Node scripts plus a reusable
-GitHub workflow.
+Central, standalone SEO position-monitoring service. One repo watches many
+sites: each site is registered as a small JSON descriptor in `projects/`, the
+runner reads keyword ranks (Topvisor read-only by default, GSC/Yandex as the
+analytics + indexation layer), writes per-project snapshots and reports under
+`data/`, and notifies Telegram or Slack.
 
-## Quick start (consumer repo)
+Zero npm dependencies — pure Node ESM scripts. No service to host, no per-site
+wiring: you add a project file and run one command (or one cron).
 
-1. **Add `semantic-core.json` to the root of your repo** (see schema below).
-2. **Create `.github/workflows/seo-weekly.yml`** with:
+> **Architecture, in one line:** `projects/<id>.json` (what to watch) +
+> ambient secrets in `.env` (how to reach the APIs) → `check-project.mjs` →
+> `data/<id>/` (snapshots, reports) → Telegram/Slack.
 
-   ```yaml
-   name: SEO Weekly
+---
 
-   on:
-     schedule:
-       - cron: '0 12 * * 1'   # every Monday 12:00 UTC
-     workflow_dispatch:
+## Quick start (standalone service)
 
-   jobs:
-     run:
-       uses: golatam/seo-tracker/.github/workflows/weekly-check.yml@v1
-       secrets: inherit
-       with:
-         site_url: https://example.com
-         site_property: sc-domain:example.com
-         notifier: slack          # slack | telegram | both | none
-         enable_yandex: false
+```bash
+git clone <this repo> && cd seo-tracker
+cp .env.example .env          # fill in API tokens (secrets live ONLY here)
+
+# 1. Register a site (no secrets in this file — config only):
+#    projects/<id>.json   (see "Project descriptor" below)
+
+# 2. Drop its keywords in:
+#    data/<id>/semantic-core.json   (see "semantic-core.json schema" below)
+
+# 3. Run it:
+node scripts/check-project.mjs <id>              # one project
+node scripts/check-project.mjs <id> --dry-run    # fetch, don't persist/notify
+node scripts/check-project.mjs <id> --validate-only  # just check the descriptor
+node scripts/check-project.mjs --all             # every "active" project
+```
+
+The first run writes `data/<id>/snapshots/<date>.json`. Later runs diff against
+the previous snapshot, write a markdown + CSV report under
+`data/<id>/snapshots/reports/`, and send a delta digest.
+
+### Adding a new project (onboarding flow)
+
+1. **Create `projects/<id>.json`.** The `id` must equal the file name. Minimal
+   Topvisor example:
+
+   ```json
+   {
+     "id": "acme",
+     "name": "Acme",
+     "domain": "acme.com",
+     "rankSource": "topvisor",
+     "topvisorProjectId": 123456,
+     "notifier": "telegram",
+     "status": "waiting_for_keywords"
+   }
    ```
 
-3. **Set GitHub Secrets** (Settings → Secrets → Actions). See the table below.
-4. **First run** will create `snapshots/<date>.json`. Subsequent runs compare
-   against the previous snapshot and send a delta report.
+2. **Validate it:** `node scripts/check-project.mjs --validate-only acme`.
+3. **Add keywords:** `data/acme/semantic-core.json` (schema below).
+4. **Flip status to `active`** in the descriptor.
+5. **Run:** `node scripts/check-project.mjs acme` (or wait for the `--all` cron).
 
-## Inputs
+A project with `status: waiting_for_keywords` (or a missing semantic core) is
+**not an error** — `--all` skips it gracefully and the runner tells you what's
+missing. That makes it safe to register sites before their keywords exist.
 
-| Input            | Required | Default              | Description                                            |
-|------------------|----------|----------------------|--------------------------------------------------------|
-| `site_url`       | yes      | —                    | Site origin, no trailing slash (e.g. `https://x.com`). |
-| `site_property`  | yes      | —                    | GSC property: `sc-domain:x.com` or `https://x.com/`.   |
-| `site_name`      | no       | hostname of site_url | Display name in report headers.                        |
-| `notifier`       | no       | `slack`              | `slack`, `telegram`, `both`, or `none`.                |
-| `enable_yandex`  | no       | `false`              | Also fetch Yandex.Webmaster positions.                 |
-| `rank_source`    | no       | `gsc`                | Position source: `gsc`, `topvisor`, `mixed` (reserved). |
-| `topvisor_project_id` | no  | —                    | Topvisor project id; required for `rank_source=topvisor`. |
-| `topvisor_regions` | no    | —                    | Comma-separated Topvisor region indexes, e.g. `1,2`.   |
-| `topvisor_date_mode` | no  | `lastTwo`            | Topvisor history mode: `lastTwo` or `single`.          |
-| `core_path`      | no       | `semantic-core.json` | Path relative to consumer repo root.                   |
-| `snapshots_dir`  | no       | `snapshots`          | Where snapshot JSONs are written and committed.        |
-| `package_ref`    | no       | `v1`                 | Git ref of seo-tracker to use (tag or branch).         |
+---
 
-## Secrets
+## Project descriptor (`projects/<id>.json`)
 
-| Secret                | When needed                                         |
-|-----------------------|-----------------------------------------------------|
-| `GSC_CLIENT_ID`       | always (GSC OAuth2)                                 |
-| `GSC_CLIENT_SECRET`   | always                                              |
-| `GSC_REFRESH_TOKEN`   | always                                              |
-| `TOPVISOR_USER_ID`    | `rank_source=topvisor`                             |
-| `TOPVISOR_API_TOKEN`  | `rank_source=topvisor`                             |
-| `SLACK_BOT_TOKEN`     | `notifier=slack` or `both`                          |
-| `SLACK_CHANNEL_ID`    | `notifier=slack` or `both`                          |
-| `TELEGRAM_BOT_TOKEN`  | `notifier=telegram` or `both`                       |
-| `TELEGRAM_CHAT_ID`    | `notifier=telegram` or `both`                       |
-| `TELEGRAM_THREAD_ID`  | optional, for group topics                          |
-| `YANDEX_OAUTH_TOKEN`  | `enable_yandex=true`                                |
-| `YANDEX_USER_ID`      | optional (auto-detected if absent)                  |
-| `YANDEX_HOST_ID`      | optional (auto-detected if absent)                  |
+Config only — **never** secrets (the registry rejects secret-like keys with a
+hard error). Paths resolve from the repo root; override the base dirs with
+`PROJECTS_DIR` / `DATA_DIR`.
 
-`secrets: inherit` in the caller workflow forwards every secret that exists
-in the consumer repo. Secrets that are unused for the chosen `notifier` /
-`enable_yandex` combination can be omitted.
+| Field               | Required | Default                         | Description                                              |
+|---------------------|----------|---------------------------------|----------------------------------------------------------|
+| `id`                | yes      | —                               | Must match the file name.                                |
+| `name`              | yes      | —                               | Display name in reports.                                 |
+| `domain`            | yes      | —                               | Bare hostname (e.g. `acme.com`).                         |
+| `siteUrl`           | no       | `https://<domain>`              | Site origin.                                             |
+| `siteProperty`      | no       | `sc-domain:<domain>`            | GSC property.                                            |
+| `rankSource`        | no       | `gsc`                           | `topvisor`, `gsc`, or `mixed` (reserved).                |
+| `topvisorProjectId` | when topvisor | —                          | Topvisor project id.                                     |
+| `topvisorRegions`   | no       | all                             | Comma-separated region indexes, e.g. `"1,2"`.            |
+| `topvisorDateMode`  | no       | `lastTwo`                       | Topvisor history mode.                                   |
+| `enableYandex`      | no       | `false`                         | Also fetch Yandex.Webmaster positions.                   |
+| `notifier`          | no       | `none`                          | `telegram`, `slack`, `both`, or `none`.                  |
+| `status`            | no       | `draft`                         | Lifecycle — see below.                                   |
+| `reportProfile`     | no       | `seo-weekly`                    | Report preset name.                                      |
+| `data.corePath`     | no       | `data/<id>/semantic-core.json`  | Override the semantic-core location.                     |
+| `data.snapshotsDir` | no       | `data/<id>/snapshots`           | Override the snapshots location.                         |
+
+### Statuses
+
+| Status                 | Runs on `--all`? | Meaning                                            |
+|------------------------|------------------|----------------------------------------------------|
+| `active`               | yes              | Fully configured; part of the weekly sweep.        |
+| `waiting_for_keywords` | no (skipped)     | Registered, but no semantic core yet.              |
+| `paused`               | no (skipped)     | Temporarily disabled.                              |
+| `draft`                | no (skipped)     | Work in progress.                                  |
+
+Only `active` projects execute under `--all`; the rest are listed as skipped so
+nothing runs silently.
+
+---
+
+## Rank sources — Topvisor (primary) vs GSC
+
+**`rankSource: topvisor` is the recommended primary source.** The integration
+is strictly **read-only**: it pulls position history Topvisor has *already*
+collected via `get/positions_2/history` (+ `get/keywords_2/keywords` and
+`get/projects_2/projects` for metadata). It **never** calls
+`edit/positions_2/checker/go`, which would start a *paid* check run. So the
+tracker reads ranks for free and never spends Topvisor check credits — to
+refresh positions you (or a Topvisor schedule) trigger the checker in Topvisor's
+own UI.
+
+**`rankSource: gsc`** keeps the legacy behavior: Google positions come from GSC
+average position, Yandex from Yandex.Webmaster when `enableYandex: true`.
+
+Regardless of rank source, GSC stays useful as the **analytics + indexation
+layer**: URL Inspection verdicts and sitemap submission still run when GSC
+credentials are present, and land in the snapshot's `indexStatus` / `sitemap`.
+
+---
+
+## Secrets & env
+
+Secrets live **only** in `.env` (or the ambient environment / GitHub Secrets) —
+never in `projects/*.json`. See `.env.example` for the annotated template.
+
+| Secret                | When needed                            |
+|-----------------------|----------------------------------------|
+| `TOPVISOR_USER_ID`    | `rankSource: topvisor`                  |
+| `TOPVISOR_API_TOKEN`  | `rankSource: topvisor`                  |
+| `GSC_CLIENT_ID`       | GSC analytics/indexation, or `rankSource: gsc` |
+| `GSC_CLIENT_SECRET`   | same                                    |
+| `GSC_REFRESH_TOKEN`   | same                                    |
+| `TELEGRAM_BOT_TOKEN`  | `notifier: telegram` or `both`          |
+| `TELEGRAM_CHAT_ID`    | `notifier: telegram` or `both`          |
+| `TELEGRAM_THREAD_ID`  | optional, for group topics (per project)|
+| `SLACK_BOT_TOKEN`     | `notifier: slack` or `both`             |
+| `SLACK_CHANNEL_ID`    | `notifier: slack` or `both`             |
+| `YANDEX_OAUTH_TOKEN`  | `enableYandex: true`                    |
+
+Config (non-secret) env knobs: `PROJECTS_DIR`, `DATA_DIR`. The runner derives
+the per-project config env (`SITE_URL`, `RANK_SOURCE`, `TOPVISOR_PROJECT_ID`,
+`SNAPSHOTS_DIR`, …) from the descriptor and injects it before each project —
+you don't set those by hand in standalone mode.
+
+> **Multi-project secrets caveat:** secrets are ambient, so a single `.env`
+> shares one Topvisor/GSC account and one Telegram bot across all projects.
+> Per-project *routing* (e.g. a Telegram thread per site) currently comes from
+> a single `TELEGRAM_THREAD_ID`; running projects that need different accounts
+> means separate runs with different env. See the architecture doc for the
+> roadmap.
+
+---
 
 ## `semantic-core.json` schema
 
 ```jsonc
 {
   // Optional. Maps page categories to display label + emoji + sort order.
-  // Used by the Slack/Telegram report. Falls back to a single "Other" bucket.
+  // Falls back to a single "Other" bucket.
   "clusters": {
-    "core":       { "label": "Core",         "emoji": "📄", "order": 1 },
-    "feature":    { "label": "Features",     "emoji": "🔧", "order": 2 },
-    "competitor": { "label": "Alternatives", "emoji": "🆚", "order": 3 }
+    "core":    { "label": "Core",     "emoji": "📄", "order": 1 },
+    "feature": { "label": "Features", "emoji": "🔧", "order": 2 }
   },
   "pages": [
     {
       "url": "/pricing/",
       "category": "core",
       "keywords": [
-        { "keyword": "pdf pricing",  "engines": ["google"], "priority": "high",   "tracked": true },
-        { "keyword": "pdf vs word",  "engines": ["google"], "priority": "medium", "tracked": true }
+        { "keyword": "pdf pricing", "engines": ["google"], "priority": "high",   "tracked": true },
+        { "keyword": "pdf vs word", "engines": ["google"], "priority": "medium", "tracked": true }
       ]
     }
   ]
 }
 ```
 
-- `page.category` should match a key in `clusters` (otherwise it falls into "Other").
-- `keyword.engines` is an array — use `["google"]` for GSC-only or `["google", "yandex"]` to also track in Yandex.Webmaster (requires `enable_yandex: true` and the relevant secrets).
-- `keyword.tracked: false` excludes the keyword from the weekly check.
-- `keyword.priority` is used by `report.mjs` for inline emphasis (`high`/`medium`/`low`).
+- `page.category` should match a key in `clusters` (otherwise → "Other").
+- `keyword.engines` — `["google"]` for GSC-only, `["google","yandex"]` to also
+  track in Yandex.Webmaster (needs `enableYandex: true` + the relevant secret).
+- `keyword.tracked: false` excludes the keyword from the check.
+- `keyword.priority` (`high`/`medium`/`low`) drives alert weighting + emphasis.
 
-## Rank sources
+---
 
-`rank_source=gsc` keeps the legacy behavior: Google positions come from GSC
-average position, Yandex positions come from Yandex.Webmaster when
-`enable_yandex=true`.
+## Reports
 
-`rank_source=topvisor` makes Topvisor the source of truth for keyword ranks.
-The integration is read-only: it uses Topvisor history endpoints and never
-starts a paid checker run. GSC/Yandex data remains useful for analytics and
-indexation checks, but no longer drives rank positions in the weekly report.
+Each run saves the canonical JSON snapshot under
+`data/<id>/snapshots/<date>.json`. When a previous snapshot exists, it also
+writes:
 
-Example caller config:
+- `data/<id>/snapshots/reports/<date>-weekly.md` — full weekly report;
+- `data/<id>/snapshots/reports/<date>-positions.csv` — raw keyword delta export.
 
-```yaml
-with:
-  site_url: https://golatam.group
-  site_property: sc-domain:golatam.group
-  notifier: telegram
-  rank_source: topvisor
-  topvisor_project_id: '123456'
-  topvisor_regions: '1,2'
-  topvisor_date_mode: lastTwo
-```
+Telegram/Slack consume the same report model as the markdown/CSV renderers, so
+chat numbers and artifact numbers stay aligned. The snapshot carries
+`entries[]` (per-keyword positions), `indexStatus[]` (GSC URL Inspection
+verdict per page) and `sitemap` (registration status).
 
-Required secrets for this mode:
+Snapshots and reports are meant to be committed — this repo is the source of
+truth for position history across every project.
 
-```text
-TOPVISOR_USER_ID
-TOPVISOR_API_TOKEN
-```
-
-## Report formats
-
-Each run still saves the canonical JSON snapshot under `snapshots/<date>.json`.
-When there is a previous snapshot to compare against, the tracker also writes:
-
-- `snapshots/reports/<date>-weekly.md` — full weekly report for humans;
-- `snapshots/reports/<date>-positions.csv` — machine-readable keyword delta export.
-
-Slack and Telegram now consume the same report model as the markdown/CSV
-renderers, so digest numbers and artifact numbers stay aligned.
-
-## Migration notes
-
-1. Add `rank_source: topvisor` and Topvisor inputs to the consumer workflow.
-2. Add `TOPVISOR_USER_ID` and `TOPVISOR_API_TOKEN` secrets.
-3. Run workflow manually with `notifier: none` first and inspect the committed
-   snapshot/report artifacts.
-4. Enable Slack/Telegram notifications after the Topvisor region/searcher
-   mapping looks right.
-
-## What gets committed
-
-After each run, the workflow commits new files under `snapshots/` back to
-the consumer repo. The snapshot JSON contains:
-
-- `entries[]` — per-keyword positions (`{ keyword, url, engine, position }`)
-- `indexStatus[]` — GSC URL Inspection verdict per page
-- `sitemap` — sitemap registration status (auto-submit attempted; gracefully
-  degrades on `ACCESS_TOKEN_SCOPE_INSUFFICIENT`)
-
-## Local dev (running scripts in a consumer repo)
-
-```bash
-cp .env.example .env       # fill in tokens
-node /path/to/seo-tracker/scripts/weekly-check.mjs --dry-run
-```
-
-All paths resolve from `process.cwd()`, so run the scripts from your
-consumer repo's root.
+---
 
 ## Versioning
 
-This package uses git tags (`v1.0.0`, `v1.1.0`, …) — no npm publish.
-Consumers pin via `@v1` (latest v1.x) or `@v1.0.0` (exact).
+Git tags (`v1.0.0`, `v1.1.0`, …) — no npm publish.
 
-## Repository visibility
+---
 
-The `seo-tracker` repo is **private**. Before the first run in a consumer
-repo, enable: **Settings → Actions → General → Access →
-"Accessible from repositories owned by the organization"** on `seo-tracker`.
-Without this, callers get `workflow not found`.
+## Compatibility: reusable GitHub workflow (legacy)
+
+> The standalone service above is the primary, recommended way to run the
+> tracker. The reusable workflow below predates it and is kept for the existing
+> firmalo/golatam consumer repos that still call it. New projects should use the
+> standalone registry instead.
+
+Originally the tracker shipped as a reusable workflow that each consumer repo
+wired in, keeping only its own `semantic-core.json`:
+
+```yaml
+name: SEO Weekly
+on:
+  schedule:
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+jobs:
+  run:
+    uses: golatam/seo-tracker/.github/workflows/weekly-check.yml@v1
+    secrets: inherit
+    with:
+      site_url: https://example.com
+      site_property: sc-domain:example.com
+      notifier: telegram          # slack | telegram | both | none
+      rank_source: topvisor        # gsc | topvisor | mixed
+      topvisor_project_id: '123456'
+      enable_yandex: false
+```
+
+In this mode the consumer sets `with:` inputs (`site_url`, `site_property`,
+`site_name`, `notifier`, `enable_yandex`, `rank_source`, `topvisor_project_id`,
+`topvisor_regions`, `topvisor_date_mode`, `core_path`, `snapshots_dir`,
+`package_ref`) and forwards secrets via `secrets: inherit`; data is committed
+back to the consumer repo's `snapshots/` rather than this repo's `data/`. The
+same Node scripts back both paths — `weekly-check.mjs` reads its config from
+`process.env`, which the workflow populates from inputs and the standalone
+runner populates from the descriptor.
+
+Because the workflow is called cross-repo, `seo-tracker` must be **public**
+(public→private cross-repo `workflow_call` is unsupported for user-owned
+accounts — the 2026-05-18 incident; see `CLAUDE.md`).

@@ -5,6 +5,11 @@
  * Full cycle: fetch GSC (+ optional Yandex) -> snapshot -> compare ->
  * notify (Slack and/or Telegram).
  *
+ * Two ways to run:
+ *   - Standalone service (recommended): `check-project.mjs` loads a project
+ *     from the registry, populates process.env, then calls `main(options)`.
+ *   - Direct CLI (legacy / reusable workflow): reads env (+ .env) itself.
+ *
  * Usage:
  *   node scripts/weekly-check.mjs [--no-slack] [--no-telegram] [--dry-run]
  *
@@ -13,6 +18,7 @@
 
 import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { loadEnv } from './env.mjs';
 import {
   getCorePath,
@@ -26,11 +32,6 @@ import { buildReportModel } from './report-model.mjs';
 import { renderMarkdownReport } from './render-markdown-report.mjs';
 import { buildCsv } from './export-csv.mjs';
 
-loadEnv();
-
-const SNAPSHOTS_DIR = getSnapshotsDir();
-const CORE_PATH = getCorePath();
-
 // ANSI
 const GREEN = '\x1b[32m';
 const RED = '\x1b[31m';
@@ -39,13 +40,6 @@ const CYAN = '\x1b[36m';
 const BOLD = '\x1b[1m';
 const DIM = '\x1b[2m';
 const RESET = '\x1b[0m';
-
-// ─── CLI args ────────────────────────────────────────────────────────
-
-const args = process.argv.slice(2);
-const noSlack = args.includes('--no-slack');
-const noTelegram = args.includes('--no-telegram');
-const dryRun = args.includes('--dry-run');
 
 // ─── Retry helper ────────────────────────────────────────────────────
 
@@ -70,7 +64,28 @@ async function withRetry(fn, label) {
 
 // ─── Main ────────────────────────────────────────────────────────────
 
-async function main() {
+/**
+ * Run one full weekly check for whatever project is described by the current
+ * process.env. The standalone runner (`check-project.mjs`) sets that env per
+ * project before calling this; the legacy CLI path lets env/.env drive it.
+ *
+ * @param {object} options
+ * @param {boolean} [options.dryRun]      do everything but persist/notify
+ * @param {boolean} [options.noSlack]     suppress Slack even if configured
+ * @param {boolean} [options.noTelegram]  suppress Telegram even if configured
+ * @param {boolean} [options.skipLoadEnv]  standalone runner already loaded env
+ */
+export async function main(options = {}) {
+  const { dryRun = false, noSlack = false, noTelegram = false, skipLoadEnv = false } = options;
+
+  // Load .env (CWD) for any secrets not already in process.env. Idempotent:
+  // env.mjs never overwrites a key that is already set, so values injected by
+  // the standalone runner take precedence over the .env file.
+  if (!skipLoadEnv) loadEnv();
+
+  const SNAPSHOTS_DIR = getSnapshotsDir();
+  const CORE_PATH = getCorePath();
+
   const siteName = getSiteName();
   const notifiers = getNotifiers();
   const yandexEnabled = isYandexEnabled();
@@ -86,14 +101,12 @@ async function main() {
   let core;
   try {
     core = JSON.parse(readFileSync(CORE_PATH, 'utf-8'));
-  } catch {
-    console.error(`${RED}Semantic core not found: ${CORE_PATH}${RESET}`);
-    process.exit(1);
+  } catch (e) {
+    throw new Error(`Semantic core not found or invalid JSON: ${CORE_PATH} (${e.message})`);
   }
 
   if (!core.pages || core.pages.length === 0) {
-    console.error(`${RED}Semantic core is empty${RESET}`);
-    process.exit(1);
+    throw new Error(`Semantic core is empty: ${CORE_PATH}`);
   }
 
   const clusters = loadClusters(core);
@@ -155,7 +168,7 @@ async function main() {
       }
       console.log(`   ${GREEN}${tvEntries.length} entries from Topvisor${RESET}\n`);
     } catch (e) {
-      console.log(`   ${YELLOW}Topvisor unavailable after ${MAX_RETRIES} attempts: ${e.message}${RESET}\n`);
+      throw new Error(`Topvisor unavailable after ${MAX_RETRIES} attempts: ${e.message}`);
     }
   }
 
@@ -312,7 +325,7 @@ async function main() {
 
   if (prevFiles.length === 0) {
     console.log(`${YELLOW}First snapshot — comparison unavailable.${RESET}\n`);
-    await sendNotifications(snapshot, 'snapshot', notifiers, ctx);
+    await sendNotifications(snapshot, 'snapshot', notifiers, ctx, { noSlack, noTelegram });
     return;
   }
 
@@ -364,7 +377,7 @@ async function main() {
   console.log(`  Avg position: ${summary.prevAvgPosition} -> ${summary.avgPosition}\n`);
 
   // 6. Send notifications
-  await sendNotifications(model, 'report', notifiers, ctx);
+  await sendNotifications(model, 'report', notifiers, ctx, { noSlack, noTelegram });
 
   console.log(`\n${GREEN}Weekly check completed${RESET}\n`);
 }
@@ -373,7 +386,7 @@ function signed(n) {
   return n > 0 ? `+${n}` : `${n}`;
 }
 
-async function sendNotifications(payload, type, notifiers, ctx) {
+async function sendNotifications(payload, type, notifiers, ctx, { noSlack = false, noTelegram = false } = {}) {
   if (notifiers.slack && !noSlack) {
     if (process.env.SLACK_BOT_TOKEN) {
       console.log(`${BOLD}Sending to Slack...${RESET}`);
@@ -403,8 +416,21 @@ async function sendNotifications(payload, type, notifiers, ctx) {
   }
 }
 
-main().catch(e => {
-  console.error(`\n${RED}Error: ${e.message}${RESET}`);
-  console.error(e.stack);
-  process.exit(1);
-});
+// ─── CLI entry (legacy / reusable-workflow path) ─────────────────────
+// Only runs when this file is executed directly. When `check-project.mjs`
+// imports `main`, this guard is false and nothing auto-runs.
+const invokedDirectly =
+  process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href;
+
+if (invokedDirectly) {
+  const args = process.argv.slice(2);
+  main({
+    dryRun: args.includes('--dry-run'),
+    noSlack: args.includes('--no-slack'),
+    noTelegram: args.includes('--no-telegram'),
+  }).catch(e => {
+    console.error(`\n${RED}Error: ${e.message}${RESET}`);
+    console.error(e.stack);
+    process.exit(1);
+  });
+}

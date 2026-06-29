@@ -1,0 +1,19 @@
+{
+  "id": "golatam",
+  "name": "Go Latam",
+  "domain": "golatam.group",
+  "siteUrl": "https://golatam.group",
+  "siteProperty": "sc-domain:golatam.group",
+  "rankSource": "topvisor",
+  "topvisorProjectId": 29486769,
+  "topvisorRegions": "",
+  "topvisorDateMode": "lastTwo",
+  "enableYandex": false,
+  "notifier": "telegram",
+  "status": "waiting_for_keywords",
+  "reportProfile": "seo-weekly",
+  "data": {
+    "corePath": "data/golatam/semantic-core.json",
+    "snapshotsDir": "data/golatam/snapshots"
+  }
+}
