@@ -11,7 +11,7 @@
  * Env vars: see .env.example
  */
 
-import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, readdirSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { loadEnv } from './env.mjs';
 import {
@@ -22,6 +22,9 @@ import {
   isYandexEnabled,
   loadClusters,
 } from '../config.mjs';
+import { buildReportModel } from './report-model.mjs';
+import { renderMarkdownReport } from './render-markdown-report.mjs';
+import { buildCsv } from './export-csv.mjs';
 
 loadEnv();
 
@@ -71,6 +74,10 @@ async function main() {
   const siteName = getSiteName();
   const notifiers = getNotifiers();
   const yandexEnabled = isYandexEnabled();
+  // Rank source: where keyword POSITIONS come from. GSC/Yandex stay the
+  // analytics/indexing layer regardless. Default keeps the legacy behavior.
+  const rankSource = (process.env.RANK_SOURCE || 'gsc').toLowerCase();
+  const useTopvisor = rankSource === 'topvisor';
 
   console.log(`\n${BOLD}Weekly position check — ${siteName}${RESET}`);
   console.log(`${DIM}${new Date().toISOString()}${RESET}\n`);
@@ -122,8 +129,38 @@ async function main() {
   const entries = [];
   const fetchedKeys = new Set();
 
+  // 2-topvisor. Topvisor as the rank source (read-only). Covers all engines
+  // configured in the Topvisor project, so it replaces the GSC/Yandex
+  // position fetch below (those remain only for indexation analytics).
+  if (useTopvisor) {
+    console.log(`${BOLD}Topvisor${RESET}`);
+    try {
+      const tvEntries = await withRetry(async () => {
+        const { fetchTopvisorPositions } = await import('./providers/topvisor.mjs');
+        return await fetchTopvisorPositions();
+      }, 'Topvisor');
+
+      for (const e of tvEntries) {
+        entries.push({
+          keyword: e.keyword,
+          url: e.url,
+          engine: e.engine,
+          position: e.position,
+          regionIndex: e.regionIndex,
+          regionName: e.regionName,
+          device: e.device,
+          actualUrl: e.actualUrl,
+        });
+        fetchedKeys.add(`${e.keyword}|${e.engine}`);
+      }
+      console.log(`   ${GREEN}${tvEntries.length} entries from Topvisor${RESET}\n`);
+    } catch (e) {
+      console.log(`   ${YELLOW}Topvisor unavailable after ${MAX_RETRIES} attempts: ${e.message}${RESET}\n`);
+    }
+  }
+
   // 2a. Google Search Console
-  if (googleKeywords.length > 0 && process.env.GSC_CLIENT_ID) {
+  if (!useTopvisor && googleKeywords.length > 0 && process.env.GSC_CLIENT_ID) {
     console.log(`${BOLD}Google Search Console${RESET}`);
     try {
       const gscResults = await withRetry(async () => {
@@ -147,12 +184,12 @@ async function main() {
     } catch (e) {
       console.log(`   ${YELLOW}GSC unavailable after ${MAX_RETRIES} attempts: ${e.message}${RESET}\n`);
     }
-  } else if (googleKeywords.length > 0) {
+  } else if (!useTopvisor && googleKeywords.length > 0) {
     console.log(`${DIM}GSC skipped — GSC_CLIENT_ID not set${RESET}\n`);
   }
 
   // 2b. Yandex.Webmaster (optional)
-  if (yandexEnabled && yandexKeywords.length > 0 && process.env.YANDEX_OAUTH_TOKEN) {
+  if (!useTopvisor && yandexEnabled && yandexKeywords.length > 0 && process.env.YANDEX_OAUTH_TOKEN) {
     console.log(`${BOLD}Yandex.Webmaster${RESET}`);
     try {
       const yandexResults = await withRetry(async () => {
@@ -248,7 +285,7 @@ async function main() {
   const today = new Date().toISOString().split('T')[0];
   const snapshot = {
     date: today,
-    source: 'api',
+    source: useTopvisor ? 'topvisor' : 'api',
     comment: 'weekly auto-check',
     entries,
     indexStatus,
@@ -283,83 +320,57 @@ async function main() {
     readFileSync(resolve(SNAPSHOTS_DIR, prevFiles[prevFiles.length - 1]), 'utf-8')
   );
 
-  // Build comparison
-  const entryKey = (e) => `${e.keyword}|${e.engine}`;
+  // Build the normalized report model — the single source of truth shared by
+  // the notifiers, the markdown renderer and the CSV exporter. Metrics are
+  // computed once here, never recomputed downstream.
+  const reportsDir = resolve(SNAPSHOTS_DIR, 'reports');
+  const markdownPath = resolve(reportsDir, `${today}-weekly.md`);
+  const csvPath = resolve(reportsDir, `${today}-positions.csv`);
 
-  const prevMap = new Map();
-  for (const e of prevSnapshot.entries) prevMap.set(entryKey(e), e);
+  const model = buildReportModel(prevSnapshot, snapshot, core, {
+    clusters,
+    site: siteName,
+    source: snapshot.source,
+    snapshotPath,
+    markdownPath,
+    csvPath,
+  });
 
-  const currMap = new Map();
-  for (const e of entries) currMap.set(entryKey(e), e);
-
-  const prevKeywords = new Set(prevSnapshot.entries.map(e => entryKey(e)));
-
-  const allKeys = new Set([...prevMap.keys(), ...currMap.keys()]);
-  const changes = [];
-
-  for (const key of allKeys) {
-    const [keyword, engine] = key.split('|');
-    const prev = prevMap.get(key);
-    const curr = currMap.get(key);
-    const prevPos = prev?.position ?? null;
-    const currPos = curr?.position ?? null;
-    const url = curr?.url || prev?.url || undefined;
-
-    let change = null;
-    if (prevPos !== null && currPos !== null) change = prevPos - currPos;
-
-    const isNewlyTracked = !prevKeywords.has(key) && currPos !== null;
-
-    let priority = 'medium';
-    let category = 'unknown';
-    for (const page of core.pages) {
-      if (page.url === url) {
-        category = page.category;
-        const kw = page.keywords.find(k => k.keyword === keyword);
-        if (kw) { priority = kw.priority; break; }
-      }
-    }
-
-    changes.push({ keyword, url, engine, previousPosition: prevPos, currentPosition: currPos, change, priority, isNewlyTracked, category });
+  // Save full weekly markdown report + raw CSV appendix next to the snapshots.
+  // (dry-run returns earlier, so this only runs for real snapshots that have
+  //  a previous snapshot to diff against.)
+  try {
+    mkdirSync(reportsDir, { recursive: true });
+    writeFileSync(markdownPath, renderMarkdownReport(model, ctx), 'utf-8');
+    writeFileSync(csvPath, buildCsv(model), 'utf-8');
+    console.log(`${GREEN}Report saved: ${markdownPath}${RESET}`);
+    console.log(`${GREEN}CSV saved:    ${csvPath}${RESET}\n`);
+  } catch (e) {
+    console.log(`${YELLOW}Could not write report files: ${e.message}${RESET}\n`);
   }
 
-  const summary = {
-    totalKeywords: changes.length,
-    improved: changes.filter(c => c.change !== null && c.change > 0).length,
-    declined: changes.filter(c => c.change !== null && c.change < 0).length,
-    unchanged: changes.filter(c => c.change === 0).length,
-    noData: changes.filter(c => c.previousPosition === null && c.currentPosition === null).length,
-    newInTop: changes.filter(c => c.previousPosition === null && c.currentPosition !== null && !c.isNewlyTracked).length,
-    newlyTracked: changes.filter(c => c.isNewlyTracked).length,
-    droppedFromTop: changes.filter(c => c.previousPosition !== null && c.currentPosition === null).length,
-    avgPosition: avg(changes.map(c => c.currentPosition).filter(p => p !== null)),
-    prevAvgPosition: avg(changes.map(c => c.previousPosition).filter(p => p !== null)),
-  };
-
-  const report = {
-    currentDate: today,
-    previousDate: prevSnapshot.date,
-    summary,
-    changes,
-    indexStatus,
-    sitemap,
-  };
-
   // Print console summary
+  const { summary, verdict } = model;
   console.log(`${BOLD}====================================${RESET}`);
   console.log(`${BOLD}  ${prevSnapshot.date} -> ${today}${RESET}`);
   console.log(`${BOLD}====================================${RESET}`);
+  console.log(`  Verdict: ${verdict.emoji} ${verdict.level} — ${verdict.text}`);
   console.log(`  Improved: ${summary.improved}`);
   console.log(`  Declined: ${summary.declined}`);
   console.log(`  Unchanged: ${summary.unchanged}`);
   if (summary.noData > 0) console.log(`  No data: ${summary.noData}`);
   if (summary.newlyTracked > 0) console.log(`  Newly tracked: ${summary.newlyTracked}`);
+  console.log(`  Visibility: ${summary.prevVisibilityScore} -> ${summary.visibilityScore} (${signed(summary.visibilityDelta)}%)`);
   console.log(`  Avg position: ${summary.prevAvgPosition} -> ${summary.avgPosition}\n`);
 
   // 6. Send notifications
-  await sendNotifications(report, 'report', notifiers, ctx);
+  await sendNotifications(model, 'report', notifiers, ctx);
 
   console.log(`\n${GREEN}Weekly check completed${RESET}\n`);
+}
+
+function signed(n) {
+  return n > 0 ? `+${n}` : `${n}`;
 }
 
 async function sendNotifications(payload, type, notifiers, ctx) {
@@ -390,11 +401,6 @@ async function sendNotifications(payload, type, notifiers, ctx) {
       console.log(`${DIM}Telegram skipped — TELEGRAM_BOT_TOKEN not set${RESET}`);
     }
   }
-}
-
-function avg(arr) {
-  if (arr.length === 0) return 0;
-  return Math.round((arr.reduce((a, b) => a + b, 0) / arr.length) * 10) / 10;
 }
 
 main().catch(e => {

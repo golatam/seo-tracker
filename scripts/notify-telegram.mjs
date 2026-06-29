@@ -9,7 +9,7 @@
  */
 
 import { loadEnv, requireEnv } from './env.mjs';
-import { NOISE_THRESHOLD, getSiteName, loadClusters } from '../config.mjs';
+import { getSiteName, loadClusters } from '../config.mjs';
 
 loadEnv();
 
@@ -105,6 +105,22 @@ function posChangeText(c) {
   return `${c.previousPosition} → <b>${c.currentPosition}</b> ${arrow}${changeStr}`;
 }
 
+// Short "prev → cur" used by the digest (no emoji arrows, compact).
+function moveText(a) {
+  const prev = a.previousPosition == null ? 'NEW' : a.previousPosition;
+  const cur = a.currentPosition == null ? 'OUT' : a.currentPosition;
+  return `${prev} → ${cur}`;
+}
+
+function signed(n) {
+  return n > 0 ? `+${n}` : `${n}`;
+}
+
+function distLine(label, prev, cur, delta) {
+  const d = delta === 0 ? '' : ` (${signed(delta)})`;
+  return `${label}: ${prev} → ${cur}${d}`;
+}
+
 function indexationSection(indexStatus, sitemap) {
   const lines = [];
   const hasIndex = Array.isArray(indexStatus) && indexStatus.length > 0;
@@ -152,100 +168,84 @@ function resolveCtx(ctx = {}) {
   };
 }
 
+/**
+ * Executive digest. Consumes a report model (formatVersion 2) from
+ * report-model.mjs and only formats it — no metric recomputation.
+ * Sections: Verdict · Source · Distribution · Alerts · Winners · Next actions.
+ */
 export function formatReport(report, ctx = {}) {
-  const { siteName, clusters } = resolveCtx(ctx);
-  const { summary, changes, currentDate, previousDate, indexStatus, sitemap } = report;
+  const { siteName } = resolveCtx(ctx);
+  const site = report.site || siteName;
+  const {
+    summary, distribution, alerts = [], winners = [],
+    verdict, nextActions = [], dimensions = {}, currentDate, previousDate,
+    indexStatus, sitemap, source,
+  } = report;
   const sections = [];
 
-  sections.push(`📊 <b>SEO report: ${escapeHtml(siteName)}</b>\n<i>${previousDate} → ${currentDate}</i>`);
-
-  const avgChange = summary.avgPosition - summary.prevAvgPosition;
-  const avgDir = avgChange < 0
-    ? `⬆️ ${Math.abs(avgChange).toFixed(1)}`
-    : avgChange > 0
-      ? `⬇️ ${avgChange.toFixed(1)}`
-      : '→ 0';
-
-  const summaryLines = [
-    '<b>Summary</b>',
-    `🔑 <b>Keywords:</b> ${summary.totalKeywords}`,
-    `🎯 <b>Avg:</b> ${summary.prevAvgPosition} → ${summary.avgPosition} (${avgDir})`,
-    `✅ Improved: <b>${summary.improved}</b>`,
-    `❌ Declined: <b>${summary.declined}</b>`,
-    `➡️ Unchanged: <b>${summary.unchanged}</b>`,
+  // Header + verdict
+  const header = [
+    `📊 <b>SEO: ${escapeHtml(site)}</b> — ${previousDate || '—'} → ${currentDate}`,
   ];
-  if (summary.noData > 0) summaryLines.push(`N/A: <b>${summary.noData}</b>`);
-  if (summary.newInTop > 0) summaryLines.push(`🆕 Entered TOP: <b>${summary.newInTop}</b>`);
-  if (summary.newlyTracked > 0) summaryLines.push(`➕ Newly tracked: <b>${summary.newlyTracked}</b>`);
-  if (summary.droppedFromTop > 0) summaryLines.push(`💀 Left TOP: <b>${summary.droppedFromTop}</b>`);
-  sections.push(summaryLines.join('\n'));
+  if (verdict) header.push(`Verdict: ${verdict.emoji} <b>${verdict.level}</b> — ${escapeHtml(verdict.text)}`);
+  sections.push(header.join('\n'));
+
+  // Source / dimensions
+  const dimBits = [];
+  if (dimensions.engines?.length) dimBits.push(dimensions.engines.join('/'));
+  const geo = [];
+  if (dimensions.regions?.length) geo.push(`regions ${dimensions.regions.join(',')}`);
+  if (dimensions.devices?.length) geo.push(dimensions.devices.join('/'));
+  if (geo.length) dimBits.push(geo.join(' '));
+  dimBits.push(`${summary.keywords} keywords`);
+  sections.push(`<i>Source: ${escapeHtml(source || 'api')} · ${escapeHtml(dimBits.join(' · '))}</i>`);
+
+  // Distribution
+  if (distribution) {
+    const d = distribution;
+    sections.push([
+      '<b>Distribution</b>',
+      distLine('TOP-3', d.previous.top3, d.current.top3, d.delta.top3),
+      distLine('TOP-10', d.previous.top10, d.current.top10, d.delta.top10),
+      distLine('TOP-30', d.previous.top30, d.current.top30, d.delta.top30),
+      distLine('TOP-100', d.previous.top100, d.current.top100, d.delta.top100),
+      distLine('OUT', d.previous.out, d.current.out, d.delta.out),
+    ].join('\n'));
+  }
+
+  // Alerts
+  if (alerts.length > 0) {
+    const lines = ['⚠️ <b>Alerts</b>'];
+    for (const a of alerts.slice(0, 8)) {
+      const dot = a.severity === 'high' ? '🔴' : '🟠';
+      const url = a.url ? ` · <i>${escapeHtml(a.url)}</i>` : '';
+      lines.push(`${dot} ${escapeHtml(a.priority)} · "${escapeHtml(a.keyword)}" ${moveText(a)}${url}`);
+    }
+    if (alerts.length > 8) lines.push(`<i>…and ${alerts.length - 8} more</i>`);
+    sections.push(lines.join('\n'));
+  }
+
+  // Winners
+  if (winners.length > 0) {
+    const lines = ['📈 <b>Winners</b>'];
+    for (const w of winners.slice(0, 5)) {
+      const url = w.url ? ` · <i>${escapeHtml(w.url)}</i>` : '';
+      lines.push(`🟢 "${escapeHtml(w.keyword)}" ${moveText(w)}${url}`);
+    }
+    sections.push(lines.join('\n'));
+  }
+
+  // Next actions
+  if (nextActions.length > 0) {
+    const lines = ['<b>Next actions</b>'];
+    nextActions.forEach((a, i) => lines.push(`${i + 1}. ${escapeHtml(a)}`));
+    sections.push(lines.join('\n'));
+  }
 
   const indexBlock = indexationSection(indexStatus, sitemap);
   if (indexBlock) sections.push(indexBlock);
 
-  const alerts = changes.filter(c =>
-    !c.isNewlyTracked && (
-      (c.previousPosition !== null && c.currentPosition === null) ||
-      (c.change !== null && c.change < -5)
-    )
-  );
-  if (alerts.length > 0) {
-    const lines = ['⚠️ <b>Alerts</b>'];
-    for (const a of alerts.slice(0, 10)) {
-      lines.push(`🔴 "${escapeHtml(a.keyword)}" ${posChangeText(a)}`);
-    }
-    sections.push(lines.join('\n'));
-  }
-
-  const byCluster = {};
-  for (const c of changes) {
-    const cat = c.category || 'unknown';
-    if (!byCluster[cat]) byCluster[cat] = [];
-    byCluster[cat].push(c);
-  }
-
-  const clusterLines = ['<b>By cluster</b>'];
-  for (const cat of clusters.order) {
-    const cl = byCluster[cat];
-    if (!cl || cl.length === 0) continue;
-    const emoji = clusters.emoji[cat] || '';
-    const label = clusters.labels[cat] || cat;
-    const imp = cl.filter(c => c.change !== null && c.change > 0).length;
-    const dec = cl.filter(c => c.change !== null && c.change < 0).length;
-    const prefix = emoji ? `${emoji} ` : '';
-    clusterLines.push(`${prefix}<b>${escapeHtml(label)}:</b> +${imp} -${dec} (${cl.length})`);
-  }
-  if (clusterLines.length > 1) sections.push(clusterLines.join('\n'));
-
-  const improved = changes
-    .filter(c => c.change !== null && c.change > NOISE_THRESHOLD && !c.isNewlyTracked)
-    .sort((a, b) => b.change - a.change)
-    .slice(0, 10);
-  if (improved.length > 0) {
-    const lines = ['📈 <b>Top improvements</b>'];
-    for (const c of improved) {
-      const clEmoji = clusters.emoji[c.category] || '';
-      const prefix = clEmoji ? `${clEmoji} ` : '';
-      lines.push(`${prefix}🟢 "${escapeHtml(c.keyword)}" ${posChangeText(c)}`);
-    }
-    sections.push(lines.join('\n'));
-  }
-
-  const declined = changes
-    .filter(c => c.change !== null && c.change < -NOISE_THRESHOLD && !c.isNewlyTracked)
-    .sort((a, b) => a.change - b.change)
-    .slice(0, 10);
-  if (declined.length > 0) {
-    const lines = ['📉 <b>Notable declines</b>'];
-    for (const c of declined) {
-      const clEmoji = clusters.emoji[c.category] || '';
-      const prefix = clEmoji ? `${clEmoji} ` : '';
-      lines.push(`${prefix}🔻 "${escapeHtml(c.keyword)}" ${posChangeText(c)}`);
-    }
-    sections.push(lines.join('\n'));
-  }
-
-  sections.push(`<i>${escapeHtml(siteName)} SEO tracker</i>`);
+  sections.push(`<i>${escapeHtml(site)} SEO tracker</i>`);
   return sections.join('\n\n');
 }
 

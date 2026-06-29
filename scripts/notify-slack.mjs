@@ -9,7 +9,7 @@
  */
 
 import { loadEnv, requireEnv } from './env.mjs';
-import { NOISE_THRESHOLD, getSiteName, loadClusters } from '../config.mjs';
+import { getSiteName, loadClusters } from '../config.mjs';
 
 loadEnv();
 
@@ -110,134 +110,114 @@ function indexationBlocks(indexStatus, sitemap) {
 
 // ─── Format report for Slack Block Kit ──────────────────────────────
 
+function moveText(a) {
+  const prev = a.previousPosition == null ? 'NEW' : a.previousPosition;
+  const cur = a.currentPosition == null ? 'OUT' : a.currentPosition;
+  return `${prev} -> ${cur}`;
+}
+
+function signed(n) {
+  return n > 0 ? `+${n}` : `${n}`;
+}
+
+function distField(label, prev, cur, delta) {
+  const d = delta === 0 ? '' : ` (${signed(delta)})`;
+  return { type: 'mrkdwn', text: `*${label}:* ${prev} -> ${cur}${d}` };
+}
+
+/**
+ * Operational dashboard. Consumes a report model (formatVersion 2) from
+ * report-model.mjs: header + verdict, distribution fields, alert/winner
+ * attachments, next-action section, indexation appendix.
+ */
 export function formatReport(report, ctx = {}) {
-  const { siteName, clusters } = resolveCtx(ctx);
-  const { summary, changes, currentDate, previousDate, indexStatus, sitemap } = report;
+  const { siteName } = resolveCtx(ctx);
+  const site = report.site || siteName;
+  const {
+    summary, distribution, alerts = [], winners = [],
+    verdict, nextActions = [], dimensions = {}, currentDate, previousDate,
+    indexStatus, sitemap, source,
+  } = report;
   const blocks = [];
+  const attachments = [];
 
   blocks.push({
     type: 'header',
-    text: { type: 'plain_text', text: `:bar_chart: SEO report: ${siteName}`, emoji: true },
+    text: { type: 'plain_text', text: `:bar_chart: SEO: ${site}`, emoji: true },
   });
 
+  if (verdict) {
+    blocks.push({
+      type: 'section',
+      text: { type: 'mrkdwn', text: `${verdict.emoji} *${verdict.level}* — ${verdict.text}` },
+    });
+  }
+
+  const dimBits = [];
+  if (dimensions.engines?.length) dimBits.push(dimensions.engines.join('/'));
+  if (dimensions.regions?.length) dimBits.push(`regions ${dimensions.regions.join(',')}`);
+  if (dimensions.devices?.length) dimBits.push(dimensions.devices.join('/'));
+  dimBits.push(`${summary.keywords} keywords`);
   blocks.push({
     type: 'context',
-    elements: [{ type: 'mrkdwn', text: `${previousDate} -> ${currentDate}` }],
+    elements: [{ type: 'mrkdwn', text: `${previousDate || '—'} -> ${currentDate} · ${source || 'api'} · ${dimBits.join(' · ')}` }],
   });
 
   blocks.push({ type: 'divider' });
 
-  const avgChange = summary.avgPosition - summary.prevAvgPosition;
-  const avgDir = avgChange < 0 ? `:arrow_up: ${Math.abs(avgChange).toFixed(1)}` : avgChange > 0 ? `:arrow_down: ${avgChange.toFixed(1)}` : '-> 0';
-
-  const summaryFields = [
-    { type: 'mrkdwn', text: `:key: *Keywords:* ${summary.totalKeywords}` },
-    { type: 'mrkdwn', text: `:dart: *Avg:* ${summary.prevAvgPosition} -> ${summary.avgPosition} (${avgDir})` },
-    { type: 'mrkdwn', text: `:white_check_mark: Improved: *${summary.improved}*` },
-    { type: 'mrkdwn', text: `:x: Declined: *${summary.declined}*` },
-    { type: 'mrkdwn', text: `:arrow_right: Unchanged: *${summary.unchanged}*` },
-  ];
-
-  if (summary.noData > 0) summaryFields.push({ type: 'mrkdwn', text: `N/A: *${summary.noData}*` });
-  if (summary.newInTop > 0) summaryFields.push({ type: 'mrkdwn', text: `:new: Entered TOP: *${summary.newInTop}*` });
-  if (summary.newlyTracked > 0) summaryFields.push({ type: 'mrkdwn', text: `:heavy_plus_sign: Newly tracked: *${summary.newlyTracked}*` });
-  if (summary.droppedFromTop > 0) summaryFields.push({ type: 'mrkdwn', text: `:skull: Left TOP: *${summary.droppedFromTop}*` });
-
-  blocks.push({ type: 'section', text: { type: 'mrkdwn', text: '*Summary*' } });
-  blocks.push({ type: 'section', fields: summaryFields.slice(0, 10) });
+  // Distribution
+  if (distribution) {
+    const d = distribution;
+    blocks.push({ type: 'section', text: { type: 'mrkdwn', text: '*Distribution*' } });
+    blocks.push({
+      type: 'section',
+      fields: [
+        distField('TOP-3', d.previous.top3, d.current.top3, d.delta.top3),
+        distField('TOP-10', d.previous.top10, d.current.top10, d.delta.top10),
+        distField('TOP-30', d.previous.top30, d.current.top30, d.delta.top30),
+        distField('TOP-100', d.previous.top100, d.current.top100, d.delta.top100),
+        distField('OUT', d.previous.out, d.current.out, d.delta.out),
+        { type: 'mrkdwn', text: `*Visibility:* ${summary.prevVisibilityScore} -> ${summary.visibilityScore} (${signed(summary.visibilityDelta)}%)` },
+      ],
+    });
+  }
 
   for (const b of indexationBlocks(indexStatus, sitemap)) blocks.push(b);
 
-  // Alerts
-  const alerts = changes.filter(c =>
-    !c.isNewlyTracked && (
-      (c.previousPosition !== null && c.currentPosition === null) ||
-      (c.change !== null && c.change < -5)
-    )
-  );
+  // Next actions
+  if (nextActions.length > 0) {
+    const lines = nextActions.map((a, i) => `${i + 1}. ${a}`);
+    blocks.push({ type: 'divider' });
+    blocks.push({ type: 'section', text: { type: 'mrkdwn', text: `*Next actions*\n${lines.join('\n')}` } });
+  }
 
-  const attachments = [];
-
+  // Alerts (red attachment)
   if (alerts.length > 0) {
-    const alertLines = alerts.slice(0, 10).map(a =>
-      `:red_circle: "${a.keyword}" ${posChangeText(a)}`
-    );
+    const lines = alerts.slice(0, 10).map(a => {
+      const dot = a.severity === 'high' ? ':red_circle:' : ':large_orange_circle:';
+      return `${dot} ${a.priority} · "${a.keyword}" ${moveText(a)}`;
+    });
     attachments.push({
       color: '#E01E5A',
-      blocks: [{
-        type: 'section',
-        text: { type: 'mrkdwn', text: `*:warning: Alerts*\n${alertLines.join('\n')}` },
-      }],
+      blocks: [{ type: 'section', text: { type: 'mrkdwn', text: `*:warning: Alerts*\n${lines.join('\n')}` } }],
     });
   }
 
-  // Cluster summary
-  blocks.push({ type: 'divider' });
-  blocks.push({ type: 'section', text: { type: 'mrkdwn', text: '*By cluster*' } });
-
-  const byCluster = {};
-  for (const c of changes) {
-    const cat = c.category || 'unknown';
-    if (!byCluster[cat]) byCluster[cat] = [];
-    byCluster[cat].push(c);
-  }
-
-  const clusterLines = [];
-  for (const cat of clusters.order) {
-    const clusterChanges = byCluster[cat];
-    if (!clusterChanges || clusterChanges.length === 0) continue;
-    const emoji = clusters.emoji[cat] || '';
-    const label = clusters.labels[cat] || cat;
-    const imp = clusterChanges.filter(c => c.change !== null && c.change > 0).length;
-    const dec = clusterChanges.filter(c => c.change !== null && c.change < 0).length;
-    const prefix = emoji ? `${emoji} ` : '';
-    clusterLines.push(`${prefix}*${label}:* +${imp} -${dec} (${clusterChanges.length})`);
-  }
-
-  if (clusterLines.length > 0) {
-    blocks.push({ type: 'section', text: { type: 'mrkdwn', text: clusterLines.join('\n') } });
-  }
-
-  // Top improvements
-  const improved = changes
-    .filter(c => c.change !== null && c.change > NOISE_THRESHOLD && !c.isNewlyTracked)
-    .sort((a, b) => b.change - a.change)
-    .slice(0, 10);
-
-  if (improved.length > 0) {
-    const lines = improved.map(c => {
-      const clEmoji = clusters.emoji[c.category] || '';
-      const prefix = clEmoji ? `${clEmoji} ` : '';
-      return `${prefix}:large_green_circle: "${c.keyword}" ${posChangeText(c)}`;
-    });
+  // Winners (green attachment)
+  if (winners.length > 0) {
+    const lines = winners.slice(0, 10).map(w =>
+      `:large_green_circle: "${w.keyword}" ${moveText(w)}`
+    );
     attachments.push({
       color: '#2EB67D',
-      blocks: [{ type: 'section', text: { type: 'mrkdwn', text: `*:chart_with_upwards_trend: Top improvements*\n${lines.join('\n')}` } }],
-    });
-  }
-
-  // Top declines
-  const declined = changes
-    .filter(c => c.change !== null && c.change < -NOISE_THRESHOLD && !c.isNewlyTracked)
-    .sort((a, b) => a.change - b.change)
-    .slice(0, 10);
-
-  if (declined.length > 0) {
-    const lines = declined.map(c => {
-      const clEmoji = clusters.emoji[c.category] || '';
-      const prefix = clEmoji ? `${clEmoji} ` : '';
-      return `${prefix}:small_red_triangle_down: "${c.keyword}" ${posChangeText(c)}`;
-    });
-    attachments.push({
-      color: '#ECB22E',
-      blocks: [{ type: 'section', text: { type: 'mrkdwn', text: `*:chart_with_downwards_trend: Notable declines*\n${lines.join('\n')}` } }],
+      blocks: [{ type: 'section', text: { type: 'mrkdwn', text: `*:chart_with_upwards_trend: Winners*\n${lines.join('\n')}` } }],
     });
   }
 
   blocks.push({ type: 'divider' });
-  blocks.push({ type: 'context', elements: [{ type: 'mrkdwn', text: `_${siteName} SEO tracker_` }] });
+  blocks.push({ type: 'context', elements: [{ type: 'mrkdwn', text: `_${site} SEO tracker_` }] });
 
-  const text = `SEO report ${previousDate} -> ${currentDate}: +${summary.improved} -${summary.declined} (${summary.totalKeywords} keywords)`;
+  const text = `SEO ${previousDate || '—'} -> ${currentDate}: ${verdict ? verdict.level : ''} +${summary.improved} -${summary.declined} (${summary.keywords} keywords)`;
 
   return { blocks, attachments, text };
 }

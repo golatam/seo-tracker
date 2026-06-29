@@ -42,6 +42,10 @@ GitHub workflow.
 | `site_name`      | no       | hostname of site_url | Display name in report headers.                        |
 | `notifier`       | no       | `slack`              | `slack`, `telegram`, `both`, or `none`.                |
 | `enable_yandex`  | no       | `false`              | Also fetch Yandex.Webmaster positions.                 |
+| `rank_source`    | no       | `gsc`                | Position source: `gsc`, `topvisor`, `mixed` (reserved). |
+| `topvisor_project_id` | no  | —                    | Topvisor project id; required for `rank_source=topvisor`. |
+| `topvisor_regions` | no    | —                    | Comma-separated Topvisor region indexes, e.g. `1,2`.   |
+| `topvisor_date_mode` | no  | `lastTwo`            | Topvisor history mode: `lastTwo` or `single`.          |
 | `core_path`      | no       | `semantic-core.json` | Path relative to consumer repo root.                   |
 | `snapshots_dir`  | no       | `snapshots`          | Where snapshot JSONs are written and committed.        |
 | `package_ref`    | no       | `v1`                 | Git ref of seo-tracker to use (tag or branch).         |
@@ -53,6 +57,8 @@ GitHub workflow.
 | `GSC_CLIENT_ID`       | always (GSC OAuth2)                                 |
 | `GSC_CLIENT_SECRET`   | always                                              |
 | `GSC_REFRESH_TOKEN`   | always                                              |
+| `TOPVISOR_USER_ID`    | `rank_source=topvisor`                             |
+| `TOPVISOR_API_TOKEN`  | `rank_source=topvisor`                             |
 | `SLACK_BOT_TOKEN`     | `notifier=slack` or `both`                          |
 | `SLACK_CHANNEL_ID`    | `notifier=slack` or `both`                          |
 | `TELEGRAM_BOT_TOKEN`  | `notifier=telegram` or `both`                       |
@@ -94,6 +100,57 @@ in the consumer repo. Secrets that are unused for the chosen `notifier` /
 - `keyword.engines` is an array — use `["google"]` for GSC-only or `["google", "yandex"]` to also track in Yandex.Webmaster (requires `enable_yandex: true` and the relevant secrets).
 - `keyword.tracked: false` excludes the keyword from the weekly check.
 - `keyword.priority` is used by `report.mjs` for inline emphasis (`high`/`medium`/`low`).
+
+## Rank sources
+
+`rank_source=gsc` keeps the legacy behavior: Google positions come from GSC
+average position, Yandex positions come from Yandex.Webmaster when
+`enable_yandex=true`.
+
+`rank_source=topvisor` makes Topvisor the source of truth for keyword ranks.
+The integration is read-only: it uses Topvisor history endpoints and never
+starts a paid checker run. GSC/Yandex data remains useful for analytics and
+indexation checks, but no longer drives rank positions in the weekly report.
+
+Example caller config:
+
+```yaml
+with:
+  site_url: https://golatam.group
+  site_property: sc-domain:golatam.group
+  notifier: telegram
+  rank_source: topvisor
+  topvisor_project_id: '123456'
+  topvisor_regions: '1,2'
+  topvisor_date_mode: lastTwo
+```
+
+Required secrets for this mode:
+
+```text
+TOPVISOR_USER_ID
+TOPVISOR_API_TOKEN
+```
+
+## Report formats
+
+Each run still saves the canonical JSON snapshot under `snapshots/<date>.json`.
+When there is a previous snapshot to compare against, the tracker also writes:
+
+- `snapshots/reports/<date>-weekly.md` — full weekly report for humans;
+- `snapshots/reports/<date>-positions.csv` — machine-readable keyword delta export.
+
+Slack and Telegram now consume the same report model as the markdown/CSV
+renderers, so digest numbers and artifact numbers stay aligned.
+
+## Migration notes
+
+1. Add `rank_source: topvisor` and Topvisor inputs to the consumer workflow.
+2. Add `TOPVISOR_USER_ID` and `TOPVISOR_API_TOKEN` secrets.
+3. Run workflow manually with `notifier: none` first and inspect the committed
+   snapshot/report artifacts.
+4. Enable Slack/Telegram notifications after the Topvisor region/searcher
+   mapping looks right.
 
 ## What gets committed
 
