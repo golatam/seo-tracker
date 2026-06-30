@@ -100,14 +100,27 @@ export function getHistory(projectId, { dates, regionsIndexes, extra = {} } = {}
     // request the fields we normalize from; harmless if some are ignored
     show_exists_dates: 1,
     show_visitors: 0,
-    positions_fields: ['position', 'relevant_url', 'snippet_title', 'snippet_text'],
+    positions_fields: ['position', 'snippet', 'relevant_url'],
     ...extra,
   };
   if (Array.isArray(dates) && dates.length) payload.dates = dates;
+  if (!payload.dates && !payload.date1 && !payload.date2) {
+    const { date1, date2 } = defaultDateRange();
+    payload.date1 = date1;
+    payload.date2 = date2;
+  }
   if (Array.isArray(regionsIndexes) && regionsIndexes.length) {
     payload.regions_indexes = regionsIndexes.map(Number);
   }
   return topvisorRequest('get', 'positions_2', 'history', payload);
+}
+
+function defaultDateRange(days = 30) {
+  const date2 = new Date();
+  const date1 = new Date(date2);
+  date1.setUTCDate(date1.getUTCDate() - days);
+  const fmt = (d) => d.toISOString().slice(0, 10);
+  return { date1: fmt(date1), date2: fmt(date2) };
 }
 
 // ─── Normalization ───────────────────────────────────────────────────
@@ -125,20 +138,14 @@ function parseRegionsIndexes() {
 
 /**
  * Map a Topvisor searcher to our engine label. Topvisor identifies
- * searchers by id/name; we only care about google vs yandex for the
- * tracker. Defaults to 'google' when unknown.
- *
- * TODO: refine once a real projects_2 response is inspected — the
- * searcher↔engine mapping is project-specific (key 0 = Google, 1 = Yandex
- * in many accounts, but not guaranteed).
+ * searchers by id/name; we only care about google vs yandex for the tracker.
+ * Prefer the explicit searcher name from projects_2 diagnostics because numeric
+ * keys are account/provider-specific.
  */
 function searcherToEngine(searcher) {
-  const name = String(searcher?.name || searcher?.searcher || searcher || '').toLowerCase();
+  const name = String(searcher?.searcher || searcher?.name || searcher || '').toLowerCase();
   if (name.includes('yandex')) return 'yandex';
   if (name.includes('google')) return 'google';
-  // numeric fallback commonly seen in the wild
-  const id = searcher?.id ?? searcher?.searcher_key ?? searcher;
-  if (id === 1 || id === '1') return 'yandex';
   return 'google';
 }
 

@@ -1,0 +1,5523 @@
+{
+  "date": "2026-06-30",
+  "source": "topvisor",
+  "comment": "weekly auto-check",
+  "entries": [
+    {
+      "keyword": "бизнес в латинской америке",
+      "url": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/",
+      "engine": "yandex",
+      "position": 9,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/"
+    },
+    {
+      "keyword": "бизнес в латинской америке",
+      "url": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/",
+      "engine": "google",
+      "position": 4,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/"
+    },
+    {
+      "keyword": "российские компании в латинской америке",
+      "url": "/",
+      "engine": "yandex",
+      "position": 73,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/"
+    },
+    {
+      "keyword": "российские компании в латинской америке",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть предприятие в латинской америке",
+      "url": "/uslugi/registracziya-mezhdunarodnoj-kompanii/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/registracziya-mezhdunarodnoj-kompanii/"
+    },
+    {
+      "keyword": "открыть предприятие в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": 2,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/"
+    },
+    {
+      "keyword": "российский бизнес в латинской америке",
+      "url": "/",
+      "engine": "yandex",
+      "position": 65,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/"
+    },
+    {
+      "keyword": "российский бизнес в латинской америке",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть бизнес в латинской америке",
+      "url": "/uslugi/otkrytie-biznesa/",
+      "engine": "yandex",
+      "position": 7,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/otkrytie-biznesa/"
+    },
+    {
+      "keyword": "открыть бизнес в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": 3,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/"
+    },
+    {
+      "keyword": "аналитические услуги по латинской америке",
+      "url": "/uslugi/",
+      "engine": "yandex",
+      "position": 10,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/"
+    },
+    {
+      "keyword": "аналитические услуги по латинской америке",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "свободно экономические зоны латинской америки",
+      "url": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/",
+      "engine": "yandex",
+      "position": 16,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/"
+    },
+    {
+      "keyword": "свободно экономические зоны латинской америки",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "golatam",
+      "url": "/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/"
+    },
+    {
+      "keyword": "golatam",
+      "url": "/yuridicheskim-licam/",
+      "engine": "google",
+      "position": 1,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/yuridicheskim-licam/"
+    },
+    {
+      "keyword": "go latam",
+      "url": "/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/"
+    },
+    {
+      "keyword": "go latam",
+      "url": "/",
+      "engine": "google",
+      "position": 1,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/"
+    },
+    {
+      "keyword": "банковский счёт в колумбии",
+      "url": "/blog/bankovskij-schet-v-kolumbii-dlya-inostrannoj-kompanii/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/bankovskij-schet-v-kolumbii-dlya-inostrannoj-kompanii/"
+    },
+    {
+      "keyword": "банковский счёт в колумбии",
+      "url": "/blog/bankovskij-schet-v-kolumbii-dlya-inostrannoj-kompanii/",
+      "engine": "google",
+      "position": 3,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/bankovskij-schet-v-kolumbii-dlya-inostrannoj-kompanii/"
+    },
+    {
+      "keyword": "открыть счёт в колумбии иностранцу",
+      "url": "/blog/bankovskij-schet-v-kolumbii-dlya-inostrannoj-kompanii/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/bankovskij-schet-v-kolumbii-dlya-inostrannoj-kompanii/"
+    },
+    {
+      "keyword": "открыть счёт в колумбии иностранцу",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "монотрибуто",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/"
+    },
+    {
+      "keyword": "монотрибуто",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "google",
+      "position": 8,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/"
+    },
+    {
+      "keyword": "монотрибуто аргентина",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "yandex",
+      "position": 10,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/"
+    },
+    {
+      "keyword": "монотрибуто аргентина",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "it бизнес латинская америка",
+      "url": "/blog/it-biznes-v-latinskoj-amerike-gde-otkryt-kompaniyu/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/it-biznes-v-latinskoj-amerike-gde-otkryt-kompaniyu/"
+    },
+    {
+      "keyword": "it бизнес латинская америка",
+      "url": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/",
+      "engine": "google",
+      "position": 3,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/"
+    },
+    {
+      "keyword": "it компания в латинской америке",
+      "url": "/blog/it-biznes-v-latinskoj-amerike-gde-otkryt-kompaniyu/",
+      "engine": "yandex",
+      "position": 3,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/it-biznes-v-latinskoj-amerike-gde-otkryt-kompaniyu/"
+    },
+    {
+      "keyword": "it компания в латинской америке",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "стартап в латинской америке",
+      "url": "/blog/chem-latinskaya-amerika-privlekaet-startapy-investiczii-v-budushhee-gid-po-vyhodu-na-latinoamerikanskij-rynok/",
+      "engine": "yandex",
+      "position": 14,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/chem-latinskaya-amerika-privlekaet-startapy-investiczii-v-budushhee-gid-po-vyhodu-na-latinoamerikanskij-rynok/"
+    },
+    {
+      "keyword": "стартап в латинской америке",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "nearshoring латинская америка",
+      "url": "/blog/it-biznes-v-latinskoj-amerike-gde-otkryt-kompaniyu/",
+      "engine": "yandex",
+      "position": 52,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/it-biznes-v-latinskoj-amerike-gde-otkryt-kompaniyu/"
+    },
+    {
+      "keyword": "nearshoring латинская америка",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть банковский счёт в бразилии",
+      "url": "/blog/kak-otkryt-bankovskij-schet-v-brazilii-dlya-inostrannoj-kompanii/",
+      "engine": "yandex",
+      "position": 6,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/kak-otkryt-bankovskij-schet-v-brazilii-dlya-inostrannoj-kompanii/"
+    },
+    {
+      "keyword": "открыть банковский счёт в бразилии",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "банковский счёт бразилия для иностранцев",
+      "url": "/blog/kak-otkryt-bankovskij-schet-v-brazilii-dlya-inostrannoj-kompanii/",
+      "engine": "yandex",
+      "position": 10,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/kak-otkryt-bankovskij-schet-v-brazilii-dlya-inostrannoj-kompanii/"
+    },
+    {
+      "keyword": "банковский счёт бразилия для иностранцев",
+      "url": "/blog/kak-otkryt-bankovskij-schet-v-brazilii-dlya-inostrannoj-kompanii/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/kak-otkryt-bankovskij-schet-v-brazilii-dlya-inostrannoj-kompanii/"
+    },
+    {
+      "keyword": "какой банк выбрать в бразилии",
+      "url": "/blog/kak-otkryt-bankovskij-schet-v-brazilii-dlya-inostrannoj-kompanii/",
+      "engine": "yandex",
+      "position": 70,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/kak-otkryt-bankovskij-schet-v-brazilii-dlya-inostrannoj-kompanii/"
+    },
+    {
+      "keyword": "какой банк выбрать в бразилии",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "cnpj для иностранной компании",
+      "url": "/blog/kak-otkryt-bankovskij-schet-v-brazilii-dlya-inostrannoj-kompanii/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/kak-otkryt-bankovskij-schet-v-brazilii-dlya-inostrannoj-kompanii/"
+    },
+    {
+      "keyword": "cnpj для иностранной компании",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "гражданство аргентины купить",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "гражданство аргентины купить",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "гражданство аргентины за инвестиции",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "гражданство аргентины за инвестиции",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "как быстро можно получить гражданство аргентины",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "как быстро можно получить гражданство аргентины",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "налоги на кубе",
+      "url": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/"
+    },
+    {
+      "keyword": "налоги на кубе",
+      "url": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/",
+      "engine": "google",
+      "position": 4,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/"
+    },
+    {
+      "keyword": "налоги в кубе",
+      "url": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/"
+    },
+    {
+      "keyword": "налоги в кубе",
+      "url": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/",
+      "engine": "google",
+      "position": 3,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/"
+    },
+    {
+      "keyword": "ндс на кубе",
+      "url": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/"
+    },
+    {
+      "keyword": "ндс на кубе",
+      "url": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/",
+      "engine": "google",
+      "position": 6,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-na-kube-chto-vazhno-znat-biznesu/"
+    },
+    {
+      "keyword": "чили налоги для бизнеса",
+      "url": "/blog/nalogi-v-chili-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-chili-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "чили налоги для бизнеса",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "налог на прибыль чили",
+      "url": "/blog/nalogi-v-chili-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-chili-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "налог на прибыль чили",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "налогообложение в чили для иностранцев",
+      "url": "/blog/nalogi-v-chili-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 3,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-chili-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "налогообложение в чили для иностранцев",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес коста р��ка",
+      "url": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 48,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/"
+    },
+    {
+      "keyword": "бизнес коста р��ка",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kosta-rike/"
+    },
+    {
+      "keyword": "свободные зоны коста рика",
+      "url": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/"
+    },
+    {
+      "keyword": "свободные зоны коста рика",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "налоги в мексике",
+      "url": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 13,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "налоги в мексике",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "мексика налоги для бизнеса",
+      "url": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "мексика налоги для бизнеса",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "iva мексика",
+      "url": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "iva мексика",
+      "url": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "google",
+      "position": 2,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "isr мексика ставка",
+      "url": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "isr мексика ставка",
+      "url": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "google",
+      "position": 2,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "свободные экономические зоны латинской америки",
+      "url": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/",
+      "engine": "yandex",
+      "position": 11,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/"
+    },
+    {
+      "keyword": "свободные экономические зоны латинской америки",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "купить готовую компанию в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "yandex",
+      "position": 32,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-brazilii/"
+    },
+    {
+      "keyword": "купить готовую компанию в бразилии",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "регистрация компании в доминиканской республике",
+      "url": "/blog/biznes-v-dominikane-registracziya-nalogi-vozmozhnosti/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/biznes-v-dominikane-registracziya-nalogi-vozmozhnosti/"
+    },
+    {
+      "keyword": "регистрация компании в доминиканской республике",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/"
+    },
+    {
+      "keyword": "бизнес мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": 9,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-meksike/"
+    },
+    {
+      "keyword": "бизнес мексика",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "google",
+      "position": 9,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-meksike/"
+    },
+    {
+      "keyword": "бизнес мехико",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": 27,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-meksike/"
+    },
+    {
+      "keyword": "бизнес мехико",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "google",
+      "position": 4,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-meksike/"
+    },
+    {
+      "keyword": "открыть компанию в мексике",
+      "url": "/blog/registracziya-kompanii-v-meksike-tipy-proczedura-stoimost/",
+      "engine": "yandex",
+      "position": 11,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-meksike-tipy-proczedura-stoimost/"
+    },
+    {
+      "keyword": "открыть компанию в мексике",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть бизнес мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": 8,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-meksike/"
+    },
+    {
+      "keyword": "открыть бизнес мексика",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес панама",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": 11,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-paname/"
+    },
+    {
+      "keyword": "бизнес панама",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "регистрация компании в панаме",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": 22,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-paname/"
+    },
+    {
+      "keyword": "регистрация компании в панаме",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть компанию в панаме",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": 18,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-paname/"
+    },
+    {
+      "keyword": "открыть компанию в панаме",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть фирму панама",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": 24,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-paname/"
+    },
+    {
+      "keyword": "открыть фирму панама",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "регистрация компании в перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "yandex",
+      "position": 12,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-peru/"
+    },
+    {
+      "keyword": "регистрация компании в перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "google",
+      "position": 8,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-peru/"
+    },
+    {
+      "keyword": "богота виза для россиян",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "богота виза для россиян",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "регистрация компании в аргентине",
+      "url": "/blog/registracziya-kompanii-v-argentine-srl-sas-procedura/",
+      "engine": "yandex",
+      "position": 16,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-argentine-srl-sas-procedura/"
+    },
+    {
+      "keyword": "регистрация компании в аргентине",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "google",
+      "position": 7,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/"
+    },
+    {
+      "keyword": "открыть компанию в аргентине",
+      "url": "/blog/registracziya-kompanii-v-argentine-srl-sas-procedura/",
+      "engine": "yandex",
+      "position": 19,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-argentine-srl-sas-procedura/"
+    },
+    {
+      "keyword": "открыть компанию в аргентине",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "google",
+      "position": 8,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/"
+    },
+    {
+      "keyword": "srl аргентина",
+      "url": "/blog/registracziya-kompanii-v-argentine-srl-sas-procedura/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-argentine-srl-sas-procedura/"
+    },
+    {
+      "keyword": "srl аргентина",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "стоимость открытия компании в аргентине",
+      "url": "/blog/registracziya-kompanii-v-argentine-srl-sas-procedura/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-argentine-srl-sas-procedura/"
+    },
+    {
+      "keyword": "стоимость открытия компании в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": 8,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-argentine/"
+    },
+    {
+      "keyword": "регистрация компании в чили",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "yandex",
+      "position": 6,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-chili/"
+    },
+    {
+      "keyword": "регистрация компании в чили",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "google",
+      "position": 9,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-chili/"
+    },
+    {
+      "keyword": "spa чили",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "spa чили",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "стоимость открытия компании в чили",
+      "url": "/blog/registracziya-kompanii-v-chili-spa-procedura/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-chili-spa-procedura/"
+    },
+    {
+      "keyword": "стоимость открытия компании в чили",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "google",
+      "position": 9,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-chili/"
+    },
+    {
+      "keyword": "регистрация компании в эквадоре",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "yandex",
+      "position": 6,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-ekvadore/"
+    },
+    {
+      "keyword": "регистрация компании в эквадоре",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-ekvadore/"
+    },
+    {
+      "keyword": "бизнес в эквадоре для иностранцев",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-ekvadore/"
+    },
+    {
+      "keyword": "бизнес в эквадоре для иностранцев",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "google",
+      "position": 9,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-ekvadore/"
+    },
+    {
+      "keyword": "налоги в эквадоре для бизнеса",
+      "url": "/blog/sravnenie-nalogov-v-stranah-latinskoj-ameriki/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/sravnenie-nalogov-v-stranah-latinskoj-ameriki/"
+    },
+    {
+      "keyword": "налоги в эквадоре для бизнеса",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "регистрация компании в колумбии",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kolumbii/"
+    },
+    {
+      "keyword": "регистрация компании в колумбии",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес в колумбии для иностранцев",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kolumbii/"
+    },
+    {
+      "keyword": "бизнес в колумбии для иностранцев",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "google",
+      "position": 8,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kolumbii/"
+    },
+    {
+      "keyword": "налоги в колумбии для бизнеса",
+      "url": "/blog/nalogi-v-kolumbii-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-kolumbii-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "налоги в колумбии для бизнеса",
+      "url": "/blog/nalogi-v-kolumbii-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "google",
+      "position": 4,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-kolumbii-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "налоги венесуэла",
+      "url": "/blog/registracziya-kompanii-v-venesuele-tipy-proczedura-nalogi/",
+      "engine": "yandex",
+      "position": 28,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-venesuele-tipy-proczedura-nalogi/"
+    },
+    {
+      "keyword": "налоги венесуэла",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "внж через бизнес латинская америка",
+      "url": "/blog/vnzh-cherez-biznes-v-latinskoj-amerike/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/vnzh-cherez-biznes-v-latinskoj-amerike/"
+    },
+    {
+      "keyword": "внж через бизнес латинская америка",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "переезд в латинскую америку через бизнес",
+      "url": "/blog/vnzh-cherez-biznes-v-latinskoj-amerike/",
+      "engine": "yandex",
+      "position": 3,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/vnzh-cherez-biznes-v-latinskoj-amerike/"
+    },
+    {
+      "keyword": "переезд в латинскую америку через бизнес",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "внж панама через бизнес",
+      "url": "/blog/vnzh-cherez-biznes-v-latinskoj-amerike/",
+      "engine": "yandex",
+      "position": 11,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/vnzh-cherez-biznes-v-latinskoj-amerike/"
+    },
+    {
+      "keyword": "внж панама через бизнес",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес гаити",
+      "url": "/strana/biznes-na-gaiti/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-na-gaiti/"
+    },
+    {
+      "keyword": "бизнес гаити",
+      "url": "/strana/biznes-na-gaiti/",
+      "engine": "google",
+      "position": 2,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-na-gaiti/"
+    },
+    {
+      "keyword": "аргентина налоги",
+      "url": "/blog/nalogovye-stavki-i-sistema-nalogooblozheniya-dlya-biznesa-v-argentine/",
+      "engine": "yandex",
+      "position": 19,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogovye-stavki-i-sistema-nalogooblozheniya-dlya-biznesa-v-argentine/"
+    },
+    {
+      "keyword": "аргентина налоги",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес аргентина",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": 18,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-argentine/"
+    },
+    {
+      "keyword": "бизнес аргентина",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": 6,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-argentine/"
+    },
+    {
+      "keyword": "налоги в аргентине",
+      "url": "/blog/nalogovye-stavki-i-sistema-nalogooblozheniya-dlya-biznesa-v-argentine/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogovye-stavki-i-sistema-nalogooblozheniya-dlya-biznesa-v-argentine/"
+    },
+    {
+      "keyword": "налоги в аргентине",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "компания в аргентине",
+      "url": "/blog/registracziya-kompanii-v-argentine-srl-sas-procedura/",
+      "engine": "yandex",
+      "position": 32,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-argentine-srl-sas-procedura/"
+    },
+    {
+      "keyword": "компания в аргентине",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "сфера услуг в аргентине",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "сфера услуг в аргентине",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": 15,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-argentine/"
+    },
+    {
+      "keyword": "бизнес в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": 8,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-argentine/"
+    },
+    {
+      "keyword": "аргентина налогообложение",
+      "url": "/blog/nalogovye-stavki-i-sistema-nalogooblozheniya-dlya-biznesa-v-argentine/",
+      "engine": "yandex",
+      "position": 16,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogovye-stavki-i-sistema-nalogooblozheniya-dlya-biznesa-v-argentine/"
+    },
+    {
+      "keyword": "аргентина налогообложение",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "аргентина для бизнеса",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": 17,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-argentine/"
+    },
+    {
+      "keyword": "аргентина для бизнеса",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": 6,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-argentine/"
+    },
+    {
+      "keyword": "открыть бизнес аргентина",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": 17,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-argentine/"
+    },
+    {
+      "keyword": "открыть бизнес аргентина",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": 4,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-argentine/"
+    },
+    {
+      "keyword": "бизнес буэнос айрес",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": 13,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-argentine/"
+    },
+    {
+      "keyword": "бизнес буэнос айрес",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес боливия",
+      "url": "/strana/biznes-v-bolivii/",
+      "engine": "yandex",
+      "position": 3,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-bolivii/"
+    },
+    {
+      "keyword": "бизнес боливия",
+      "url": "/strana/biznes-v-bolivii/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-bolivii/"
+    },
+    {
+      "keyword": "бизнес в бразилии",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "yandex",
+      "position": 9,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-brazilii/"
+    },
+    {
+      "keyword": "бизнес в бразилии",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "налоги в бразилии",
+      "url": "/blog/sistema-nalogooblozheniya-v-brazilii/",
+      "engine": "yandex",
+      "position": 6,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/sistema-nalogooblozheniya-v-brazilii/"
+    },
+    {
+      "keyword": "налоги в бразилии",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "инвестиции в бразилию",
+      "url": "/blog/investicii-v-biznes-v-brazilii/",
+      "engine": "yandex",
+      "position": 19,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/investicii-v-biznes-v-brazilii/"
+    },
+    {
+      "keyword": "инвестиции в бразилию",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "налогообложение в бразилии",
+      "url": "/blog/sistema-nalogooblozheniya-v-brazilii/",
+      "engine": "yandex",
+      "position": 6,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/sistema-nalogooblozheniya-v-brazilii/"
+    },
+    {
+      "keyword": "налогообложение в бразилии",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "ставки налогов в бразилии",
+      "url": "/blog/sistema-nalogooblozheniya-v-brazilii/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/sistema-nalogooblozheniya-v-brazilii/"
+    },
+    {
+      "keyword": "ставки налогов в бразилии",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бразилия предпринимательство",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-brazilii/"
+    },
+    {
+      "keyword": "бразилия предпринимательство",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": 9,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-brazilii/"
+    },
+    {
+      "keyword": "бразилия система налогообложения",
+      "url": "/blog/sistema-nalogooblozheniya-v-brazilii/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/sistema-nalogooblozheniya-v-brazilii/"
+    },
+    {
+      "keyword": "бразилия система налогообложения",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "юр лицо в бразилии",
+      "url": "/blog/registracziya-kompanii-v-brazilii-gajd-dlya-inostranczev/",
+      "engine": "yandex",
+      "position": 14,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-brazilii-gajd-dlya-inostranczev/"
+    },
+    {
+      "keyword": "юр лицо в бразилии",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть бизнес бразилия",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "yandex",
+      "position": 11,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-brazilii/"
+    },
+    {
+      "keyword": "открыть бизнес бразилия",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": 9,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-brazilii/"
+    },
+    {
+      "keyword": "открыть компанию в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "yandex",
+      "position": 13,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-brazilii/"
+    },
+    {
+      "keyword": "открыть компанию в бразилии",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "чили бизнес",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-chili/"
+    },
+    {
+      "keyword": "чили бизнес",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "чили налоги",
+      "url": "/blog/nalogi-v-chili-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-chili-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "чили налоги",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес в чили",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-chili/"
+    },
+    {
+      "keyword": "бизнес в чили",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "google",
+      "position": 6,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-chili/"
+    },
+    {
+      "keyword": "налоги в чили",
+      "url": "/blog/nalogi-v-chili-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-chili-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "налоги в чили",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес сантьяго",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-chili/"
+    },
+    {
+      "keyword": "бизнес сантьяго",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть бизнес чили",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-chili/"
+    },
+    {
+      "keyword": "открыть бизнес чили",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть компанию в чили",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-chili/"
+    },
+    {
+      "keyword": "открыть компанию в чили",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "google",
+      "position": 8,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-chili/"
+    },
+    {
+      "keyword": "бизнес доминикана",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/"
+    },
+    {
+      "keyword": "бизнес доминикана",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "google",
+      "position": 9,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/"
+    },
+    {
+      "keyword": "бизнес в доминикане",
+      "url": "/blog/biznes-v-dominikane-registracziya-nalogi-vozmozhnosti/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/biznes-v-dominikane-registracziya-nalogi-vozmozhnosti/"
+    },
+    {
+      "keyword": "бизнес в доминикане",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "google",
+      "position": 7,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/"
+    },
+    {
+      "keyword": "идеи бизнеса в доминикане",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/"
+    },
+    {
+      "keyword": "идеи бизнеса в доминикане",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "google",
+      "position": 4,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/"
+    },
+    {
+      "keyword": "бизнес доминиканская",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/"
+    },
+    {
+      "keyword": "бизнес доминиканская",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "google",
+      "position": 8,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/"
+    },
+    {
+      "keyword": "открыть бизнес доминикана",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/"
+    },
+    {
+      "keyword": "открыть бизнес доминикана",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "google",
+      "position": 6,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/"
+    },
+    {
+      "keyword": "бизнес санто доминго",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/"
+    },
+    {
+      "keyword": "бизнес санто доминго",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "google",
+      "position": 1,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-dominikane/"
+    },
+    {
+      "keyword": "открыть предприятие доминиканская",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "yandex",
+      "position": 3,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/"
+    },
+    {
+      "keyword": "открыть предприятие доминиканская",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "google",
+      "position": 6,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/"
+    },
+    {
+      "keyword": "налоги в доминиканской республике",
+      "url": "/blog/biznes-v-dominikane-registracziya-nalogi-vozmozhnosti/",
+      "engine": "yandex",
+      "position": 6,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/biznes-v-dominikane-registracziya-nalogi-vozmozhnosti/"
+    },
+    {
+      "keyword": "налоги в доминиканской республике",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес эквадор",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-ekvadore/"
+    },
+    {
+      "keyword": "бизнес эквадор",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "налоги в эквадоре",
+      "url": "/blog/sravnenie-nalogov-v-stranah-latinskoj-ameriki/",
+      "engine": "yandex",
+      "position": 13,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/sravnenie-nalogov-v-stranah-latinskoj-ameriki/"
+    },
+    {
+      "keyword": "налоги в эквадоре",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес в эквадоре",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-ekvadore/"
+    },
+    {
+      "keyword": "бизнес в эквадоре",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "google",
+      "position": 7,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-ekvadore/"
+    },
+    {
+      "keyword": "открыть компанию в эквадоре",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-ekvadore/"
+    },
+    {
+      "keyword": "открыть компанию в эквадоре",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть бизнес эквадор",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-ekvadore/"
+    },
+    {
+      "keyword": "открыть бизнес эквадор",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "google",
+      "position": 8,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-ekvadore/"
+    },
+    {
+      "keyword": "открыть фирму эквадор",
+      "url": "/blog/registracziya-kompanii-v-ekvadore-tipy-proczedura-stoimost/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-ekvadore-tipy-proczedura-stoimost/"
+    },
+    {
+      "keyword": "открыть фирму эквадор",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес в гондурасе",
+      "url": "/blog/biznes-v-gondurase-registracziya-nalogi-svobodnye-zony/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/biznes-v-gondurase-registracziya-nalogi-svobodnye-zony/"
+    },
+    {
+      "keyword": "бизнес в гондурасе",
+      "url": "/strana/biznes-v-gondurase/",
+      "engine": "google",
+      "position": 1,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-gondurase/"
+    },
+    {
+      "keyword": "регистрация компании в гондурасе",
+      "url": "/blog/biznes-v-gondurase-registracziya-nalogi-svobodnye-zony/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/biznes-v-gondurase-registracziya-nalogi-svobodnye-zony/"
+    },
+    {
+      "keyword": "регистрация компании в гондурасе",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес в гватемале",
+      "url": "/blog/otkrytie-biznesa-v-gvatemale-registracziya-nalogi-svobodnye-zony/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-gvatemale-registracziya-nalogi-svobodnye-zony/"
+    },
+    {
+      "keyword": "бизнес в гватемале",
+      "url": "/strana/biznes-v-gvatemale/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-gvatemale/"
+    },
+    {
+      "keyword": "бизнес гватемала",
+      "url": "/blog/otkrytie-biznesa-v-gvatemale-registracziya-nalogi-svobodnye-zony/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-gvatemale-registracziya-nalogi-svobodnye-zony/"
+    },
+    {
+      "keyword": "бизнес гватемала",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес колумбия",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kolumbii/"
+    },
+    {
+      "keyword": "бизнес колумбия",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "колумбия налоги",
+      "url": "/blog/nalogi-v-kolumbii-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 8,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-kolumbii-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "колумбия налоги",
+      "url": "/blog/nalogi-v-kolumbii-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "google",
+      "position": 4,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-kolumbii-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "налоги в колумбии",
+      "url": "/blog/nalogi-v-kolumbii-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-kolumbii-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "налоги в колумбии",
+      "url": "/blog/nalogi-v-kolumbii-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "google",
+      "position": 2,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-kolumbii-stavki-lgoty-rezhimy-dlya-biznesa/"
+    },
+    {
+      "keyword": "открыть бизнес колумбия",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kolumbii/"
+    },
+    {
+      "keyword": "открыть бизнес колумбия",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "google",
+      "position": 7,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kolumbii/"
+    },
+    {
+      "keyword": "открыть компанию в колумбии",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kolumbii/"
+    },
+    {
+      "keyword": "открыть компанию в колумбии",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес богота",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kolumbii/"
+    },
+    {
+      "keyword": "бизнес богота",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "google",
+      "position": 7,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kolumbii/"
+    },
+    {
+      "keyword": "открыть предприятие колумбия",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kolumbii/"
+    },
+    {
+      "keyword": "открыть предприятие колумбия",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес коста рика",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": 10,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kosta-rike/"
+    },
+    {
+      "keyword": "бизнес коста рика",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес сан хосе",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес сан хосе",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "регистрация компании в коста рике",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": 38,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kosta-rike/"
+    },
+    {
+      "keyword": "регистрация компании в коста рике",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть бизнес коста рика",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": 16,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kosta-rike/"
+    },
+    {
+      "keyword": "открыть бизнес коста рика",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть бизнес сан хосе",
+      "url": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 40,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/"
+    },
+    {
+      "keyword": "открыть бизнес сан хосе",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "коста рика экономика",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "коста рика экономика",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "коста рика налоги",
+      "url": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/"
+    },
+    {
+      "keyword": "коста рика налоги",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "налоги в коста рике",
+      "url": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/"
+    },
+    {
+      "keyword": "налоги в коста рике",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "налогообложение в коста-рикой",
+      "url": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/"
+    },
+    {
+      "keyword": "налогообложение в коста-рикой",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "какой налог в коста рике",
+      "url": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 6,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-kosta-rike-stavki-zony-francas-lgoty-dlya-biznesa/"
+    },
+    {
+      "keyword": "какой налог в коста рике",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес куба",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес куба",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес на кубе",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес на кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "google",
+      "position": 9,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/luchshie-idei-dlya-biznesa-na-kube/"
+    },
+    {
+      "keyword": "инвестиции кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "yandex",
+      "position": 30,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/luchshie-idei-dlya-biznesa-na-kube/"
+    },
+    {
+      "keyword": "инвестиции кубе",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "куба предприниматель",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "куба предприниматель",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес гавана",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес гавана",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть бизнес на кубе",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть бизнес на кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/luchshie-idei-dlya-biznesa-na-kube/"
+    },
+    {
+      "keyword": "инвестиции в кубу",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "инвестиции в кубу",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "предпринимательство на кубе",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "предпринимательство на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-kube/"
+    },
+    {
+      "keyword": "кубинский бизнес",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "кубинский бизнес",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "инвестиции на кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "yandex",
+      "position": 24,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/luchshie-idei-dlya-biznesa-na-kube/"
+    },
+    {
+      "keyword": "инвестиции на кубе",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "мексика перспективы",
+      "url": "/blog/chem-meksika-interesuet-investorov/",
+      "engine": "yandex",
+      "position": 23,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/chem-meksika-interesuet-investorov/"
+    },
+    {
+      "keyword": "мексика перспективы",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "мексика перспективы развития",
+      "url": "/blog/chem-meksika-interesuet-investorov/",
+      "engine": "yandex",
+      "position": 18,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/chem-meksika-interesuet-investorov/"
+    },
+    {
+      "keyword": "мексика перспективы развития",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "инвестиции в мексике",
+      "url": "/blog/chem-meksika-interesuet-investorov/",
+      "engine": "yandex",
+      "position": 14,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/chem-meksika-interesuet-investorov/"
+    },
+    {
+      "keyword": "инвестиции в мексике",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть бизнес в мексике",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": 12,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-meksike/"
+    },
+    {
+      "keyword": "открыть бизнес в мексике",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "ип в мексике",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": 13,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-meksike/"
+    },
+    {
+      "keyword": "ип в мексике",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "стоимость покупки компании в мексике",
+      "url": "/blog/registracziya-kompanii-v-meksike-tipy-proczedura-stoimost/",
+      "engine": "yandex",
+      "position": 21,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-meksike-tipy-proczedura-stoimost/"
+    },
+    {
+      "keyword": "стоимость покупки компании в мексике",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "как открыть бизнес в мексике",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": 14,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-meksike/"
+    },
+    {
+      "keyword": "как открыть бизнес в мексике",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес в никарагуа",
+      "url": "/strana/biznes-v-nikarague/",
+      "engine": "yandex",
+      "position": 7,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-nikarague/"
+    },
+    {
+      "keyword": "бизнес в никарагуа",
+      "url": "/strana/biznes-v-nikarague/",
+      "engine": "google",
+      "position": 4,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-nikarague/"
+    },
+    {
+      "keyword": "панама налоги",
+      "url": "/blog/v-chem-osobennost-nalogovoj-sistemy-dlya-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": 16,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/v-chem-osobennost-nalogovoj-sistemy-dlya-biznesa-v-paname/"
+    },
+    {
+      "keyword": "панама налоги",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "налоги в панаме",
+      "url": "/blog/v-chem-osobennost-nalogovoj-sistemy-dlya-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": 16,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/v-chem-osobennost-nalogovoj-sistemy-dlya-biznesa-v-paname/"
+    },
+    {
+      "keyword": "налоги в панаме",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть бизнес в панаме",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": 7,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-paname/"
+    },
+    {
+      "keyword": "открыть бизнес в панаме",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес в панаме для россиян",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": 9,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-paname/"
+    },
+    {
+      "keyword": "бизнес в панаме для россиян",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "панама для торговли",
+      "url": "/strana/biznes-v-paname/",
+      "engine": "yandex",
+      "position": 75,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-paname/"
+    },
+    {
+      "keyword": "панама для торговли",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "регистрация фирмы в панаме россия",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": 23,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-paname/"
+    },
+    {
+      "keyword": "регистрация фирмы в панаме россия",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "как открыть компанию в панаме",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": 15,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-paname/"
+    },
+    {
+      "keyword": "как открыть компанию в панаме",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "парагвай налоги",
+      "url": "/blog/nalog-na-pribyl-paragvaya/",
+      "engine": "yandex",
+      "position": 7,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalog-na-pribyl-paragvaya/"
+    },
+    {
+      "keyword": "парагвай налоги",
+      "url": "/blog/nalog-na-pribyl-paragvaya/",
+      "engine": "google",
+      "position": 7,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalog-na-pribyl-paragvaya/"
+    },
+    {
+      "keyword": "налоги в парагвае",
+      "url": "/blog/nalog-na-pribyl-paragvaya/",
+      "engine": "yandex",
+      "position": 9,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalog-na-pribyl-paragvaya/"
+    },
+    {
+      "keyword": "налоги в парагвае",
+      "url": "/blog/nalog-na-pribyl-paragvaya/",
+      "engine": "google",
+      "position": 7,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalog-na-pribyl-paragvaya/"
+    },
+    {
+      "keyword": "парагвай компания",
+      "url": "/blog/registracziya-kompanii-v-paragvae-proczedura-i-osobennosti/",
+      "engine": "yandex",
+      "position": 8,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-paragvae-proczedura-i-osobennosti/"
+    },
+    {
+      "keyword": "парагвай компания",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "парагвай корпоративный налог",
+      "url": "/blog/nalog-na-pribyl-paragvaya/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalog-na-pribyl-paragvaya/"
+    },
+    {
+      "keyword": "парагвай корпоративный налог",
+      "url": "/blog/nalog-na-pribyl-paragvaya/",
+      "engine": "google",
+      "position": 6,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalog-na-pribyl-paragvaya/"
+    },
+    {
+      "keyword": "бизнес в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-paragvae/"
+    },
+    {
+      "keyword": "бизнес в парагвае",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес парагвай",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-paragvae/"
+    },
+    {
+      "keyword": "бизнес парагвай",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": 7,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-paragvae/"
+    },
+    {
+      "keyword": "открыть компанию в парагвае",
+      "url": "/blog/registracziya-kompanii-v-paragvae-proczedura-i-osobennosti/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-paragvae-proczedura-i-osobennosti/"
+    },
+    {
+      "keyword": "открыть компанию в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-paragvae/"
+    },
+    {
+      "keyword": "перу бизнес",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "перу бизнес",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": 2,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-peru/"
+    },
+    {
+      "keyword": "налоги в перу",
+      "url": "/blog/sravnenie-nalogov-v-stranah-latinskoj-ameriki/",
+      "engine": "yandex",
+      "position": 11,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/sravnenie-nalogov-v-stranah-latinskoj-ameriki/"
+    },
+    {
+      "keyword": "налоги в перу",
+      "url": "/blog/nalogi-dlya-biznesa-v-peru/",
+      "engine": "google",
+      "position": 9,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-dlya-biznesa-v-peru/"
+    },
+    {
+      "keyword": "сфера услуг перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "yandex",
+      "position": 23,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-peru/"
+    },
+    {
+      "keyword": "сфера услуг перу",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "ндс в перу",
+      "url": "/blog/nalogi-dlya-biznesa-v-peru/",
+      "engine": "yandex",
+      "position": 13,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-dlya-biznesa-v-peru/"
+    },
+    {
+      "keyword": "ндс в перу",
+      "url": "/blog/nalogi-dlya-biznesa-v-peru/",
+      "engine": "google",
+      "position": 7,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-dlya-biznesa-v-peru/"
+    },
+    {
+      "keyword": "сфера услуг в перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "yandex",
+      "position": 20,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-peru/"
+    },
+    {
+      "keyword": "сфера услуг в перу",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес лима",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес лима",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть счет в перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "yandex",
+      "position": 14,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-peru/"
+    },
+    {
+      "keyword": "открыть счет в перу",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес план для перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "yandex",
+      "position": 3,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-peru/"
+    },
+    {
+      "keyword": "бизнес план для перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "google",
+      "position": 8,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-peru/"
+    },
+    {
+      "keyword": "система налогообложения перу",
+      "url": "/blog/nalogi-dlya-biznesa-v-peru/",
+      "engine": "yandex",
+      "position": 8,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-dlya-biznesa-v-peru/"
+    },
+    {
+      "keyword": "система налогообложения перу",
+      "url": "/blog/nalogi-dlya-biznesa-v-peru/",
+      "engine": "google",
+      "position": 4,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-dlya-biznesa-v-peru/"
+    },
+    {
+      "keyword": "открыть компанию в перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-peru/"
+    },
+    {
+      "keyword": "открыть компанию в перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/otkrytie-biznesa-v-peru/"
+    },
+    {
+      "keyword": "бизнес в пуэрто-рико",
+      "url": "/strana/biznes-v-puerto-riko/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-puerto-riko/"
+    },
+    {
+      "keyword": "бизнес в пуэрто-рико",
+      "url": "/strana/biznes-v-puerto-riko/",
+      "engine": "google",
+      "position": 4,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-puerto-riko/"
+    },
+    {
+      "keyword": "бизнес сальвадор",
+      "url": "/strana/biznes-v-salvadore/",
+      "engine": "yandex",
+      "position": 15,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-salvadore/"
+    },
+    {
+      "keyword": "бизнес сальвадор",
+      "url": "/strana/biznes-v-salvadore/",
+      "engine": "google",
+      "position": 7,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-salvadore/"
+    },
+    {
+      "keyword": "открыть компанию сальвадор",
+      "url": "/strana/biznes-v-salvadore/",
+      "engine": "yandex",
+      "position": 26,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-salvadore/"
+    },
+    {
+      "keyword": "открыть компанию сальвадор",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "оформить юр лицо сальвадор",
+      "url": "/",
+      "engine": "yandex",
+      "position": 12,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/"
+    },
+    {
+      "keyword": "оформить юр лицо сальвадор",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "уругвай налоги",
+      "url": "/blog/nalogi-v-urugvae-irae-iva-svobodnye-zony-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-urugvae-irae-iva-svobodnye-zony-dlya-biznesa/"
+    },
+    {
+      "keyword": "уругвай налоги",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "налоги в уругвае",
+      "url": "/blog/nalogi-v-urugvae-irae-iva-svobodnye-zony-dlya-biznesa/",
+      "engine": "yandex",
+      "position": 11,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/nalogi-v-urugvae-irae-iva-svobodnye-zony-dlya-biznesa/"
+    },
+    {
+      "keyword": "налоги в уругвае",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес уругвай",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес уругвай",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "инвестиции в уругвай",
+      "url": "/blog/osnovnye-napravleniya-investicij-v-urugvaj/",
+      "engine": "yandex",
+      "position": 3,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/osnovnye-napravleniya-investicij-v-urugvaj/"
+    },
+    {
+      "keyword": "инвестиции в уругвай",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть компанию уругвай",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть компанию уругвай",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть бизнес уругвай",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть бизнес уругвай",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть оффшорную компанию в уругвае",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открыть оффшорную компанию в уругвае",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "продажа бизнеса в уругвае",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "продажа бизнеса в уругвае",
+      "url": "/strana/biznes-v-urugvae/",
+      "engine": "google",
+      "position": 6,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-urugvae/"
+    },
+    {
+      "keyword": "продам фирму в уругвае",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "продам фирму в уругвае",
+      "url": "/strana/biznes-v-urugvae/",
+      "engine": "google",
+      "position": 7,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-urugvae/"
+    },
+    {
+      "keyword": "уругвай продам фирму",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "уругвай продам фирму",
+      "url": "/strana/biznes-v-urugvae/",
+      "engine": "google",
+      "position": 7,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-urugvae/"
+    },
+    {
+      "keyword": "венесуэла бизнес",
+      "url": "/blog/registracziya-kompanii-v-venesuele-tipy-proczedura-nalogi/",
+      "engine": "yandex",
+      "position": 3,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-venesuele-tipy-proczedura-nalogi/"
+    },
+    {
+      "keyword": "венесуэла бизнес",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": 6,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-venesuele/"
+    },
+    {
+      "keyword": "регистрация компании в венесуэле",
+      "url": "/blog/registracziya-kompanii-v-venesuele-tipy-proczedura-nalogi/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-venesuele-tipy-proczedura-nalogi/"
+    },
+    {
+      "keyword": "регистрация компании в венесуэле",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": 6,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-venesuele/"
+    },
+    {
+      "keyword": "бизнес в венесуэле",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "yandex",
+      "position": 6,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-venesuele/"
+    },
+    {
+      "keyword": "бизнес в венесуэле",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": 6,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-venesuele/"
+    },
+    {
+      "keyword": "бизнесы в венесуэле",
+      "url": "/blog/registracziya-kompanii-v-venesuele-tipy-proczedura-nalogi/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-venesuele-tipy-proczedura-nalogi/"
+    },
+    {
+      "keyword": "бизнесы в венесуэле",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": 3,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-venesuele/"
+    },
+    {
+      "keyword": "бизнес каракас",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "yandex",
+      "position": 7,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-venesuele/"
+    },
+    {
+      "keyword": "бизнес каракас",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": 4,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-venesuele/"
+    },
+    {
+      "keyword": "открыть бизнес венесуэла",
+      "url": "/blog/registracziya-kompanii-v-venesuele-tipy-proczedura-nalogi/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/registracziya-kompanii-v-venesuele-tipy-proczedura-nalogi/"
+    },
+    {
+      "keyword": "открыть бизнес венесуэла",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": 3,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-venesuele/"
+    },
+    {
+      "keyword": "открыть бизнес каракас",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-venesuele/"
+    },
+    {
+      "keyword": "открыть бизнес каракас",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": 1,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/strana/biznes-v-venesuele/"
+    },
+    {
+      "keyword": "развитие бизнеса в латинской америке",
+      "url": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/",
+      "engine": "yandex",
+      "position": 9,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/"
+    },
+    {
+      "keyword": "развитие бизнеса в латинской америке",
+      "url": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/"
+    },
+    {
+      "keyword": "аутсорс продаж латинская америка",
+      "url": "/uslugi/bizdev-na-autsorse/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/bizdev-na-autsorse/"
+    },
+    {
+      "keyword": "аутсорс продаж латинская америка",
+      "url": "/uslugi/bizdev-na-autsorse/",
+      "engine": "google",
+      "position": 1,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/bizdev-na-autsorse/"
+    },
+    {
+      "keyword": "сопровождение бизнеса за рубежом",
+      "url": "/",
+      "engine": "yandex",
+      "position": 80,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/"
+    },
+    {
+      "keyword": "сопровождение бизнеса за рубежом",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "сопровождение бизнеса в латинской америке",
+      "url": "/uslugi/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/"
+    },
+    {
+      "keyword": "сопровождение бизнеса в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/"
+    },
+    {
+      "keyword": "исследование рынка латинской америки",
+      "url": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/",
+      "engine": "yandex",
+      "position": 39,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/preimushhestva-vedeniya-biznesa-v-latinskoj-amerike/"
+    },
+    {
+      "keyword": "исследование рынка латинской америки",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "поиск клиентов в латинской америке",
+      "url": "/blog/kak-najti-klientov-v-latinskoj-amerike-strategii-b2b/",
+      "engine": "yandex",
+      "position": 3,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/kak-najti-klientov-v-latinskoj-amerike-strategii-b2b/"
+    },
+    {
+      "keyword": "поиск клиентов в латинской америке",
+      "url": "/uslugi/biznes-soprovozhdenie/poisk-klientov-i-novyh-nish/",
+      "engine": "google",
+      "position": 1,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/biznes-soprovozhdenie/poisk-klientov-i-novyh-nish/"
+    },
+    {
+      "keyword": "лидогенерация в латинской америке",
+      "url": "/uslugi/lidogeneracziya/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/lidogeneracziya/"
+    },
+    {
+      "keyword": "лидогенерация в латинской америке",
+      "url": "/uslugi/lidogeneracziya/",
+      "engine": "google",
+      "position": 1,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/lidogeneracziya/"
+    },
+    {
+      "keyword": "консалтинг в латинской америке",
+      "url": "/uslugi/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/"
+    },
+    {
+      "keyword": "консалтинг в латинской америке",
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/",
+      "engine": "google",
+      "position": 2,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/mezhdunarodnyj-biznes-konsalting/"
+    },
+    {
+      "keyword": "международный бизнес консалтинг",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "международный бизнес консалтинг",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "виза цифрового кочевника латинская америка",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "виза цифрового кочевника латинская америка",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "внж для предпринимателей латинская америка",
+      "url": "/blog/vnzh-cherez-biznes-v-latinskoj-amerike/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/vnzh-cherez-biznes-v-latinskoj-amerike/"
+    },
+    {
+      "keyword": "внж для предпринимателей латинская америка",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "бизнес виза латинская америка",
+      "url": "/uslugi/oformlenie-viz/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/oformlenie-viz/"
+    },
+    {
+      "keyword": "бизнес виза латинская америка",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "открытие бизнеса в латинской америке",
+      "url": "/uslugi/bizdev-na-autsorse/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/bizdev-na-autsorse/"
+    },
+    {
+      "keyword": "открытие бизнеса в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/"
+    },
+    {
+      "keyword": "регистрация компании латинская америка",
+      "url": "/uslugi/registracziya-mezhdunarodnoj-kompanii/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/registracziya-mezhdunarodnoj-kompanii/"
+    },
+    {
+      "keyword": "регистрация компании латинская америка",
+      "url": "/uslugi/registracziya-mezhdunarodnoj-kompanii/",
+      "engine": "google",
+      "position": 2,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/registracziya-mezhdunarodnoj-kompanii/"
+    },
+    {
+      "keyword": "перенести бизнес за границу",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "перенести бизнес за границу",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "релокация бизнеса в латинскую америку",
+      "url": "/uslugi/peremeshhenie-biznesa/",
+      "engine": "yandex",
+      "position": 2,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/peremeshhenie-biznesa/"
+    },
+    {
+      "keyword": "релокация бизнеса в латинскую америку",
+      "url": "/uslugi/peremeshhenie-biznesa/",
+      "engine": "google",
+      "position": 6,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/peremeshhenie-biznesa/"
+    },
+    {
+      "keyword": "открыть компанию в латинской америке",
+      "url": "/uslugi/registracziya-mezhdunarodnoj-kompanii/",
+      "engine": "yandex",
+      "position": 4,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/registracziya-mezhdunarodnoj-kompanii/"
+    },
+    {
+      "keyword": "открыть компанию в латинской америке",
+      "url": "/uslugi/otkrytie-biznesa/",
+      "engine": "google",
+      "position": 5,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/uslugi/otkrytie-biznesa/"
+    },
+    {
+      "keyword": "регистрация компании за рубежом",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "регистрация компании за рубежом",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "найти дистрибьютора в латинской америке",
+      "url": "/blog/poisk-partnerov-v-latinskoj-amerike-gde-i-kak-najti/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/poisk-partnerov-v-latinskoj-amerike-gde-i-kak-najti/"
+    },
+    {
+      "keyword": "найти дистрибьютора в латинской америке",
+      "url": "/yuridicheskim-licam/distribyutory/",
+      "engine": "google",
+      "position": 1,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/yuridicheskim-licam/distribyutory/"
+    },
+    {
+      "keyword": "saas выход на рынок латинской америки",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "saas выход на рынок латинской америки",
+      "url": "/yuridicheskim-licam/dlya-b2b-saas/",
+      "engine": "google",
+      "position": 1,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/yuridicheskim-licam/dlya-b2b-saas/"
+    },
+    {
+      "keyword": "продвижение it продукта в латам",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "продвижение it продукта в латам",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "экспорт продукции в латинскую америку",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "экспорт продукции в латинскую америку",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "производство в латинской америке",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "производство в латинской америке",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "продажи на маркетплейсах латинской америки",
+      "url": "/blog/ecommerce-v-latinskoj-amerike-marketplejsy-i-strategii/",
+      "engine": "yandex",
+      "position": 5,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/blog/ecommerce-v-latinskoj-amerike-marketplejsy-i-strategii/"
+    },
+    {
+      "keyword": "продажи на маркетплейсах латинской америки",
+      "url": "/yuridicheskim-licam/dlya-sellerov/",
+      "engine": "google",
+      "position": 3,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/yuridicheskim-licam/dlya-sellerov/"
+    },
+    {
+      "keyword": "экспорт товаров в латинскую америку",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "экспорт товаров в латинскую америку",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "торговля с латинской америкой",
+      "engine": "yandex",
+      "position": null,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "торговля с латинской америкой",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "enterprise продажи латинская америка",
+      "url": "/yuridicheskim-licam/enterprise-prodavczy/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/yuridicheskim-licam/enterprise-prodavczy/"
+    },
+    {
+      "keyword": "enterprise продажи латинская америка",
+      "url": "/yuridicheskim-licam/enterprise-prodavczy/",
+      "engine": "google",
+      "position": 1,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/yuridicheskim-licam/enterprise-prodavczy/"
+    },
+    {
+      "keyword": "inside sales латинская америка",
+      "url": "/yuridicheskim-licam/inside-sales/",
+      "engine": "yandex",
+      "position": 1,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/yuridicheskim-licam/inside-sales/"
+    },
+    {
+      "keyword": "inside sales латинская америка",
+      "url": "/yuridicheskim-licam/inside-sales/",
+      "engine": "google",
+      "position": 1,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/yuridicheskim-licam/inside-sales/"
+    },
+    {
+      "keyword": "партнёрские продажи за рубежом",
+      "url": "/yuridicheskim-licam/partnerskie-prodazhi/",
+      "engine": "yandex",
+      "position": 6,
+      "regionIndex": 1,
+      "regionName": "Москва",
+      "device": "desktop",
+      "actualUrl": "/yuridicheskim-licam/partnerskie-prodazhi/"
+    },
+    {
+      "keyword": "партнёрские продажи за рубежом",
+      "engine": "google",
+      "position": null,
+      "regionIndex": 2,
+      "regionName": "Москва",
+      "device": "desktop"
+    },
+    {
+      "keyword": "развитие и размещение предприятия в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "развитие и размещение предприятия в латинской америке",
+      "url": "/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "развитие и размещение предприятия латинская америка",
+      "url": "/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "развитие и размещение предприятия латинская америка",
+      "url": "/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "особенности бизнеса в латинской америке",
+      "url": "/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "особенности бизнеса в латинской америке",
+      "url": "/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Аргентина",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Аргентина",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Буэнос Айрес",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Буэнос Айрес",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "ип в аргентине",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "ип в аргентине",
+      "url": "/blog/ip-v-argentine-ili-monotributo-rezhim-monotributo/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "купить бизнес в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "купить бизнес в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Аргентина",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Аргентина",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "как открыть бизнес в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "как открыть бизнес в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "как открыть ип в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "как открыть ип в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть ип в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть ип в аргентине",
+      "url": "/strana/biznes-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Боливия",
+      "url": "/strana/biznes-v-bolivii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Боливия",
+      "url": "/strana/biznes-v-bolivii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию Боливия",
+      "url": "/strana/biznes-v-bolivii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию Боливия",
+      "url": "/strana/biznes-v-bolivii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в боливии",
+      "url": "/blog/registracziya-kompanii-v-bolivii-formy-proczedura-nalogi/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в боливии",
+      "url": "/blog/registracziya-kompanii-v-bolivii-formy-proczedura-nalogi/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Бразилиа",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Бразилиа",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Бразилия",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Бразилия",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть предприятие Бразилия",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть предприятие Бразилия",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в бразилии",
+      "url": "/blog/registracziya-kompanii-v-brazilii-gajd-dlya-inostranczev/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в бразилии",
+      "url": "/blog/registracziya-kompanii-v-brazilii-gajd-dlya-inostranczev/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес можно открыть в бразилии",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес можно открыть в бразилии",
+      "url": "/strana/biznes-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Сантьяго",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Сантьяго",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Чили",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Чили",
+      "url": "/strana/biznes-v-chili/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Доминикана",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Доминикана",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Доминиканская",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Доминиканская",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Санто Доминго",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Санто Доминго",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Доминикана",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Доминикана",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть предприятие Доминиканская",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть предприятие Доминиканская",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "как открыть счет в доминикане",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "как открыть счет в доминикане",
+      "url": "/strana/biznes-v-dominikane/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Эквадор",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Эквадор",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть фирму Эквадор",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть фирму Эквадор",
+      "url": "/strana/biznes-v-ekvadore/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Богота",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Богота",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Колумбия",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Колумбия",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть предприятие Колумбия",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть предприятие Колумбия",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "ндс в колумбии",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "ндс в колумбии",
+      "url": "/strana/biznes-v-kolumbii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Сан Хосе",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Сан Хосе",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Коста Рика",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Коста Рика",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Сан Хосе",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Сан Хосе",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "зарегистрировать бизнес в коста рике",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "зарегистрировать бизнес в коста рике",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "к кому обратиться для регистрации бизнеса в коста рике",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "к кому обратиться для регистрации бизнеса в коста рике",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открытие компании в коста рике",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открытие компании в коста рике",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "регистрация ооо в костарике",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "регистрация ооо в костарике",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "чем зарабатывать в коста рике",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "чем зарабатывать в коста рике",
+      "url": "/strana/biznes-v-kosta-rike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Гавана",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Гавана",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес на кубе для россиян",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес на кубе для россиян",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес на кубе для русских",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес на кубе для русских",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "как на кубе открыть бизнес",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "как на кубе открыть бизнес",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес можно открыть на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес можно открыть на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "продажа бизнес в куба",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "продажа бизнес в куба",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "частный бизнес на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "частный бизнес на кубе",
+      "url": "/strana/biznes-v-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "стоимость открытия компании в мексике",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "стоимость открытия компании в мексике",
+      "url": "/strana/biznes-v-meksike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "как открыть ип в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "как открыть ип в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес открыть в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес открыть в парагвае",
+      "url": "/strana/biznes-v-paragvae/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в парагвае",
+      "url": "/blog/registracziya-kompanii-v-paragvae-proczedura-i-osobennosti/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в парагвае",
+      "url": "/blog/registracziya-kompanii-v-paragvae-proczedura-i-osobennosti/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Лима",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Лима",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию Лима",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию Лима",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть предприятие Перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть предприятие Перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть фирму Перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть фирму Перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "оформить юридическое лицо Перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "оформить юридическое лицо Перу",
+      "url": "/strana/biznes-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес пуэрто рико",
+      "url": "/strana/biznes-v-puerto-riko/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес пуэрто рико",
+      "url": "/strana/biznes-v-puerto-riko/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в пуэрто рико",
+      "url": "/strana/biznes-v-puerto-riko/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в пуэрто рико",
+      "url": "/strana/biznes-v-puerto-riko/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в пуэрто рико",
+      "url": "/strana/biznes-v-puerto-riko/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в пуэрто рико",
+      "url": "/strana/biznes-v-puerto-riko/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию Сальвадор",
+      "url": "/strana/biznes-v-salvadore/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию Сальвадор",
+      "url": "/strana/biznes-v-salvadore/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "оформить юр лицо Сальвадор",
+      "url": "/strana/biznes-v-salvadore/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "оформить юр лицо Сальвадор",
+      "url": "/strana/biznes-v-salvadore/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Уругвай",
+      "url": "/strana/biznes-v-urugvae/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Уругвай",
+      "url": "/strana/biznes-v-urugvae/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию Уругвай",
+      "url": "/strana/biznes-v-urugvae/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию Уругвай",
+      "url": "/strana/biznes-v-urugvae/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Каракас",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Каракас",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Венесуэла",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Венесуэла",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Каракас",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Каракас",
+      "url": "/strana/biznes-v-venesuele/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "поиск партнёров в латинской америке",
+      "url": "/blog/poisk-partnerov-v-latinskoj-amerike-gde-i-kak-najti/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "поиск партнёров в латинской америке",
+      "url": "/blog/poisk-partnerov-v-latinskoj-amerike-gde-i-kak-najti/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "международный бизнес-консалтинг",
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "международный бизнес-консалтинг",
+      "url": "/uslugi/mezhdunarodnyj-biznes-konsalting/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "где открыть компанию в латинской америке",
+      "url": "/uslugi/otkrytie-biznesa/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "где открыть компанию в латинской америке",
+      "url": "/uslugi/otkrytie-biznesa/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "go latam отзывы",
+      "url": "/about-us/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "go latam отзывы",
+      "url": "/about-us/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "сравнение стран латинской америки для бизнеса",
+      "url": "/strany/sravnenie/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "сравнение стран латинской америки для бизнеса",
+      "url": "/strany/sravnenie/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "где открыть бизнес в латинской америке",
+      "url": "/strany/sravnenie/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "где открыть бизнес в латинской америке",
+      "url": "/strany/sravnenie/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в доминикане",
+      "url": "/blog/biznes-v-dominikane-registracziya-nalogi-vozmozhnosti/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в доминикане",
+      "url": "/blog/biznes-v-dominikane-registracziya-nalogi-vozmozhnosti/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "налоговые льготы it латам",
+      "url": "/blog/it-biznes-v-latinskoj-amerike-gde-otkryt-kompaniyu/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "налоговые льготы it латам",
+      "url": "/blog/it-biznes-v-latinskoj-amerike-gde-otkryt-kompaniyu/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "digital nomad виза латам",
+      "url": "/blog/it-biznes-v-latinskoj-amerike-gde-otkryt-kompaniyu/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "digital nomad виза латам",
+      "url": "/blog/it-biznes-v-latinskoj-amerike-gde-otkryt-kompaniyu/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "стартапы в мексике",
+      "url": "/blog/kak-meksika-pomogaet-startapam/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "стартапы в мексике",
+      "url": "/blog/kak-meksika-pomogaet-startapam/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "найти клиентов в латинской америке",
+      "url": "/blog/kak-najti-klientov-v-latinskoj-amerike-strategii-b2b/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "найти клиентов в латинской америке",
+      "url": "/blog/kak-najti-klientov-v-latinskoj-amerike-strategii-b2b/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "CNPJ для иностранной компании",
+      "url": "/blog/kak-otkryt-bankovskij-schet-v-brazilii-dlya-inostrannoj-kompanii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "CNPJ для иностранной компании",
+      "url": "/blog/kak-otkryt-bankovskij-schet-v-brazilii-dlya-inostrannoj-kompanii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "conta corrente pj бразилия",
+      "url": "/blog/kak-otkryt-bankovskij-schet-v-brazilii-dlya-inostrannoj-kompanii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "крипто-лицензия в сальвадоре",
+      "url": "/blog/kripto-liczenziya-v-salvadore-dasp-trebovaniya-proczedura/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "крипто-лицензия в сальвадоре",
+      "url": "/blog/kripto-liczenziya-v-salvadore-dasp-trebovaniya-proczedura/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "локальный партнёр в latam",
+      "url": "/blog/lokalnyj-partner-v-latam-kak-proverit-i-oformit-sotrudnichestvo/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "локальный партнёр в latam",
+      "url": "/blog/lokalnyj-partner-v-latam-kak-proverit-i-oformit-sotrudnichestvo/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес открыть на кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес открыть на кубе",
+      "url": "/blog/luchshie-idei-dlya-biznesa-na-kube/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "выбрать страну latam b2b-выхода",
+      "url": "/blog/matricza-vybora-strany-latam-dlya-b2b-vyhoda/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "выбрать страну latam b2b-выхода",
+      "url": "/blog/matricza-vybora-strany-latam-dlya-b2b-vyhoda/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "как получить гражданство аргентины",
+      "url": "/blog/mozhno-li-predprinimatelyam-poluchit-grazhdanstvo-v-argentine/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "как получить гражданство аргентины",
+      "url": "/blog/mozhno-li-predprinimatelyam-poluchit-grazhdanstvo-v-argentine/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "налогообложение в парагвае",
+      "url": "/blog/nalog-na-pribyl-paragvaya/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "налогообложение в парагвае",
+      "url": "/blog/nalog-na-pribyl-paragvaya/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "свободные зоны чили",
+      "url": "/blog/nalogi-v-chili-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "свободные зоны чили",
+      "url": "/blog/nalogi-v-chili-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "IMMEX программа мексика",
+      "url": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "ISR мексика ставка",
+      "url": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "IVA мексика",
+      "url": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "IVA мексика",
+      "url": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "налогообложение в мексике для иностранцев",
+      "url": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "налогообложение в мексике для иностранцев",
+      "url": "/blog/nalogi-v-meksike-stavki-lgoty-rezhimy-dlya-biznesa/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес открыть в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "какой бизнес открыть в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в бразилии",
+      "url": "/blog/otkrytie-biznesa-v-brazilii/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в чили",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в чили",
+      "url": "/blog/otkrytie-biznesa-v-chili/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в доминикане",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в доминикане",
+      "url": "/blog/otkrytie-biznesa-v-dominikanskoj-respublike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открытие бизнеса в гватемале",
+      "url": "/blog/otkrytie-biznesa-v-gvatemale-registracziya-nalogi-svobodnye-zony/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открытие бизнеса в гватемале",
+      "url": "/blog/otkrytie-biznesa-v-gvatemale-registracziya-nalogi-svobodnye-zony/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в гватемале",
+      "url": "/blog/otkrytie-biznesa-v-gvatemale-registracziya-nalogi-svobodnye-zony/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в гватемале",
+      "url": "/blog/otkrytie-biznesa-v-gvatemale-registracziya-nalogi-svobodnye-zony/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Мехико",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "бизнес Мехико",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть предприятие Мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть предприятие Мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть фирму Мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть фирму Мексика",
+      "url": "/blog/otkrytie-biznesa-v-meksike/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в мексике",
+      "url": "/blog/registracziya-kompanii-v-meksike-tipy-proczedura-stoimost/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в мексике",
+      "url": "/blog/registracziya-kompanii-v-meksike-tipy-proczedura-stoimost/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "зарегестрировать компанию Панама",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "зарегестрировать компанию Панама",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Панама",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес Панама",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть фирму Панама",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть фирму Панама",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открытие компании в панаме",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открытие компании в панаме",
+      "url": "/blog/otkrytie-biznesa-v-paname/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть бизнес в перу",
+      "url": "/blog/otkrytie-biznesa-v-peru/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "платежи в латинской америке",
+      "url": "/blog/platezhi-v-latinskoj-amerike-pix-spei-pse-dlya-biznesa/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "платежи в латинской америке",
+      "url": "/blog/platezhi-v-latinskoj-amerike-pix-spei-pse-dlya-biznesa/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "рабочая виза в мексику",
+      "url": "/blog/rabochaya-viza-v-meksiku-kak-poluchit-trebovaniya-sroki/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "рабочая виза в мексику",
+      "url": "/blog/rabochaya-viza-v-meksiku-kak-poluchit-trebovaniya-sroki/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "SAS аргентина регистрация",
+      "url": "/blog/registracziya-kompanii-v-argentine-srl-sas-procedura/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "SRL аргентина",
+      "url": "/blog/registracziya-kompanii-v-argentine-srl-sas-procedura/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в боливии",
+      "url": "/blog/registracziya-kompanii-v-bolivii-formy-proczedura-nalogi/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в боливии",
+      "url": "/blog/registracziya-kompanii-v-bolivii-formy-proczedura-nalogi/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "SpA чили",
+      "url": "/blog/registracziya-kompanii-v-chili-spa-procedura/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "двойное налогообложение россия эквадор",
+      "url": "/blog/registracziya-kompanii-v-ekvadore-tipy-proczedura-stoimost/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "двойное налогообложение россия эквадор",
+      "url": "/blog/registracziya-kompanii-v-ekvadore-tipy-proczedura-stoimost/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "зоны франка эквадор",
+      "url": "/blog/registracziya-kompanii-v-ekvadore-tipy-proczedura-stoimost/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "sas колумбия регистрация",
+      "url": "/blog/registracziya-kompanii-v-kolumbii-sas-proczedura-stoimost/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "zona franca колумбия",
+      "url": "/blog/registracziya-kompanii-v-kolumbii-sas-proczedura-stoimost/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в никарагуа",
+      "url": "/blog/registracziya-kompanii-v-nikaragua-zony-francas-nalogi/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "регистрация компании в никарагуа",
+      "url": "/blog/registracziya-kompanii-v-nikaragua-zony-francas-nalogi/",
+      "engine": "yandex",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в никарагуа",
+      "url": "/blog/registracziya-kompanii-v-nikaragua-zony-francas-nalogi/",
+      "engine": "google",
+      "position": null
+    },
+    {
+      "keyword": "открыть компанию в никарагуа",
+      "url": "/blog/registracziya-kompanii-v-nikaragua-zony-francas-nalogi/",
+      "engine": "yandex",
+      "position": null
+    }
+  ],
+  "indexStatus": [],
+  "sitemap": null
+}
