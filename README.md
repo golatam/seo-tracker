@@ -27,7 +27,11 @@ cp .env.example .env          # fill in API tokens (secrets live ONLY here)
 # 2. Drop its keywords in:
 #    data/<id>/semantic-core.json   (see "semantic-core.json schema" below)
 
-# 3. Run it:
+# 3. Import the rank-tracking baseline into Topvisor when needed:
+node scripts/import-topvisor-keywords.mjs <id> /path/to/topvisor-import.csv --dry-run
+node scripts/import-topvisor-keywords.mjs <id> /path/to/topvisor-import.csv
+
+# 4. Run it:
 node scripts/check-project.mjs <id>              # one project
 node scripts/check-project.mjs <id> --dry-run    # fetch, don't persist/notify
 node scripts/check-project.mjs <id> --validate-only  # just check the descriptor
@@ -57,8 +61,13 @@ the previous snapshot, write a markdown + CSV report under
 
 2. **Validate it:** `node scripts/check-project.mjs --validate-only acme`.
 3. **Add keywords:** `data/acme/semantic-core.json` (schema below).
-4. **Flip status to `active`** in the descriptor.
-5. **Run:** `node scripts/check-project.mjs acme` (or wait for the `--all` cron).
+4. **Import the representative rank-tracking set into Topvisor:**
+   `node scripts/import-topvisor-keywords.mjs acme /path/to/topvisor-import.csv`.
+   The script reads central credentials from this repo's `.env`, so Topvisor
+   keys are not duplicated into every consumer project.
+5. **Flip status to `active`** in the descriptor only after Topvisor has
+   searchers/regions, imported keywords, and at least one readable history date.
+6. **Run:** `node scripts/check-project.mjs acme` (or wait for the `--all` cron).
 
 A project with `status: waiting_for_keywords` (or a missing semantic core) is
 **not an error** — `--all` skips it gracefully and the runner tells you what's
